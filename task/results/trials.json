@@ -1,0 +1,1368 @@
+[
+  {
+    "pair": 0,
+    "mode": "eager",
+    "wall_seconds": 6.227461587986909,
+    "turns": [],
+    "calls": [],
+    "final_response": "",
+    "error": "provider_ClientError_code_429",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "pair": 0,
+    "mode": "discovery",
+    "wall_seconds": 15.638052897003945,
+    "turns": [
+      {
+        "turn": 0,
+        "usage": {
+          "candidates_token_count": 17,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 17
+            }
+          ],
+          "prompt_token_count": 293,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 293
+            }
+          ],
+          "total_token_count": 310,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 5.789653742016526,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "usage": {
+          "candidates_token_count": 21,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 21
+            }
+          ],
+          "prompt_token_count": 1019,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1019
+            }
+          ],
+          "total_token_count": 1040,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 1.4341712370223831,
+        "declared_tools": [
+          "issue_read",
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 1639,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1639
+            }
+          ],
+          "total_token_count": 1681,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 2.434380885999417,
+        "declared_tools": [
+          "issue_read",
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 3,
+        "usage": {
+          "candidates_token_count": 84,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 84
+            }
+          ],
+          "prompt_token_count": 1739,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1739
+            }
+          ],
+          "total_token_count": 1823,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 1.6330197979987133,
+        "declared_tools": [
+          "issue_read",
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 4,
+        "usage": {
+          "candidates_token_count": 217,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 217
+            }
+          ],
+          "prompt_token_count": 9390,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 9390
+            }
+          ],
+          "total_token_count": 9607,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 3.194471266004257,
+        "declared_tools": [
+          "issue_read",
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "issue get"
+        },
+        "ok": true,
+        "seconds": 0.0014947049785405397,
+        "result": {
+          "loaded_tools": [
+            "issue_read",
+            "add_issue_comment",
+            "assign_copilot_to_issue"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "get file contents or repository content"
+        },
+        "ok": true,
+        "seconds": 0.0023590700002387166,
+        "result": {
+          "loaded_tools": [
+            "get_file_contents",
+            "create_or_update_file",
+            "delete_file"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "issue_read",
+        "arguments": {
+          "method": "get",
+          "issue_number": 2275,
+          "repo": "github-mcp-server",
+          "owner": "github"
+        },
+        "result_sha256": "cd2206039dc9bf937a6b9f8f497f14d1b23b1df2f0a8ce679acf59fac348cf05",
+        "ok": true,
+        "seconds": 0.841808969998965,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      },
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "path": "pkg/github/tools.go",
+          "owner": "github",
+          "repo": "github-mcp-server",
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264"
+        },
+        "result_sha256": "7a67da6ddc539950ad6dc00422bfdcaaa1ada9f61f5a7aa0c3e43683316577a2",
+        "ok": true,
+        "seconds": 0.3037190070026554,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"issue_title\": \"Make `projects` toolset part of the default toolsets\",\n  \"issue_state\": \"closed\",\n  \"toolset\": \"projects\",\n  \"default_enabled\": false,\n  \"source_path\": \"pkg/github/tools.go\",\n  \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\",\n  \"source_line_start\": 127,\n  \"source_line_end\": 132,\n  \"evidence_quote\": \"\\tToolsetMetadataProjects = inventory.ToolsetMetadata{\\n\\t\\tID:               \\\"projects\\\",\\n\\t\\tDescription:      \\\"GitHub Projects related tools\\\",\\n\\t\\tIcon:             \\\"project\\\",\\n\\t\\tInstructionsFunc: generateProjectsToolsetInstructions,\\n\\t}\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "pair": 1,
+    "mode": "discovery",
+    "wall_seconds": 23.33712669997476,
+    "turns": [
+      {
+        "turn": 0,
+        "usage": {
+          "candidates_token_count": 16,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 16
+            }
+          ],
+          "prompt_token_count": 293,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 293
+            }
+          ],
+          "total_token_count": 309,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 17.76964428598876,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "usage": {
+          "candidates_token_count": 19,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 19
+            }
+          ],
+          "prompt_token_count": 1018,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1018
+            }
+          ],
+          "total_token_count": 1037,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 1.7415077199984808,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "issue"
+        },
+        "ok": true,
+        "seconds": 0.0017878820071928203,
+        "result": {
+          "loaded_tools": [
+            "add_issue_comment",
+            "assign_copilot_to_issue",
+            "issue_read"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "get file contents repository"
+        },
+        "ok": true,
+        "seconds": 0.002596485981484875,
+        "result": {
+          "loaded_tools": [
+            "get_file_contents",
+            "create_or_update_file",
+            "delete_file"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      }
+    ],
+    "final_response": "",
+    "error": "provider_ClientError_code_429",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "pair": 1,
+    "mode": "eager",
+    "wall_seconds": 43.16819111100631,
+    "turns": [],
+    "calls": [],
+    "final_response": "",
+    "error": "provider_ServerError_code_504",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "pair": 2,
+    "mode": "eager",
+    "wall_seconds": 13.853903823008295,
+    "turns": [
+      {
+        "turn": 0,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 8652,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8652
+            }
+          ],
+          "total_token_count": 8694,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 4.929535131988814,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 5338
+            }
+          ],
+          "cached_content_token_count": 5338,
+          "candidates_token_count": 84,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 84
+            }
+          ],
+          "prompt_token_count": 8752,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8752
+            }
+          ],
+          "total_token_count": 8836,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 3.2962176889996044,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 9542
+            }
+          ],
+          "cached_content_token_count": 9542,
+          "candidates_token_count": 217,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 217
+            }
+          ],
+          "prompt_token_count": 16403,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 16403
+            }
+          ],
+          "total_token_count": 16620,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 3.8087614410032984,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "issue_read",
+        "arguments": {
+          "method": "get",
+          "repo": "github-mcp-server",
+          "issue_number": 2275,
+          "owner": "github"
+        },
+        "result_sha256": "cd2206039dc9bf937a6b9f8f497f14d1b23b1df2f0a8ce679acf59fac348cf05",
+        "ok": true,
+        "seconds": 1.496045009989757,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      },
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "owner": "github",
+          "path": "pkg/github/tools.go",
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "7a67da6ddc539950ad6dc00422bfdcaaa1ada9f61f5a7aa0c3e43683316577a2",
+        "ok": true,
+        "seconds": 0.32078019398613833,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"issue_title\": \"Make `projects` toolset part of the default toolsets\",\n  \"issue_state\": \"closed\",\n  \"toolset\": \"projects\",\n  \"default_enabled\": false,\n  \"source_path\": \"pkg/github/tools.go\",\n  \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\",\n  \"source_line_start\": 127,\n  \"source_line_end\": 132,\n  \"evidence_quote\": \"\\tToolsetMetadataProjects = inventory.ToolsetMetadata{\\n\\t\\tID:               \\\"projects\\\",\\n\\t\\tDescription:      \\\"GitHub Projects related tools\\\",\\n\\t\\tIcon:             \\\"project\\\",\\n\\t\\tInstructionsFunc: generateProjectsToolsetInstructions,\\n\\t}\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "pair": 2,
+    "mode": "discovery",
+    "wall_seconds": 7.464287097012857,
+    "turns": [],
+    "calls": [],
+    "final_response": "",
+    "error": "provider_ClientError_code_429",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "pair": 3,
+    "mode": "discovery",
+    "wall_seconds": 19.856623926985776,
+    "turns": [
+      {
+        "turn": 0,
+        "usage": {
+          "candidates_token_count": 18,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 18
+            }
+          ],
+          "prompt_token_count": 293,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 293
+            }
+          ],
+          "total_token_count": 311,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 4.93023396001081,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 1028,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1028
+            }
+          ],
+          "total_token_count": 1070,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 5.871844484994654,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "add_issue_comment",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "usage": {
+          "candidates_token_count": 84,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 84
+            }
+          ],
+          "prompt_token_count": 1128,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1128
+            }
+          ],
+          "total_token_count": 1212,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 5.026697728986619,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "add_issue_comment",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 3,
+        "usage": {
+          "candidates_token_count": 222,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 222
+            }
+          ],
+          "prompt_token_count": 8779,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8779
+            }
+          ],
+          "total_token_count": 9001,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 2.673463515995536,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "add_issue_comment",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "issue get contents"
+        },
+        "ok": true,
+        "seconds": 0.0010580249945633113,
+        "result": {
+          "loaded_tools": [
+            "get_file_contents",
+            "issue_read",
+            "add_issue_comment"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "issue_read",
+        "arguments": {
+          "issue_number": 2275,
+          "method": "get",
+          "owner": "github",
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "cd2206039dc9bf937a6b9f8f497f14d1b23b1df2f0a8ce679acf59fac348cf05",
+        "ok": true,
+        "seconds": 1.0736108840210363,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      },
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "path": "pkg/github/tools.go",
+          "owner": "github",
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "7a67da6ddc539950ad6dc00422bfdcaaa1ada9f61f5a7aa0c3e43683316577a2",
+        "ok": true,
+        "seconds": 0.27879776500049047,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "```json\n{\n  \"issue_title\": \"Make `projects` toolset part of the default toolsets\",\n  \"issue_state\": \"closed\",\n  \"toolset\": \"projects\",\n  \"default_enabled\": false,\n  \"source_path\": \"pkg/github/tools.go\",\n  \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\",\n  \"source_line_start\": 127,\n  \"source_line_end\": 132,\n  \"evidence_quote\": \"\\tToolsetMetadataProjects = inventory.ToolsetMetadata{\\n\\t\\tID:               \\\"projects\\\",\\n\\t\\tDescription:      \\\"GitHub Projects related tools\\\",\\n\\t\\tIcon:             \\\"project\\\",\\n\\t\\tInstructionsFunc: generateProjectsToolsetInstructions,\\n\\t}\"\n}\n```",
+    "error": null,
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "pair": 3,
+    "mode": "eager",
+    "wall_seconds": 45.04866833501728,
+    "turns": [],
+    "calls": [],
+    "final_response": "",
+    "error": "provider_TimeoutError_code_None",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "pair": 4,
+    "mode": "eager",
+    "wall_seconds": 15.052830533008091,
+    "turns": [
+      {
+        "turn": 0,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 5335
+            }
+          ],
+          "cached_content_token_count": 5335,
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 8652,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8652
+            }
+          ],
+          "total_token_count": 8694,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 6.444544939993648,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "usage": {
+          "candidates_token_count": 84,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 84
+            }
+          ],
+          "prompt_token_count": 8752,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8752
+            }
+          ],
+          "total_token_count": 8836,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 2.4702259930199943,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 12723
+            }
+          ],
+          "cached_content_token_count": 12723,
+          "candidates_token_count": 216,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 216
+            }
+          ],
+          "prompt_token_count": 16403,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 16403
+            }
+          ],
+          "total_token_count": 16619,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 4.487310662982054,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "issue_read",
+        "arguments": {
+          "method": "get",
+          "repo": "github-mcp-server",
+          "owner": "github",
+          "issue_number": 2275
+        },
+        "result_sha256": "cd2206039dc9bf937a6b9f8f497f14d1b23b1df2f0a8ce679acf59fac348cf05",
+        "ok": true,
+        "seconds": 1.4137652270146646,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      },
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "repo": "github-mcp-server",
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "path": "pkg/github/tools.go",
+          "owner": "github"
+        },
+        "result_sha256": "7a67da6ddc539950ad6dc00422bfdcaaa1ada9f61f5a7aa0c3e43683316577a2",
+        "ok": true,
+        "seconds": 0.23387388902483508,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"issue_title\": \"Make `projects` toolset part of the default toolsets\",\n  \"issue_state\": \"closed\",\n  \"toolset\": \"projects\",\n  \"default_enabled\": false,\n  \"source_path\": \"pkg/github/tools.go\",\n  \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\",\n  \"source_line_start\": 127,\n  \"source_line_end\": 132,\n  \"evidence_quote\": \"ToolsetMetadataProjects = inventory.ToolsetMetadata{\\n\\t\\tID:               \\\"projects\\\",\\n\\t\\tDescription:      \\\"GitHub Projects related tools\\\",\\n\\t\\tIcon:             \\\"project\\\",\\n\\t\\tInstructionsFunc: generateProjectsToolsetInstructions,\\n\\t}\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "pair": 4,
+    "mode": "discovery",
+    "wall_seconds": 13.615086085977964,
+    "turns": [
+      {
+        "turn": 0,
+        "usage": {
+          "candidates_token_count": 16,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 16
+            }
+          ],
+          "prompt_token_count": 293,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 293
+            }
+          ],
+          "total_token_count": 309,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 5.14924629998859,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "usage": {
+          "candidates_token_count": 18,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 18
+            }
+          ],
+          "prompt_token_count": 1018,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1018
+            }
+          ],
+          "total_token_count": 1036,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 1.477658218005672,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 1635,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1635
+            }
+          ],
+          "total_token_count": 1677,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 1.3446703779918607,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 3,
+        "usage": {
+          "candidates_token_count": 84,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 84
+            }
+          ],
+          "prompt_token_count": 1735,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1735
+            }
+          ],
+          "total_token_count": 1819,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 2.001649333979003,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 4,
+        "usage": {
+          "candidates_token_count": 217,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 217
+            }
+          ],
+          "prompt_token_count": 9386,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 9386
+            }
+          ],
+          "total_token_count": 9603,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 2.447436764021404,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "issue"
+        },
+        "ok": true,
+        "seconds": 0.0013406400103121996,
+        "result": {
+          "loaded_tools": [
+            "add_issue_comment",
+            "assign_copilot_to_issue",
+            "issue_read"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "get file contents"
+        },
+        "ok": true,
+        "seconds": 0.0010676640085875988,
+        "result": {
+          "loaded_tools": [
+            "get_file_contents",
+            "create_or_update_file",
+            "delete_file"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "issue_read",
+        "arguments": {
+          "issue_number": 2275,
+          "repo": "github-mcp-server",
+          "owner": "github",
+          "method": "get"
+        },
+        "result_sha256": "cd2206039dc9bf937a6b9f8f497f14d1b23b1df2f0a8ce679acf59fac348cf05",
+        "ok": true,
+        "seconds": 0.9057424700004049,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      },
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "repo": "github-mcp-server",
+          "path": "pkg/github/tools.go",
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "owner": "github"
+        },
+        "result_sha256": "7a67da6ddc539950ad6dc00422bfdcaaa1ada9f61f5a7aa0c3e43683316577a2",
+        "ok": true,
+        "seconds": 0.2845163309830241,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"issue_title\": \"Make `projects` toolset part of the default toolsets\",\n  \"issue_state\": \"closed\",\n  \"toolset\": \"projects\",\n  \"default_enabled\": false,\n  \"source_path\": \"pkg/github/tools.go\",\n  \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\",\n  \"source_line_start\": 127,\n  \"source_line_end\": 132,\n  \"evidence_quote\": \"\\tToolsetMetadataProjects = inventory.ToolsetMetadata{\\n\\t\\tID:               \\\"projects\\\",\\n\\t\\tDescription:      \\\"GitHub Projects related tools\\\",\\n\\t\\tIcon:             \\\"project\\\",\\n\\t\\tInstructionsFunc: generateProjectsToolsetInstructions,\\n\\t}\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  }
+]

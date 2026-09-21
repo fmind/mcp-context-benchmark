@@ -4,7 +4,7 @@ Declared before model trials on 2026-09-21.
 
 Question: does on-demand tool discovery reduce complete-task input usage without losing the answer on one bounded GitHub investigation?
 
-- Model: Gemini Developer API, `gemini-3.8-flash`, thinking level `low`, temperature 0, maximum 2,048 output tokens per response. No fallback model, provider, or automatic model retries.
+- Model: GCP Agent Platform, `global`, `gemini-3.8-flash`, thinking level `low`, temperature omitted, maximum 2,048 output tokens per response. No fallback model, provider, or automatic model retries.
 - Host: the small reference harness in `task_benchmark.py`, using Google Gen AI SDK 2.24.0 and MCP SDK 2.2.0. This is a strategy experiment, not a new Claude Code/Codex/goose benchmark.
 - Catalogue: GitHub MCP server v1.12.2, same 45 default tool names as the startup experiment. Eager exposes all 45 input definitions. Discovery initially exposes one deterministic keyword-search function; matching definitions join the native tool list for subsequent turns and stay loaded.
 - Task: inspect public issue github/github-mcp-server#2275 and the projects toolset definition in `pkg/github/tools.go` at commit `85598ba6e1256f7ebf4867b95d63b833c4549264`. Report issue metadata, the requested toolset, whether it is enabled by default in that source, and source line evidence.
@@ -16,3 +16,5 @@ Question: does on-demand tool discovery reduce complete-task input usage without
 - Decision: consider discovery useful for this one case only if every planned trial passes and paired input usage falls in all five pairs. Otherwise report mixed or inconclusive results; do not tune away failures. This is five repeats of one task, not five independent tasks or a reliability estimate.
 - Development: inspect source and tool payload formats before trials; only an unrelated `OK` inference may be used for transport smoke testing. The task is a development case, not a held-out evaluation. No tool-search weights, prompt, limits, or grader changes after results are observed without a separately named experiment.
 - Reproducibility limit: the public issue can change and the stable model alias can be updated. Retain observed model versions and source digests; reject changed source observations in future replays. Provider-managed caching is observed, not controlled, and latency can vary independently of context size.
+
+Pre-trial amendment on 2026-09-21: switched the authorized provider to GCP with ADC after the Developer API could not serve inference. No paired task trial had run. Removed temperature because the [current model guide](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash) says sampling parameters are ignored. An unrelated `OK` smoke verified GCP inference with all 45 declarations. Model sampling is not deterministic. The task, prompt, search, grader, trial count, and limits are unchanged.

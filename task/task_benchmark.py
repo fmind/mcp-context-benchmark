@@ -16,6 +16,7 @@ import subprocess
 import time
 from pathlib import Path
 
+import google.auth
 import jsonschema
 from google import genai
 from google.genai import types
@@ -120,7 +121,7 @@ async def call(session: ClientSession, name: str, arguments: dict) -> dict:
 def grade(text: str, calls: list[dict], expected: dict) -> dict:
     try:
         answer = json.loads(text)
-    except ValueError, TypeError:
+    except (ValueError, TypeError) as _error:
         return {"passed": False, "errors": ["Final response is not a JSON object"]}
     if not isinstance(answer, dict):
         return {"passed": False, "errors": ["Final response is not an object"]}
@@ -171,7 +172,6 @@ async def trial(
         ]
         config = types.GenerateContentConfig(
             system_instruction=SYSTEM,
-            temperature=0,
             max_output_tokens=2048,
             thinking_config=types.ThinkingConfig(thinking_level="low", include_thoughts=False),
             tools=[types.Tool(function_declarations=provider_tools)],
@@ -267,6 +267,8 @@ async def main() -> None:
     parser.add_argument("--server", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--prepare-only", action="store_true")
+    parser.add_argument("--project", required=True, help="GCP project used for requests and ADC quota")
+    parser.add_argument("--location", default="global")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     if not args.prepare_only and (args.output / "trials.json").exists():
@@ -333,9 +335,14 @@ async def main() -> None:
         if args.prepare_only:
             print("Verified live MCP catalogue, issue, pinned source, and deterministic answer.")
             return
+        credentials, _ = google.auth.default(
+            scopes=["https://www.googleapis.com/auth/cloud-platform"], quota_project_id=args.project
+        )
         client = genai.Client(
-            enterprise=False,
-            api_key=os.environ["GEMINI_API_KEY"],
+            enterprise=True,
+            project=args.project,
+            location=args.location,
+            credentials=credentials,
             http_options=types.HttpOptions(timeout=45000, retry_options=types.HttpRetryOptions(attempts=1)),
         )
         remaining = [600000]
@@ -377,7 +384,10 @@ async def main() -> None:
             {
                 "model": MODEL,
                 "thinking": "low",
-                "temperature": 0,
+                "provider": "gcp",
+                "location": args.location,
+                "authentication": "adc",
+                "temperature": "omitted; ignored by this model",
                 "max_output_tokens": 2048,
                 "system": SYSTEM,
                 "prompt": PROMPT,

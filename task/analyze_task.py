@@ -18,6 +18,7 @@ def summarize(trials: list[dict]) -> tuple[dict, list[dict]]:
                 "mode": trial["mode"],
                 "passed": trial.get("grade", {}).get("passed", False),
                 "error": trial.get("error") or trial.get("reason"),
+                "usage_complete": bool(turns) and trial.get("error") is None and "reason" not in trial,
                 "model_calls": len(turns),
                 "input_tokens": sum(t["usage"].get("prompt_token_count", 0) for t in turns),
                 "output_tokens": sum(t["usage"].get("candidates_token_count", 0) for t in turns),
@@ -33,10 +34,12 @@ def summarize(trials: list[dict]) -> tuple[dict, list[dict]]:
     summary = {}
     for mode in ["eager", "discovery"]:
         subset = [r for r in rows if r["mode"] == mode]
-        completed = [r for r in subset if r["model_calls"] and r["wall_seconds"] is not None]
+        completed = [r for r in subset if r["passed"] and r["usage_complete"]]
         summary[mode] = {
             "trials": len(subset),
             "passed": sum(r["passed"] for r in subset),
+            "median_population": "successful trials with complete usage only",
+            "median_sample_size": len(completed),
             **{
                 f"median_{field}": median(r[field] for r in completed) if completed else None
                 for field in [
@@ -73,7 +76,7 @@ def summarize(trials: list[dict]) -> tuple[dict, list[dict]]:
         else "inconclusive_or_mixed"
     )
     summary["interpretation"] = (
-        "Five repeats of one development task; not independent task coverage. Input includes cached tokens. Output and thought fields are reported separately without assuming an invoice."
+        "Five repeats of one development task; not independent task coverage. Medians include successful trials only and are conditional on completion. CSV token sums are reported usage, not estimates for failed requests: zero with usage_complete=false means no usage returned, not free inference. Partial usage is retained but excluded from comparisons. Input includes cached tokens. Output and thought fields are reported separately without assuming an invoice."
     )
     return summary, rows
 
@@ -85,7 +88,7 @@ def main() -> None:
     summary, rows = summarize(json.loads((args.directory / "trials.json").read_text()))
     (args.directory / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     with (args.directory / "trials.csv").open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

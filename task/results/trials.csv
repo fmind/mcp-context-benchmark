@@ -1,0 +1,11 @@
+pair,mode,passed,error,usage_complete,model_calls,input_tokens,output_tokens,thought_tokens,cached_input_tokens,total_tokens,peak_input_tokens,discovery_calls,mcp_calls,wall_seconds
+0,eager,False,provider_ClientError_code_429,False,0,0,0,0,0,0,0,0,0,6.227461587986909
+0,discovery,True,,True,5,14080,381,0,0,14461,9390,2,2,15.638052897003945
+1,discovery,False,provider_ClientError_code_429,False,2,1311,35,0,0,1346,1018,2,0,23.33712669997476
+1,eager,False,provider_ServerError_code_504,False,0,0,0,0,0,0,0,0,0,43.16819111100631
+2,eager,True,,True,3,33807,343,0,14880,34150,16403,0,2,13.853903823008295
+2,discovery,False,provider_ClientError_code_429,False,0,0,0,0,0,0,0,0,0,7.464287097012857
+3,discovery,False,,True,4,11228,366,0,0,11594,8779,1,2,19.856623926985776
+3,eager,False,provider_TimeoutError_code_None,False,0,0,0,0,0,0,0,0,0,45.04866833501728
+4,eager,True,,True,3,33807,342,0,18058,34149,16403,0,2,15.052830533008091
+4,discovery,True,,True,5,14067,377,0,0,14444,9386,2,2,13.615086085977964

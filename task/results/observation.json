@@ -1,0 +1,17 @@
+{
+  "observed_date": "2026-09-21",
+  "server_session_start": "2026-09-21T18:19:58Z",
+  "server_session_end": "2026-09-21T18:23:25Z",
+  "timestamp_source": "local MCP server log; times rounded to seconds",
+  "python": "3.13.5",
+  "provider": "gcp",
+  "location": "global",
+  "planned_trials": 10,
+  "successful_trials": 4,
+  "provider_or_timeout_failures": 5,
+  "strict_output_format_failures": 1,
+  "diagnostic": "Pair 3 discovery returned correct fields and evidence wrapped in Markdown fences; the predeclared JSON-only grade remains failed.",
+  "reported_trial_tokens": 110144,
+  "usage_limit": "Failed requests may incur unreported usage. Smoke inference is outside trials. Token sums are not a billing statement.",
+  "replacement_trials": 0
+}

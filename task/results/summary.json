@@ -1,0 +1,44 @@
+{
+  "eager": {
+    "trials": 5,
+    "passed": 2,
+    "median_population": "successful trials with complete usage only",
+    "median_sample_size": 2,
+    "median_input_tokens": 33807.0,
+    "median_output_tokens": 342.5,
+    "median_thought_tokens": 0.0,
+    "median_cached_input_tokens": 16469.0,
+    "median_total_tokens": 34149.5,
+    "median_peak_input_tokens": 16403.0,
+    "median_model_calls": 3.0,
+    "median_discovery_calls": 0.0,
+    "median_mcp_calls": 2.0,
+    "median_wall_seconds": 14.453367178008193
+  },
+  "discovery": {
+    "trials": 5,
+    "passed": 2,
+    "median_population": "successful trials with complete usage only",
+    "median_sample_size": 2,
+    "median_input_tokens": 14073.5,
+    "median_output_tokens": 379.0,
+    "median_thought_tokens": 0.0,
+    "median_cached_input_tokens": 0.0,
+    "median_total_tokens": 14452.5,
+    "median_peak_input_tokens": 9388.0,
+    "median_model_calls": 5.0,
+    "median_discovery_calls": 2.0,
+    "median_mcp_calls": 2.0,
+    "median_wall_seconds": 14.626569491490955
+  },
+  "paired": [
+    {
+      "pair": 4,
+      "input_reduction_percent": 58.3902742035673,
+      "total_reduction_percent": 57.70300740870889,
+      "wall_change_seconds": -1.437744447030127
+    }
+  ],
+  "verdict": "inconclusive_or_mixed",
+  "interpretation": "Five repeats of one development task; not independent task coverage. Medians include successful trials only and are conditional on completion. CSV token sums are reported usage, not estimates for failed requests: zero with usage_complete=false means no usage returned, not free inference. Partial usage is retained but excluded from comparisons. Input includes cached tokens. Output and thought fields are reported separately without assuming an invoice."
+}
