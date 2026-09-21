@@ -1,0 +1,202 @@
+{
+  "checked_on": "2026-09-21",
+  "links": [
+    {
+      "url": "https://a2a-protocol.org/latest/",
+      "status": 200,
+      "final_url": "https://a2a-protocol.org/latest/",
+      "sha256": "cd8978404ffbc88ad48edff895a8931b751131df0ca06aae38adfa81da88a217"
+    },
+    {
+      "url": "https://aaif.io/",
+      "status": 200,
+      "final_url": "https://aaif.io/",
+      "sha256": "e35c2d11c19c665206c71e401123cd6bce5e15539e026e6f7e233ab58f3a2765"
+    },
+    {
+      "url": "https://aaif.io/blog/agent-router-joins-aaif",
+      "status": 200,
+      "final_url": "https://aaif.io/blog/agent-router-joins-aaif",
+      "sha256": "4897d26a3e6ebf38d373fad77c075c8f2eb7a01f7ed0cc37edbde80edebbd511"
+    },
+    {
+      "url": "https://adk.dev/context/compaction/",
+      "status": 200,
+      "final_url": "https://adk.dev/context/compaction/",
+      "sha256": "fdda7a6e8de6b928b60c1aa45941806deae7d8ba7ff62f4b4cbba2f00c82bc17"
+    },
+    {
+      "url": "https://adk.dev/tools-custom/mcp-tools/",
+      "status": 200,
+      "final_url": "https://adk.dev/tools-custom/mcp-tools/",
+      "sha256": "bc1589303f0a683cf78e0c0c5c7302c2c33bc7f0308643adcaa551d048aaa45a"
+    },
+    {
+      "url": "https://agentgateway.dev/blog/2026-07-27-optimize-token-cost-with-context-compression/",
+      "status": 200,
+      "final_url": "https://agentgateway.dev/blog/2026-07-27-optimize-token-cost-with-context-compression/",
+      "sha256": "7cefa4650a33daac3a140116ed9eb29d4aad90f67c10547988a3290f2f0c5707"
+    },
+    {
+      "url": "https://agents.md/",
+      "status": 200,
+      "final_url": "https://agents.md/",
+      "sha256": "2e370dedc3d78195745f56adcc56fa127b75c2c90a05c09b8f2af60d06c6cbd9"
+    },
+    {
+      "url": "https://antigravity.google/docs/mcp?tab=cli",
+      "status": 200,
+      "final_url": "https://antigravity.google/docs/mcp?tab=cli",
+      "sha256": "1d092d5c2089dc39b19791157de408ae4b550c9e0179e46a1f335b053897e0c6"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/cloud-environments",
+      "status": 200,
+      "final_url": "https://code.claude.com/docs/en/cloud-environments",
+      "sha256": "530e7b29dc06aa75c889f002b10c0a87e5e56249f22ec17798f46e1af950ab0b"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search",
+      "status": 200,
+      "final_url": "https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search",
+      "sha256": "969de5ae6ad2cf06157473ebc9af82b3e0c5cf73ab64300dbfafb1a504d6af50"
+    },
+    {
+      "url": "https://code.visualstudio.com/docs/agents/run/tools",
+      "status": 200,
+      "final_url": "https://code.visualstudio.com/docs/agents/run/tools",
+      "sha256": "7a64d985048c5b632b6566e06eca1b008bb8dcdc8aa2b4ae3c7ef28cac08d251"
+    },
+    {
+      "url": "https://cursor.com/blog/dynamic-context-discovery",
+      "status": 200,
+      "final_url": "https://cursor.com/blog/dynamic-context-discovery",
+      "sha256": "f7de6a1b77ba5a75e61c25b59527b43e2871994f11546c000004f26bba78005b"
+    },
+    {
+      "url": "https://cursor.com/help/customization/mcp",
+      "status": 200,
+      "final_url": "https://cursor.com/help/customization/mcp",
+      "sha256": "1da5badf504284a870a5e3415d36b19db5dd3b3cf7f1d7b9936637d759f507fd"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+      "status": 200,
+      "final_url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+      "sha256": "dff39bb92a33db66236a17dab59a86fceb5621bd4a6d96aae0bcd4772485c298"
+    },
+    {
+      "url": "https://docs.crewai.com/v1.15.22/en/concepts/agents",
+      "status": 200,
+      "final_url": "https://docs.crewai.com/v1.15.22/en/concepts/agents",
+      "sha256": "4c5ea3ee72b26144f874b5703fc65e5c8b6becd8723cf495c7ebdf31e86ae6ff"
+    },
+    {
+      "url": "https://docs.crewai.com/v1.15.22/en/mcp/overview",
+      "status": 200,
+      "final_url": "https://docs.crewai.com/v1.15.22/en/mcp/overview",
+      "sha256": "a24690f7c153342ac747622034865bdadea6c8673304548205666d2f21107eae"
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+      "status": 200,
+      "final_url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+      "sha256": "0a929736679f31a802bad71e9ea0c8ea13a8b35ecb46dba32ea1067def7b3699"
+    },
+    {
+      "url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "status": 200,
+      "final_url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "sha256": "09d18cd26139213e59778ac2738487219a9667df96bd04683c8b5b4859e52286"
+    },
+    {
+      "url": "https://github.com/agentgateway/agentgateway/blob/v1.5.0/examples/mcp-authorization/README.md",
+      "status": 200,
+      "final_url": "https://github.com/agentgateway/agentgateway/blob/v1.5.0/examples/mcp-authorization/README.md",
+      "sha256": "78268910919d1e1b712174981457ad66089ed11d9d35403bb6200fa8c9cb04c5"
+    },
+    {
+      "url": "https://github.com/agentgateway/agentgateway/blob/v1.5.0/schema/config.json",
+      "status": 200,
+      "final_url": "https://github.com/agentgateway/agentgateway/blob/v1.5.0/schema/config.json",
+      "sha256": "84ca61ebf1f62b57b7ded9bd4d0281fa3375bc04345675c06e3921c97fb945a4"
+    },
+    {
+      "url": "https://github.com/fmind/dot",
+      "status": 200,
+      "final_url": "https://github.com/fmind/dot",
+      "sha256": "163d7cfef5c1501428ed791305f92c141e4b9bedc69cdfc35fcc2c9c3bf6b9de"
+    },
+    {
+      "url": "https://github.com/github/github-mcp-server/releases/tag/v1.12.2",
+      "status": 200,
+      "final_url": "https://github.com/github/github-mcp-server/releases/tag/v1.12.2",
+      "sha256": "c62f02b0ded51204ed7321128eeb486ba72b24cea174d63898916b04e0799f42"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/core/src/tools/spec_plan.rs",
+      "status": 200,
+      "final_url": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/core/src/tools/spec_plan.rs",
+      "sha256": "31dd44ccfa756d04e9fa59c8871cb7440485400f06f90aedce61d04e783dd81f"
+    },
+    {
+      "url": "https://goose-docs.ai/docs/guides/managing-tools/code-mode/",
+      "status": 200,
+      "final_url": "https://goose-docs.ai/docs/guides/managing-tools/code-mode/",
+      "sha256": "bbdc5db5bf42dcd1dee51e2936ff33b98c126c1973272a9b5723c9f47152b7ca"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt",
+      "error": "HTTP Error 403: Forbidden",
+      "verification": "HTTP fetch returned 403; page content was successfully opened and checked with the web browser tool on 2026-09-21."
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/environments/cloud-environment",
+      "status": 200,
+      "final_url": "https://learn.chatgpt.com/docs/environments/cloud-environment",
+      "sha256": "46e5493ab86e98b46e0b549331dfafc922da2bf93147601fe1cca2bdc40eab6c"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+      "status": 200,
+      "final_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+      "sha256": "c28ed7aeb4ef4876dd6f6c1670f389533be81b8aa1625d8a670aa11e2329eb4d"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "status": 200,
+      "final_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "sha256": "56c4e52b46ea03f9e408ad99595270373cf711575b57cfef80db9534da0a561b"
+    },
+    {
+      "url": "https://pydantic.dev/docs/ai/capabilities/tool-search/",
+      "status": 200,
+      "final_url": "https://pydantic.dev/docs/ai/capabilities/tool-search/",
+      "sha256": "07644a75cd5cd3eb5a6f2c2d82946c2b0614d23cdb0de7e4dd424f0d66294fc7"
+    },
+    {
+      "url": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+      "status": 200,
+      "final_url": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+      "sha256": "b8374f401611d499b643bb28fbde6e65923c8b1212724dae13c188e20c4fb7db"
+    },
+    {
+      "url": "https://theagentrouter.ai/docs/capabilities/mcp/",
+      "status": 200,
+      "final_url": "https://theagentrouter.ai/docs/capabilities/mcp/",
+      "sha256": "ab84c6aed108ac7291c52ac177cd0c49937d789723b4e0409f2a45746f6bfc5f"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+      "status": 200,
+      "final_url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+      "sha256": "d480efc371837c9e6363e69cc1742424efa8a5058f0bf7937fe95b68f9bcce33"
+    },
+    {
+      "url": "https://www.fmind.dev/articles/mcp-2026-07-28-stateless-core-enterprise-authorization-and-sdk-betas/",
+      "status": 200,
+      "final_url": "https://www.fmind.dev/articles/mcp-2026-07-28-stateless-core-enterprise-authorization-and-sdk-betas/",
+      "sha256": "9ccf2d1d5671fac652ce9bea54871b16f59facc1c790cb2c6efb2784f5578100"
+    }
+  ]
+}

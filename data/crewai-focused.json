@@ -1,0 +1,270 @@
+[
+  {
+    "name": "github-mcp-server_stdio_get_file_contents",
+    "description": "Get the contents of a file or directory from a GitHub repository",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "type",
+                  "name",
+                  "path",
+                  "size",
+                  "sha",
+                  "url",
+                  "git_url",
+                  "html_url",
+                  "download_url"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Subset of fields to return for each entry when the path is a directory. If omitted, all fields are returned. Ignored when the path is a single file. Use this to reduce response size when listing directories and you only need specific fields, e.g. just 'name' and 'type'.",
+          "title": "Fields"
+        },
+        "owner": {
+          "description": "Repository owner (username or organization)",
+          "title": "Owner",
+          "type": "string"
+        },
+        "path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "/",
+          "description": "Path to file/directory",
+          "title": "Path"
+        },
+        "ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Accepts optional git refs such as `refs/tags/{tag}`, `refs/heads/{branch}` or `refs/pull/{pr_number}/head`",
+          "title": "Ref"
+        },
+        "repo": {
+          "description": "Repository name",
+          "title": "Repo",
+          "type": "string"
+        },
+        "sha": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Accepts optional commit SHA. If specified, it will be used instead of ref",
+          "title": "Sha"
+        }
+      },
+      "required": [
+        "owner",
+        "repo"
+      ],
+      "title": "get_file_contentsSchema",
+      "type": "object"
+    },
+    "original_name": "get_file_contents"
+  },
+  {
+    "name": "github-mcp-server_stdio_issue_read",
+    "description": "Get information about a specific issue in a GitHub repository.",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "issue_number": {
+          "description": "The number of the issue",
+          "title": "Issue Number",
+          "type": "number"
+        },
+        "method": {
+          "description": "The read operation to perform on a single issue.\nOptions are:\n1. get - Get issue details. Also returns best-effort hierarchy flags (`has_parent`, `has_children`); `parent` and `sub_issues_summary` are optional relationship summaries, and `closed_by_pull_requests` summarizes the pull requests configured to close the issue as `total_count` plus up to 5 `references`.\n2. get_comments - Get issue comments.\n3. get_sub_issues - Get sub-issues (children) of the issue.\n4. get_parent - Get the parent issue, if this issue is a sub-issue of another.\n5. get_labels - Get labels assigned to the issue.\n. Allowed values: ['get', 'get_comments', 'get_sub_issues', 'get_parent', 'get_labels']",
+          "enum": [
+            "get",
+            "get_comments",
+            "get_sub_issues",
+            "get_parent",
+            "get_labels"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "owner": {
+          "description": "The owner of the repository",
+          "title": "Owner",
+          "type": "string"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Page number for pagination (min 1). Minimum: 1",
+          "title": "Page"
+        },
+        "perPage": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Results per page for pagination (min 1, max 100). Minimum: 1. Maximum: 100",
+          "title": "Perpage"
+        },
+        "repo": {
+          "description": "The name of the repository",
+          "title": "Repo",
+          "type": "string"
+        }
+      },
+      "required": [
+        "issue_number",
+        "method",
+        "owner",
+        "repo"
+      ],
+      "title": "issue_readSchema",
+      "type": "object"
+    },
+    "original_name": "issue_read"
+  },
+  {
+    "name": "github-mcp-server_stdio_search_code",
+    "description": "Fast and precise code search across ALL GitHub repositories using GitHub's native search engine. Best for finding exact symbols, functions, classes, or specific code patterns.",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "anyOf": [
+            {
+              "items": {
+                "enum": [
+                  "name",
+                  "path",
+                  "sha",
+                  "repository",
+                  "text_matches"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Subset of fields to return for each code search result. If omitted, all fields are returned. Use this to reduce response size when you only need specific fields; omitting 'repository' and 'text_matches' in particular drops the largest per-result data.",
+          "title": "Fields"
+        },
+        "order": {
+          "anyOf": [
+            {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sort order for results. Allowed values: ['asc', 'desc']",
+          "title": "Order"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Page number for pagination (min 1). Minimum: 1",
+          "title": "Page"
+        },
+        "perPage": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Results per page for pagination (min 1, max 100). Minimum: 1. Maximum: 100",
+          "title": "Perpage"
+        },
+        "query": {
+          "description": "Search query (GitHub code search REST). Implicit AND between terms; supports `OR`, `NOT`, and `\"quoted phrase\"` for exact match. Qualifiers: `repo:owner/repo`, `org:`, `user:`, `language:`, `path:dir` (prefix match), `filename:exact.ext`, `extension:`, `in:file`, `in:path`, `size:`, `is:archived`, `is:fork`. Max 256 chars. Examples: `WithContext language:go org:github`; `\"package main\" repo:o/r`; `func extension:go path:cmd repo:o/r`; `NOT TODO language:go repo:o/r`.",
+          "title": "Query",
+          "type": "string"
+        },
+        "sort": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sort field ('indexed' only)",
+          "title": "Sort"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "title": "search_codeSchema",
+      "type": "object"
+    },
+    "original_name": "search_code"
+  }
+]

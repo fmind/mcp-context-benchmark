@@ -1,0 +1,488 @@
+{
+  "checked_on": "2026-09-20",
+  "links": [
+    {
+      "index": 1,
+      "url": "https://modelcontextprotocol.io/",
+      "status": 200,
+      "final_url": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "bytes": 295666,
+      "sha256": "658945872903f267d3dce2d9a85fb744b68fa35688ec364af9181d3271427654"
+    },
+    {
+      "index": 2,
+      "url": "https://code.claude.com/",
+      "status": 200,
+      "final_url": "https://claude.com/product/claude-code",
+      "bytes": 564077,
+      "sha256": "b7f714b34bc652f1969292f1153ad5e4f89f1c876f79a53e548f0681079b7707"
+    },
+    {
+      "index": 3,
+      "url": "https://cursor.com/",
+      "status": 200,
+      "final_url": "https://cursor.com/",
+      "bytes": 626710,
+      "sha256": "70178b4823008f70efefe24be35e77386afb4183ffe0d5cd5e1c12f247b25080"
+    },
+    {
+      "index": 4,
+      "url": "https://github.com/fmind/dot",
+      "status": 200,
+      "final_url": "https://github.com/fmind/dot",
+      "bytes": 468300,
+      "sha256": "b46c0b95437770a5127e21cbb6b71cf58e8c557ab9608ed5d9d8cdac4d2b3e85"
+    },
+    {
+      "index": 5,
+      "url": "https://www.fmind.dev/articles/mcp-2026-07-28-stateless-core-enterprise-authorization-and-sdk-betas/",
+      "status": 200,
+      "final_url": "https://www.fmind.dev/articles/mcp-2026-07-28-stateless-core-enterprise-authorization-and-sdk-betas/",
+      "bytes": 168916,
+      "sha256": "c27b2bfcc5ed9bdae28bc8fd326495a1227b623f88eeb4eb247675ba449a508a"
+    },
+    {
+      "index": 6,
+      "url": "https://modelcontextprotocol.io/docs/concepts/architecture",
+      "status": 200,
+      "final_url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+      "bytes": 713597,
+      "sha256": "59c0b22ce976034980a0fc8d0b2fef15c96f1e8c8052e5cddf2fcd7d0ca9a3c1"
+    },
+    {
+      "index": 7,
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+      "status": 200,
+      "final_url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+      "bytes": 874178,
+      "sha256": "c28ed7aeb4ef4876dd6f6c1670f389533be81b8aa1625d8a670aa11e2329eb4d"
+    },
+    {
+      "index": 8,
+      "url": "https://github.com/fluxninja/mcp-server-kubernetes",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "index": 9,
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "index": 10,
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "status": 200,
+      "final_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "bytes": 355288,
+      "sha256": "3e6fd7c560b144a34a2ad98965dc3ac80ce102aa7d1ed08ba823671970cd8ec7"
+    },
+    {
+      "index": 11,
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+      "status": 200,
+      "final_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+      "bytes": 342340,
+      "sha256": "f255f2685b203a6884aeff6da8f5727b1fbdbd4a3b9eb85b9307cc91691bd558"
+    },
+    {
+      "index": 12,
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "status": 200,
+      "final_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "bytes": 344201,
+      "sha256": "deac68b1569680d6a948f610da2a6970e504aa1d05e28cdd2d51e9d1fba63747"
+    },
+    {
+      "index": 13,
+      "url": "https://github.com/docker/mcp-server",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "index": 14,
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "index": 15,
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "index": 16,
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "index": 17,
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/gitlab",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "index": 18,
+      "url": "https://antigravity.google/",
+      "status": 200,
+      "final_url": "https://antigravity.google/",
+      "bytes": 28752,
+      "sha256": "a690d8f920ca457e833d13075522f8c35d06180bf835adbd37cb2cd917524536"
+    },
+    {
+      "index": 19,
+      "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+      "status": 200,
+      "final_url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+      "bytes": 705962,
+      "sha256": "dff39bb92a33db66236a17dab59a86fceb5621bd4a6d96aae0bcd4772485c298"
+    },
+    {
+      "index": 20,
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+      "status": 200,
+      "final_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "bytes": 1706583,
+      "sha256": "9ffdee043df97df14fe5a83745a091506da1868b896f87d1cfca626105efe914"
+    },
+    {
+      "index": 21,
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/manage-tool-context",
+      "status": 200,
+      "final_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/manage-tool-context",
+      "bytes": 364023,
+      "sha256": "05fb27b62a2290bff40aeffa09170e7ab4511a5b5c9e92afdb5ef1b2131d19d2"
+    },
+    {
+      "index": 22,
+      "url": "https://goose-docs.ai/docs/guides/managing-tools/code-mode/",
+      "status": 200,
+      "final_url": "https://goose-docs.ai/docs/guides/managing-tools/code-mode/",
+      "bytes": 42122,
+      "sha256": "bbdc5db5bf42dcd1dee51e2936ff33b98c126c1973272a9b5723c9f47152b7ca"
+    },
+    {
+      "index": 23,
+      "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+      "status": 200,
+      "final_url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+      "bytes": 211284,
+      "sha256": "d480efc371837c9e6363e69cc1742424efa8a5058f0bf7937fe95b68f9bcce33"
+    },
+    {
+      "index": 24,
+      "url": "https://langchain-ai.github.io/langgraph/",
+      "status": 200,
+      "final_url": "https://langchain-ai.github.io/langgraph/",
+      "bytes": 757,
+      "sha256": "69f08b5fe2ad25fecac14566280e1e791958a05cad4c6c29f2cdf7bd9ee27340"
+    },
+    {
+      "index": 25,
+      "url": "https://www.langchain.com/",
+      "status": 200,
+      "final_url": "https://www.langchain.com/",
+      "bytes": 273843,
+      "sha256": "99f6b252c6fbf7b4cab0c7bc14a35dcc2c78ca27e468c0e4f5135dea48463a35"
+    },
+    {
+      "index": 26,
+      "url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "status": 200,
+      "final_url": "https://docs.langchain.com/oss/python/langchain/middleware/built-in",
+      "bytes": 2030839,
+      "sha256": "09d18cd26139213e59778ac2738487219a9667df96bd04683c8b5b4859e52286"
+    },
+    {
+      "index": 27,
+      "url": "https://adk.dev/",
+      "status": 200,
+      "final_url": "https://adk.dev/",
+      "bytes": 125482,
+      "sha256": "43e2deba541c4984d935ce3483ed70d54d7ea926576a649dfabffa8cb30fcb8c"
+    },
+    {
+      "index": 28,
+      "url": "https://adk.dev/tools-custom/mcp-tools/",
+      "status": 200,
+      "final_url": "https://adk.dev/tools-custom/mcp-tools/",
+      "bytes": 381626,
+      "sha256": "bc1589303f0a683cf78e0c0c5c7302c2c33bc7f0308643adcaa551d048aaa45a"
+    },
+    {
+      "index": 29,
+      "url": "https://www.crewai.com/",
+      "status": 200,
+      "final_url": "https://crewai.com/",
+      "bytes": 262941,
+      "sha256": "9bf8c9ba10667abf697a691f2100e7d09f910ae6e76f508fbd8ceb7bb575fcf9"
+    },
+    {
+      "index": 30,
+      "url": "https://docs.crewai.com/v1.15.21/en/mcp/overview",
+      "status": 200,
+      "final_url": "https://docs.crewai.com/v1.15.21/en/mcp/overview",
+      "bytes": 888424,
+      "sha256": "e8aae693f3282f30a7cc341d03f9c9b686f98d54d1593a92a59f2d95a1551ee5"
+    },
+    {
+      "index": 31,
+      "url": "https://pydantic.dev/docs/ai/",
+      "status": 200,
+      "final_url": "https://pydantic.dev/docs/ai/overview/",
+      "bytes": 186793,
+      "sha256": "9dab1d12f9670ba27873c6f32679e450e832d8a5daced8a070b600c37318e6e3"
+    },
+    {
+      "index": 32,
+      "url": "https://pydantic.dev/docs/ai/capabilities/tool-search/",
+      "status": 200,
+      "final_url": "https://pydantic.dev/docs/ai/capabilities/tool-search/",
+      "bytes": 123453,
+      "sha256": "07644a75cd5cd3eb5a6f2c2d82946c2b0614d23cdb0de7e4dd424f0d66294fc7"
+    },
+    {
+      "index": 33,
+      "url": "https://pydantic.dev/docs/ai/harness/code-mode/",
+      "status": 200,
+      "final_url": "https://pydantic.dev/docs/ai/harness/code-mode/",
+      "bytes": 220830,
+      "sha256": "81c4387c769e8c181c1bf53c6c50e8ac3e13bf3096a190746a79847e4ce7b6fd"
+    },
+    {
+      "index": 34,
+      "url": "https://adk.dev/context/compaction/",
+      "status": 200,
+      "final_url": "https://adk.dev/context/compaction/",
+      "bytes": 165675,
+      "sha256": "fdda7a6e8de6b928b60c1aa45941806deae7d8ba7ff62f4b4cbba2f00c82bc17"
+    },
+    {
+      "index": 35,
+      "url": "https://docs.crewai.com/v1.15.21/en/concepts/agents",
+      "status": 200,
+      "final_url": "https://docs.crewai.com/v1.15.21/en/concepts/agents",
+      "bytes": 918113,
+      "sha256": "6e54bef0eeac21f74ae3ddfbbf44cf89a9b270ffb4ff65ae78d887275738c2bd"
+    },
+    {
+      "index": 36,
+      "url": "https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search",
+      "status": 200,
+      "final_url": "https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search",
+      "bytes": 1467152,
+      "sha256": "0835eb646cb19fb61391a0ea8d5d03e07fbde87da22d805760d7f042dd496a2f"
+    },
+    {
+      "index": 37,
+      "url": "https://github.com/openai/codex",
+      "status": 200,
+      "final_url": "https://github.com/openai/codex",
+      "bytes": 362512,
+      "sha256": "08ccd9eabda74a858d7811267e78ce40d1ddb1fc509851630c3cb403a9705cf5"
+    },
+    {
+      "index": 38,
+      "url": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/core/src/tools/spec_plan.rs",
+      "status": 200,
+      "final_url": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/core/src/tools/spec_plan.rs",
+      "bytes": 1014589,
+      "sha256": "a3b3fe295a62cf4974eb007fc33793c9ef4716128833f4d7140bf92fd1a49627"
+    },
+    {
+      "index": 39,
+      "url": "https://antigravity.google/blog/introducing-custom-agents",
+      "status": 200,
+      "final_url": "https://antigravity.google/blog/introducing-custom-agents",
+      "bytes": 29615,
+      "sha256": "80b98d88b55f99160fafab5c87bedebce3a15fdbebf7c72d6ee1eff10933d037"
+    },
+    {
+      "index": 40,
+      "url": "https://antigravity.google/docs/subagents",
+      "status": 200,
+      "final_url": "https://antigravity.google/docs/subagents",
+      "bytes": 25535,
+      "sha256": "b5141aaed54875a548d58a96ca8515e307b22a0ca57fbb0090171f0a571aeb06"
+    },
+    {
+      "index": 41,
+      "url": "https://code.visualstudio.com/docs/copilot/overview",
+      "status": 200,
+      "final_url": "https://code.visualstudio.com/docs/agents/overview",
+      "bytes": 110292,
+      "sha256": "884b37588971a0f0b78c9a82fb90d93471350d6c1dad5480ec2fa3602fb4c688"
+    },
+    {
+      "index": 42,
+      "url": "https://code.visualstudio.com/docs/agents/run/tools",
+      "status": 200,
+      "final_url": "https://code.visualstudio.com/docs/agents/run/tools",
+      "bytes": 122084,
+      "sha256": "5ce450d6189dfd7f359ce367f1c02a49d4f51b5c4626915da7380a8055e47f2a"
+    },
+    {
+      "index": 43,
+      "url": "https://cursor.com/blog/dynamic-context-discovery",
+      "status": 200,
+      "final_url": "https://cursor.com/blog/dynamic-context-discovery",
+      "bytes": 197147,
+      "sha256": "0c413a4742e3b4f272dde992497b32c9fae7d26b12d039e070f2cfdcce55c03a"
+    },
+    {
+      "index": 44,
+      "url": "https://github.com/block/goose",
+      "status": 200,
+      "final_url": "https://github.com/aaif-goose/goose",
+      "bytes": 391313,
+      "sha256": "04cea37f56b4ed74c0eda8bb7de7ed8e656d9e7bccf2d452449e7fd95a013a69"
+    },
+    {
+      "index": 45,
+      "url": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+      "status": 200,
+      "final_url": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+      "bytes": 378623,
+      "sha256": "74a65ee8b2e7388b5d30f4f2dc0c4a15fd8238e166e9141d75e7b6de9866dc88"
+    },
+    {
+      "index": 46,
+      "url": "https://code.claude.com/docs/en/cloud-environments",
+      "status": 200,
+      "final_url": "https://code.claude.com/docs/en/cloud-environments",
+      "bytes": 703885,
+      "sha256": "4efd22b98b44cd32934027a7222e54d6b16dca9dad51db59f11017aef62dfbf2"
+    },
+    {
+      "index": 47,
+      "url": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli",
+      "status": 200,
+      "final_url": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli",
+      "bytes": 454571,
+      "sha256": "fc5ca72c4c7552d066ae11009fb227faad0ab28d6d8ef8977fc7730c2fb32fe1"
+    },
+    {
+      "index": 48,
+      "url": "https://learn.chatgpt.com/docs/environments/cloud-environment",
+      "status": 200,
+      "final_url": "https://learn.chatgpt.com/docs/environments/cloud-environment",
+      "bytes": 339557,
+      "sha256": "46e5493ab86e98b46e0b549331dfafc922da2bf93147601fe1cca2bdc40eab6c"
+    },
+    {
+      "index": 49,
+      "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+      "status": 200,
+      "final_url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+      "bytes": 583579,
+      "sha256": "0a929736679f31a802bad71e9ea0c8ea13a8b35ecb46dba32ea1067def7b3699"
+    },
+    {
+      "index": 50,
+      "url": "https://cursor.com/help/customization/mcp",
+      "status": 200,
+      "final_url": "https://cursor.com/help/customization/mcp",
+      "bytes": 189208,
+      "sha256": "1da5badf504284a870a5e3415d36b19db5dd3b3cf7f1d7b9936637d759f507fd"
+    },
+    {
+      "index": 51,
+      "url": "https://aaif.io/",
+      "status": 200,
+      "final_url": "https://aaif.io/",
+      "bytes": 583135,
+      "sha256": "14a97fdd97a658ee4d51bb72ecb4dcb2cae206a7ac9b8c2f9780875fcd9ef541"
+    },
+    {
+      "index": 52,
+      "url": "https://github.com/agentgateway/agentgateway/blob/v1.5.0/examples/mcp-authorization/README.md",
+      "status": 200,
+      "final_url": "https://github.com/agentgateway/agentgateway/blob/v1.5.0/examples/mcp-authorization/README.md",
+      "bytes": 265333,
+      "sha256": "ec302ff9680dc196d3efacd219007679718fe13687ba080c1a39c32bb315e72a"
+    },
+    {
+      "index": 53,
+      "url": "https://aaif.io/blog/agent-router-joins-aaif",
+      "status": 200,
+      "final_url": "https://aaif.io/blog/agent-router-joins-aaif",
+      "bytes": 146022,
+      "sha256": "69da6a1216ecbe5a4e835d2e35a1f3d3eeb2840da2178377d5e0d7ae18e6a11b"
+    },
+    {
+      "index": 54,
+      "url": "https://theagentrouter.ai/docs/capabilities/mcp/",
+      "status": 200,
+      "final_url": "https://theagentrouter.ai/docs/capabilities/mcp/",
+      "bytes": 103200,
+      "sha256": "ab84c6aed108ac7291c52ac177cd0c49937d789723b4e0409f2a45746f6bfc5f"
+    },
+    {
+      "index": 55,
+      "url": "https://agentgateway.dev/blog/2026-07-27-optimize-token-cost-with-context-compression/",
+      "status": 200,
+      "final_url": "https://agentgateway.dev/blog/2026-07-27-optimize-token-cost-with-context-compression/",
+      "bytes": 49372,
+      "sha256": "7cefa4650a33daac3a140116ed9eb29d4aad90f67c10547988a3290f2f0c5707"
+    },
+    {
+      "index": 56,
+      "url": "https://github.com/agentgateway/agentgateway/blob/v1.5.0/schema/config.json",
+      "status": 200,
+      "final_url": "https://github.com/agentgateway/agentgateway/blob/v1.5.0/schema/config.json",
+      "bytes": 1437132,
+      "sha256": "948ba8fa55d86bad47b7a127320dcdc50f71f8710af02f1f69c23e7b2239c872"
+    },
+    {
+      "index": 57,
+      "url": "https://a2a-protocol.org/latest/",
+      "status": 200,
+      "final_url": "https://a2a-protocol.org/latest/",
+      "bytes": 92841,
+      "sha256": "cd8978404ffbc88ad48edff895a8931b751131df0ca06aae38adfa81da88a217"
+    },
+    {
+      "index": 58,
+      "url": "https://agents.md/",
+      "status": 200,
+      "final_url": "https://agents.md/",
+      "bytes": 81690,
+      "sha256": "2e370dedc3d78195745f56adcc56fa127b75c2c90a05c09b8f2af60d06c6cbd9"
+    },
+    {
+      "index": 59,
+      "url": "https://api.github.com/repos/github/github-mcp-server/releases/latest",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/github/github-mcp-server/releases/latest",
+      "bytes": 17821,
+      "sha256": "905e9f309d704ca6532d5696446c745bab1b74fbf08ee35bc36d4b318f50c832"
+    },
+    {
+      "index": 60,
+      "url": "https://pypi.org/pypi/langchain/json",
+      "status": 200,
+      "final_url": "https://pypi.org/pypi/langchain/json",
+      "bytes": 818715,
+      "sha256": "c730f9296b551439955f10ca589756c8d17e32137982d5f440cf53e2b2c662eb"
+    },
+    {
+      "index": 61,
+      "url": "https://pypi.org/pypi/google-adk/json",
+      "status": 200,
+      "final_url": "https://pypi.org/pypi/google-adk/json",
+      "bytes": 170015,
+      "sha256": "41712734d8235bc93ae4d9ba1ba1c11cb85f76bd1616befa1106a4f9d1ac1918"
+    },
+    {
+      "index": 62,
+      "url": "https://pypi.org/pypi/crewai/json",
+      "status": 200,
+      "final_url": "https://pypi.org/pypi/crewai/json",
+      "bytes": 741896,
+      "sha256": "2b609d42f2a81cf0d17baa66a8484b8fe73b023ed8de218f8ba556817a2eed36"
+    },
+    {
+      "index": 63,
+      "url": "https://pypi.org/pypi/pydantic-ai/json",
+      "status": 200,
+      "final_url": "https://pypi.org/pypi/pydantic-ai/json",
+      "bytes": 548592,
+      "sha256": "a22f518564d469989292ea7359e7c73184659b9e2a9f2432a7870618a969459c"
+    }
+  ]
+}

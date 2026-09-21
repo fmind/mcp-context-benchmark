@@ -1,0 +1,54 @@
+{
+  "tools": [
+    {
+      "name": "search_tools",
+      "parameters_json_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "queries": {
+            "description": "List of search queries to match against tool names and descriptions. Use specific words likely to appear in tool names or descriptions to narrow down relevant tools. Each query is independently tokenized; matches across queries are unioned.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "queries"
+        ],
+        "type": "object"
+      },
+      "description": "Search first for a standalone deferred tool when current tools and catalog descriptions do not name the requested operation. A capability id used as an ordinary domain word does not request that capability. This cannot find capability-owned tools; load a listed capability by id instead. If no tools are found, do not retry.",
+      "outer_typed_dict_key": null,
+      "strict": null,
+      "sequential": false,
+      "kind": "function",
+      "metadata": null,
+      "timeout": null,
+      "defer_loading": false,
+      "unless_native": "tool_search",
+      "with_native": null,
+      "tool_kind": "tool-search",
+      "return_schema": null,
+      "include_return_schema": null,
+      "toolset_id": null,
+      "capability_id": null
+    }
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "Inspect a GitHub issue and its source.",
+          "timestamp": "2026-09-20 20:07:08.004447+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "timestamp": "2026-09-20 20:07:08.004853+00:00",
+      "instructions": null,
+      "kind": "request",
+      "metadata": null,
+      "state": "complete"
+    }
+  ]
+}

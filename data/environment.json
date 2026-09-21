@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-20",
+  "platform": "Linux x86_64",
+  "python": "3.13.5",
+  "reference_tokenizer": "tiktoken 0.14.0 / o200k_base",
+  "github_client_policy": "exclude delete_repository for clients advertising elicitation; identical 45 names in default comparison",
+  "claude": "2.1.274",
+  "codex": "0.154.0",
+  "antigravity_cli": "1.2.7",
+  "antigravity_model": "gemini-3.8-flash-high",
+  "goose": "1.51.0 GNU (code-mode compiled in)",
+  "crewai": "1.15.22",
+  "frameworks": {
+    "langchain": "1.4.2",
+    "langgraph": "1.2.11",
+    "langchain-mcp-adapters": "0.3.1",
+    "langchain-anthropic": "1.7.2",
+    "google-adk": "2.9.2",
+    "pydantic-ai-slim": "2.46.0",
+    "mcp": "2.2.0",
+    "tiktoken": "0.14.0"
+  },
+  "releases": {
+    "github": {
+      "version": "v1.12.2",
+      "release_url": "https://github.com/github/github-mcp-server/releases/tag/v1.12.2",
+      "asset_url": "https://github.com/github/github-mcp-server/releases/download/v1.12.2/github-mcp-server_Linux_x86_64.tar.gz",
+      "asset_sha256": "95843162759da2c31dde082dd145be35db82164594796c294414b69790c2290e"
+    },
+    "goose": {
+      "version": "v1.51.0",
+      "release_url": "https://github.com/aaif-goose/goose/releases/tag/v1.51.0",
+      "asset_url": "https://github.com/aaif-goose/goose/releases/download/v1.51.0/goose-x86_64-unknown-linux-gnu.tar.gz",
+      "asset_sha256": "fc53761f5b907499d5fe21ef940c2bc57b2d93b4c8b858be24261cc136c6108e"
+    }
+  }
+}

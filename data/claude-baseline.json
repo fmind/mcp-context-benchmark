@@ -1,0 +1,53 @@
+{
+  "system": [
+    {
+      "type": "text",
+      "text": "x-anthropic-billing-header: cc_version=2.1.274.abc; cc_entrypoint=sdk-cli;"
+    },
+    {
+      "type": "text",
+      "text": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+      "cache_control": {
+        "type": "ephemeral"
+      }
+    },
+    {
+      "type": "text",
+      "text": "You are a benchmark assistant.",
+      "cache_control": {
+        "type": "ephemeral"
+      }
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /benchmark\n - Is a git repository: false\n - Platform: linux\n - Shell: unknown\n - OS Version: Linux 6.6.141-09476-g954adab60416\n</system-reminder>"
+        },
+        {
+          "type": "text",
+          "text": "<system-reminder>\nYou are powered by the model named Sonnet 4.6. The exact model ID is claude-sonnet-4-6. Assistant knowledge cutoff is August 2025.\n</system-reminder>"
+        },
+        {
+          "type": "text",
+          "text": "<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>"
+        },
+        {
+          "type": "text",
+          "text": "<system-reminder>\nToday's date is 2026-09-20.\n</system-reminder>\n"
+        },
+        {
+          "type": "text",
+          "text": "Reply OK. Do not call tools.",
+          "cache_control": {
+            "type": "ephemeral"
+          }
+        }
+      ]
+    }
+  ],
+  "tools": []
+}

@@ -1,0 +1,96 @@
+{
+  "tools": [
+    {
+      "name": "execute_typescript",
+      "description": "Execute TypeScript code with access to registered SDK functions.\n\nYour code runs in a TypeScript runtime with registered SDK functions already imported and available.\n\nCODE STRUCTURE:\nasync function run() {\n    // Your code here\n    // Call Namespace.functionName() with proper types\n    return result;\n}\n\nIMPORTANT RULES:\n- You MUST define a `run()` function\n- You MUST NOT call or export any functions from the root of the script, `run()` will be called automatically\n- ALWAYS batch multiple tool operations into ONE execute call\n- Functions MUST be called as 'Namespace.functionName'\n- Only registered SDK functions are available - no fetch(), fs, or other Node/Deno APIs\n- Variables don't persist between executions\n- Code runs in an isolated Deno sandbox\n\nTOKEN USAGE WARNING:\n- This tool could return LARGE responses if your code returns big objects\n- Filter/map/reduce data IN YOUR CODE before returning\n- Only return specific fields you need\n- Use console.log() for intermediate results\n\nRETURN TYPE NOTE:\n- Function results are already parsed JavaScript objects, NOT JSON strings\n- Do NOT call JSON.parse() on results\n- Access properties directly (e.g., result.data)",
+      "input_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "ExecuteWithToolGraph",
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Typescript code to execute.\n\nREQUIRED FORMAT:\nasync function ``run()`` {\n  // YOUR CODE GOES HERE\n  // ALWAYS RETURN THE RESULT e.g. return result;\n}\n\nIMPORTANT: Your code should ONLY contain the function definition.\nThe sandbox automatically calls run() and exports the result.",
+            "type": "string",
+            "default": ""
+          },
+          "tool_graph": {
+            "description": "DAG of tool calls showing execution flow. Each node represents a tool call.\nUse depends_on to show data flow (e.g., node 1 uses output from node 0).",
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/ToolGraphNode"
+            },
+            "default": []
+          }
+        },
+        "$defs": {
+          "ToolGraphNode": {
+            "type": "object",
+            "properties": {
+              "tool": {
+                "description": "Tool name in format \"server/tool\" (e.g., \"developer/shell\")",
+                "type": "string"
+              },
+              "description": {
+                "description": "Brief description of what this call does (e.g., \"list files in /src\")",
+                "type": "string"
+              },
+              "depends_on": {
+                "description": "Indices of nodes this depends on (empty if no dependencies)",
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "uint",
+                  "minimum": 0
+                },
+                "default": []
+              }
+            },
+            "required": [
+              "tool",
+              "description"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "get_function_details",
+      "description": "Get detailed TypeScript definitions for specific functions.\n\nProvide function names in 'namespace.functionName' format (e.g., 'Notion.apiPostSearch').\nReturns full type signatures, parameter schemas, and return types.\n\nNote: Functions showing Promise<any> return type have no schema - the actual runtime\nvalue is a parsed JavaScript object (never a JSON string).",
+      "input_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "GetFunctionDetailsInput",
+        "type": "object",
+        "properties": {
+          "functions": {
+            "description": "List of functions to get details of.",
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/FunctionId"
+            }
+          }
+        },
+        "required": [
+          "functions"
+        ],
+        "$defs": {
+          "FunctionId": {
+            "description": "Function representation in the form should be in the form '<namespace>.<function name>'. e.g. If there is a function `getData` within the `DataApi` namespace the value provided in this field is DataApi.getData",
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_functions",
+      "description": "List all available SDK functions organized by namespace.\n\nReturns function signatures showing structure without full type details.",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "cache_control": {
+        "type": "ephemeral"
+      }
+    }
+  ]
+}

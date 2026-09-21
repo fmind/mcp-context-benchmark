@@ -1,0 +1,10 @@
+{
+  "langchain": "1.4.2",
+  "langgraph": "1.2.11",
+  "langchain-mcp-adapters": "0.3.1",
+  "langchain-anthropic": "1.7.2",
+  "google-adk": "2.9.2",
+  "pydantic-ai-slim": "2.46.0",
+  "mcp": "2.2.0",
+  "tiktoken": "0.14.0"
+}
