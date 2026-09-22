@@ -133,3 +133,15 @@ The public home is [fmind/mcp-context-benchmark](https://github.com/fmind/mcp-co
 The separate [three-strategy study](task/STUDY.md) has [complete outcome and usage records](task/study-results/README.md), including the initial interruption and operational amendment. Its role allowlist differs from the startup subset, and its first/repeat passes do not impose cache state.
 
 The executed runners are archived beside their results. Current task runners accept either `ref` or `sha` for the pinned commit and reject conflicting references, following the GitHub tool's supported [reference parameters](https://github.com/github/github-mcp-server/blob/v1.12.2/pkg/github/repositories.go#L966-L974). The [live alias control](validation/github-reference-alias-2026-09-21.json) fetched both source files with both spellings and obtained identical projected hashes. This post-run correction preserves the declared strict-gate failure and every historical observation. The original runner and its hash are also available in the original public benchmark revision; current source is not a byte-identical reconstruction of it.
+
+## CLI-first skill comparison
+
+[`scripts/skills_index.py`](scripts/skills_index.py) counts the agent skills of [fmind/dot](https://github.com/fmind/dot) at a pinned commit, reading `git show` output rather than a working tree. Each skill contributes its `name` and `description`, serialized as compact JSON with sorted keys and counted with `tiktoken 0.14.0` and `o200k_base`, like the MCP declarations. It also counts the complete `gh` skill file, which a host loads only when the skill is selected. Run it against a local clone:
+
+```bash
+git clone https://github.com/fmind/dot /absolute/path/to/dot
+uv run --script scripts/skills_index.py /absolute/path/to/dot
+```
+
+This measures startup discovery text only. It excludes host framing, CLI `--help` output, command results, and any task execution, and it does not compare capability: the `gh` CLI and the GitHub MCP server expose different operations, authentication, and output shapes. No complete CLI task was run.
+

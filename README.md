@@ -13,6 +13,7 @@ The default 45-tool input catalogue counts **10,989 reference tokens**; a three-
 | How large is the GitHub catalogue? | 90 tools: 22,934; default 45: 10,989; read-only 26: 6,293; three-tool allowlist: 989 | `o200k_base` reference tokens, input declarations | [results.json](results.json) |
 | What does host-side discovery remove at startup? | Claude Code 11,696 to 1,286; Codex CLI 11,365 to 923; goose 11,133 to 834 | Reference tokens added over each host's no-GitHub baseline | [data/](data/), [METHODS.md](METHODS.md) |
 | Does provider-native search shrink the HTTP request? | No: LangChain's tool array held all 45 deferred definitions plus a search descriptor, 11,327 | Reference tokens, request bytes rather than model context | [data/langchain-provider-search.json](data/langchain-provider-search.json) |
+| What does a CLI-first skill catalogue cost at startup? | 82 `fmind/dot` skills: 2,089; the `gh` skill: 29 until loaded, 687 for its loaded file | `o200k_base` reference tokens, skill names and descriptions | [data/cli-skills.json](data/cli-skills.json) |
 | Eager versus discovery on one complete task | Only completed pair: 33,807 versus 14,067 (58.4% less); verdict inconclusive | Cumulative native input tokens | [task/results/](task/results/) |
 | Eager, fixed role, and discovery on retrieval tasks | Two complete triplets: 17,177 / 1,391 / 2,010 and 17,988 / 2,262 / 2,048; verdict inconclusive | Cumulative native input tokens | [task/study-results/](task/study-results/README.md) |
 

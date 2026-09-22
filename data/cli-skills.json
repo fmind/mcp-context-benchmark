@@ -1,0 +1,12 @@
+{
+  "source": "https://github.com/fmind/dot/tree/4d65e1f591ce50f46bac407d2a27622abd0bffd1/skills",
+  "commit": "4d65e1f591ce50f46bac407d2a27622abd0bffd1",
+  "tokenizer": "tiktoken 0.14.0 o200k_base",
+  "serialization": "compact JSON, sorted keys, name and description only",
+  "skills": 82,
+  "index_tokens": 2089,
+  "focus_skill": "gh",
+  "focus_index_tokens": 29,
+  "focus_skill_file_tokens": 687,
+  "scope": "Startup discovery text and one loaded skill file. Excludes host framing, CLI help, command output, and task execution."
+}
