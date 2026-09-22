@@ -143,5 +143,14 @@ git clone https://github.com/fmind/dot /absolute/path/to/dot
 uv run --script scripts/skills_index.py /absolute/path/to/dot
 ```
 
-This measures startup discovery text only. It excludes host framing, CLI `--help` output, command results, and any task execution, and it does not compare capability: the `gh` CLI and the GitHub MCP server expose different operations, authentication, and output shapes. No complete CLI task was run.
+This index count excludes host framing. [`scripts/capture_claude_skills.py`](scripts/capture_claude_skills.py) measures the host view: Claude Code's first request, captured on loopback without inference like the original host captures, in six variants from one installed version and one flag set: baseline, GitHub MCP eager, GitHub MCP with tool search, the `gh` skill alone, all skills, and all skills with `SLASH_COMMAND_TOOL_CHAR_BUDGET=100000`. Claude Code [budgets skill metadata](https://code.claude.com/docs/en/env-vars) at 1% of the context window with an 8,000-character fallback and drops descriptions on overflow; the last variant lifts that budget. Skills that set `disable-model-invocation` are installed but not listed, and a skill named like a built-in replaces it; `provenance.json` records both. Three consecutive runs on September 22, 2026 produced byte-identical requests, and the MCP variants reproduced the September 20 additions within one token on the newer CLI.
+
+```bash
+python scripts/capture_claude_skills.py /absolute/path/to/dot /absolute/path/to/github-mcp-server /absolute/path/to/new-dir
+uv run --script analyze_cli.py
+```
+
+[`scripts/cli_outputs.py`](scripts/cli_outputs.py) runs read-only `gh` commands and GitHub MCP v1.12.2 calls for issue #2275 and the pinned `pkg/github/tools.go`, with the authenticated `gh` account for both. It retains byte sizes, digests, and `o200k_base` counts of the raw text, never the issue or source content. MCP results count text items and embedded resource text, before any client projection. The issue is live and can change; the file reads are pinned.
+
+These measurements do not compare capability: the `gh` CLI and the GitHub MCP server expose different operations, authentication, and output shapes. No complete CLI task with a model was run.
 

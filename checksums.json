@@ -5,6 +5,7 @@
   "claude-baseline.json": "e3fc7aae3707d97793415d933c13f0b5d14cebb9495a14d1490ed0bf6ca5ffee",
   "claude-deferred.json": "734e03dc726affcfe12afcd0a41878395879d244ccc5c26b0bc7299357ba58d9",
   "claude-eager.json": "f25bb9d20bd1e054a9b6a61cc26ec6442acd938dd54ff5d8dd2de5fad67b1e54",
+  "cli-outputs.json": "9b0f5a82f792dc2f049f6ab01be528bacaafc3c6d37cd11067d8c996714af3b0",
   "cli-skills.json": "fbd93902656c9de22c1fe3edbb8431607397c334fa7e7b671a27975c8bb92f25",
   "codex-baseline.json": "137cf281e4b0ea2012997d47985a9d108636d04469dd98ab2d06a4cda451db80",
   "codex-deferred.json": "c3f00da959cdd76188baedbbbad5d74e274b91615036113a935274805f7b4d1c",

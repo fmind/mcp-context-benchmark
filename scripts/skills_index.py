@@ -35,7 +35,11 @@ def main() -> None:
     encoding = tiktoken.get_encoding("o200k_base")
 
     def tokens(value: object) -> int:
-        text = value if isinstance(value, str) else json.dumps(value, sort_keys=True, separators=(",", ":"))
+        text = (
+            value
+            if isinstance(value, str)
+            else json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+        )
         return len(encoding.encode(text))
 
     index, bodies = [], {}

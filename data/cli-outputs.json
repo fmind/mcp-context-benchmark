@@ -1,0 +1,142 @@
+{
+  "captured_utc": "2026-09-22T19:57:32Z",
+  "gh": "gh version 2.101.0 (2026-09-15)",
+  "github_mcp_server": "1.12.2",
+  "tokenizer": "tiktoken 0.14.0 o200k_base, plain text",
+  "scope": "Raw stdout or MCP result text; excludes host framing and any client-side projection or truncation.",
+  "outputs": {
+    "help:gh": {
+      "command": [
+        "gh",
+        "--help"
+      ],
+      "bytes": 2917,
+      "sha256": "fa6675bed232958396a46b15845b08e59d7a8d42f48b210c5648cace7cf2c068",
+      "tokens": 666
+    },
+    "help:gh issue view": {
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "--help"
+      ],
+      "bytes": 1327,
+      "sha256": "ae334e259bf88145da6589a6736d7d52a7ab310bd793d98807a9127f4c62fc3e",
+      "tokens": 322
+    },
+    "help:gh api": {
+      "command": [
+        "gh",
+        "api",
+        "--help"
+      ],
+      "bytes": 7770,
+      "sha256": "c6136b139e05d1b4e9271a1edf08473b6f57df6ff01dc6da64b7079f53852e82",
+      "tokens": 1882
+    },
+    "issue:default": {
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "2275",
+        "-R",
+        "github/github-mcp-server"
+      ],
+      "bytes": 3130,
+      "sha256": "c460af1bdf63ad1075c9a6ac5c0b82a585dc5143b548b140ff079357db6028c0",
+      "tokens": 714
+    },
+    "issue:comments": {
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "2275",
+        "-R",
+        "github/github-mcp-server",
+        "--comments"
+      ],
+      "bytes": 1244,
+      "sha256": "7f292cc8801e90efd3c356a14e4925c7741daeb0feb5f67d4b88b8fc0f4574c0",
+      "tokens": 301
+    },
+    "issue:json-with-body": {
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "2275",
+        "-R",
+        "github/github-mcp-server",
+        "--json",
+        "number,title,state,url,body"
+      ],
+      "bytes": 3101,
+      "sha256": "fd5c4256ba904afc2682f0882e9481ba04f39f625f2d90d9d61d50803c12012f",
+      "tokens": 709
+    },
+    "issue:json-no-body": {
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "2275",
+        "-R",
+        "github/github-mcp-server",
+        "--json",
+        "number,title,state,url"
+      ],
+      "bytes": 160,
+      "sha256": "3062a6839b03dc9572ac6c685686be5ebf7a69cdbd7a647639dee776fbe6d5ad",
+      "tokens": 42
+    },
+    "file:api-default": {
+      "command": [
+        "gh",
+        "api",
+        "repos/github/github-mcp-server/contents/pkg/github/tools.go?ref=85598ba6e1256f7ebf4867b95d63b833c4549264"
+      ],
+      "bytes": 24850,
+      "sha256": "227dd81916540c4639ee3e4c02fd533b716f68676c17668a2b48404e6d44af0d",
+      "tokens": 15708
+    },
+    "file:api-raw": {
+      "command": [
+        "gh",
+        "api",
+        "-H",
+        "Accept: application/vnd.github.raw",
+        "repos/github/github-mcp-server/contents/pkg/github/tools.go?ref=85598ba6e1256f7ebf4867b95d63b833c4549264"
+      ],
+      "bytes": 17272,
+      "sha256": "b14b55f66e2e53f059b78c33779047ed6f441b88589446de811ae7f98d6a7167",
+      "tokens": 4265
+    },
+    "mcp:issue_read": {
+      "tool": "issue_read",
+      "arguments": {
+        "owner": "github",
+        "repo": "github-mcp-server",
+        "method": "get",
+        "issue_number": 2275
+      },
+      "bytes": 3871,
+      "sha256": "d60a6bea46f8456b873f02dd9f02629ea3998a7199c8c6723725fb4d3b307c49",
+      "tokens": 957
+    },
+    "mcp:get_file_contents": {
+      "tool": "get_file_contents",
+      "arguments": {
+        "owner": "github",
+        "repo": "github-mcp-server",
+        "path": "pkg/github/tools.go",
+        "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264"
+      },
+      "bytes": 17354,
+      "sha256": "bf1d8355a87b5ac4c6f7bb44734eafc993ade962d931b646dd96e12876d195b3",
+      "tokens": 4298
+    }
+  }
+}

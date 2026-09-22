@@ -1,0 +1,84 @@
+{
+  "claude": "2.1.280 (Claude Code)",
+  "dot_commit": "4d65e1f591ce50f46bac407d2a27622abd0bffd1",
+  "host_scope": "JSON system + messages + tools of the first request; additions subtract the same-version baseline",
+  "installed_skills": 82,
+  "model_invocable_skills": 81,
+  "skills_replacing_builtins": [
+    "security-review"
+  ],
+  "host": [
+    {
+      "variant": "baseline",
+      "total": 2061,
+      "addition": 0,
+      "listed_skills": 12,
+      "listed_without_description": 0
+    },
+    {
+      "variant": "mcp-eager",
+      "total": 13756,
+      "addition": 11695,
+      "listed_skills": 12,
+      "listed_without_description": 0
+    },
+    {
+      "variant": "mcp-deferred",
+      "total": 3346,
+      "addition": 1285,
+      "listed_skills": 12,
+      "listed_without_description": 0
+    },
+    {
+      "variant": "skill-gh",
+      "total": 2087,
+      "addition": 26,
+      "listed_skills": 13,
+      "listed_without_description": 0
+    },
+    {
+      "variant": "skills-all",
+      "total": 2705,
+      "addition": 644,
+      "listed_skills": 92,
+      "listed_without_description": 66
+    },
+    {
+      "variant": "skills-all-unbudgeted",
+      "total": 3947,
+      "addition": 1886,
+      "listed_skills": 92,
+      "listed_without_description": 0
+    }
+  ],
+  "skill_index": {
+    "source": "https://github.com/fmind/dot/tree/4d65e1f591ce50f46bac407d2a27622abd0bffd1/skills",
+    "commit": "4d65e1f591ce50f46bac407d2a27622abd0bffd1",
+    "tokenizer": "tiktoken 0.14.0 o200k_base",
+    "serialization": "compact JSON, sorted keys, name and description only",
+    "skills": 82,
+    "index_tokens": 2089,
+    "focus_skill": "gh",
+    "focus_index_tokens": 29,
+    "focus_skill_file_tokens": 687,
+    "scope": "Startup discovery text and one loaded skill file. Excludes host framing, CLI help, command output, and task execution."
+  },
+  "outputs": {
+    "captured_utc": "2026-09-22T19:57:32Z",
+    "gh": "gh version 2.101.0 (2026-09-15)",
+    "github_mcp_server": "1.12.2",
+    "tokens": {
+      "help:gh": 666,
+      "help:gh issue view": 322,
+      "help:gh api": 1882,
+      "issue:default": 714,
+      "issue:comments": 301,
+      "issue:json-with-body": 709,
+      "issue:json-no-body": 42,
+      "file:api-default": 15708,
+      "file:api-raw": 4265,
+      "mcp:issue_read": 957,
+      "mcp:get_file_contents": 4298
+    }
+  }
+}
