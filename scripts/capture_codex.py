@@ -1,15 +1,18 @@
 # ruff: noqa: T201, S603
 # Research instrumentation: progress output, fixed argv, and adapter-boundary inspection.
+import hashlib
 import json
 import os
+import shutil
 import subprocess
 import threading
+from datetime import UTC, datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).parent
 OUT = ROOT / "codex-payloads"
-OUT.mkdir(exist_ok=True)
+OUT.mkdir(exist_ok=False)
 records = []
 
 
@@ -31,13 +34,38 @@ class Handler(BaseHTTPRequestHandler):
 
 server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
 threading.Thread(target=server.serve_forever, daemon=True).start()
-models = json.loads((Path.home() / ".codex/models_cache.json").read_text())["models"]
-model = next(m for m in models if m["slug"] == "gpt-5.5")
+# This public release-derived fixture is a new control, not the missing historical cache.
+fixture = ROOT / "codex-model.json"
+model = json.loads(fixture.read_text())["models"][0]
+if model["slug"] != "gpt-5.5":
+    raise ValueError("The controlled capture requires the gpt-5.5 fixture")
+executable = shutil.which("codex")
+if executable is None:
+    raise RuntimeError("Install Codex CLI 0.154.0 on PATH")
+version = subprocess.check_output([executable, "--version"], text=True).strip()
+if version != "codex-cli 0.154.0":
+    raise ValueError("Install Codex CLI 0.154.0 for this controlled capture")
+(OUT / "provenance.json").write_text(
+    json.dumps(
+        {
+            "captured_at_utc": datetime.now(UTC).isoformat(),
+            "cli_version": version,
+            "fixture_sha256": hashlib.sha256(fixture.read_bytes()).hexdigest(),
+            "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            "fixture_source": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/models-manager/models.json",
+            "configuration": "isolated CODEX_HOME and XDG_CONFIG_HOME per variant",
+            "historical_configuration": False,
+        },
+        indent=2,
+    )
+    + "\n"
+)
 try:
     for mode in ["baseline", "eager", "deferred"]:
         records.clear()
         work = ROOT / f"codex-{mode}"
         work.mkdir(exist_ok=True)
+        (work / "config").mkdir(exist_ok=True)
         model["supports_search_tool"] = mode != "eager"
         catalog = work / "models.json"
         catalog.write_text(json.dumps({"models": [model]}))
@@ -62,7 +90,7 @@ try:
                 + ',args=["stdio", "--exclude-tools=delete_repository"],env={GITHUB_PERSONAL_ACCESS_TOKEN="not-a-real-token-catalogue-only"}}'
             )
         command = [
-            "codex",
+            executable,
             "exec",
             "--ephemeral",
             "--skip-git-repo-check",
@@ -79,7 +107,12 @@ try:
             result = subprocess.run(
                 command,
                 cwd=work,
-                env={"PATH": os.environ["PATH"], "LANG": "C.UTF-8"},
+                env={
+                    "PATH": os.environ["PATH"],
+                    "LANG": "C.UTF-8",
+                    "CODEX_HOME": str(work / "config"),
+                    "XDG_CONFIG_HOME": str(work / "xdg-config"),
+                },
                 capture_output=True,
                 text=True,
                 timeout=45,
@@ -91,6 +124,8 @@ try:
         except subprocess.TimeoutExpired:
             print(mode, "timeout")
         (OUT / f"{mode}.json").write_text(json.dumps(records, indent=2))
+        if not records:
+            raise RuntimeError(f"No captured model request for {mode}; do not report a zero-token result")
         print(mode, "requests", len(records), [(r["path"], len(r["tools"])) for r in records])
 finally:
     server.shutdown()

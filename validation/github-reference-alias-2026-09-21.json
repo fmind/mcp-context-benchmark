@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-09-21T19:59:28.151711+00:00",
+  "method": "Four actual read-only MCP calls; no inference. Each path fetched with ref and sha independently.",
+  "python": "3.13.5",
+  "mcp_sdk": "2.2.0",
+  "server": "v1.12.2",
+  "server_binary_sha256": "b7a96bf79c68c0d4d0cdb5713e9ff36a1730b87ee3ae710e2e6189f398d7c1aa",
+  "protocol": "2025-11-25",
+  "results": [
+    {
+      "path": "go.mod",
+      "commit": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+      "projected_sha256": {
+        "ref": "1ccfd1a53d893b48d7dce18010adc7efc86ac9687aded6181ef4f69d9599dee1",
+        "sha": "1ccfd1a53d893b48d7dce18010adc7efc86ac9687aded6181ef4f69d9599dee1"
+      }
+    },
+    {
+      "path": "pkg/github/tools.go",
+      "commit": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+      "projected_sha256": {
+        "ref": "7a67da6ddc539950ad6dc00422bfdcaaa1ada9f61f5a7aa0c3e43683316577a2",
+        "sha": "7a67da6ddc539950ad6dc00422bfdcaaa1ada9f61f5a7aa0c3e43683316577a2"
+      }
+    }
+  ]
+}

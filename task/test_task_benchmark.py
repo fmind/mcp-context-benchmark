@@ -54,6 +54,14 @@ class GraderTests(unittest.TestCase):
             )["passed"]
         )
 
+    def test_source_alias_cannot_override_the_allowed_commit(self) -> None:
+        args = {"owner": "github", "repo": "github-mcp-server", "path": bench.SOURCE}
+        self.assertTrue(bench.allowed("get_file_contents", dict(args, sha=bench.REF)))
+        self.assertTrue(bench.allowed("get_file_contents", dict(args, ref=bench.REF, sha=bench.REF)))
+        self.assertFalse(bench.allowed("get_file_contents", dict(args, ref=bench.REF, sha="main")))
+        self.assertFalse(bench.allowed("get_file_contents", dict(args, ref="main", sha=bench.REF)))
+        self.assertFalse(bench.allowed("get_file_contents", args))
+
     def test_execution_scope(self) -> None:
         self.assertFalse(bench.allowed("delete_repository", {"owner": "github", "repo": "github-mcp-server"}))
         self.assertFalse(

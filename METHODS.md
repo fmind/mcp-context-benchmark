@@ -22,6 +22,7 @@ Use an OS temporary directory. The capture scripts intentionally write beside th
 MCP_BENCH_SOURCE="$PWD"
 MCP_BENCH_WORK=$(mktemp -d -t mcp-context-bench-XXXXXXXX)
 cp "$MCP_BENCH_SOURCE"/scripts/*.py "$MCP_BENCH_WORK/"
+cp "$MCP_BENCH_SOURCE"/scripts/codex-model.json "$MCP_BENCH_WORK/"
 uv venv --python 3.13.5 "$MCP_BENCH_WORK/venv"
 uv pip sync --python "$MCP_BENCH_WORK/venv/bin/python" \
   "$MCP_BENCH_SOURCE/requirements-frameworks.txt"
@@ -41,15 +42,19 @@ Then collect real MCP catalogues and framework declarations, with no provider in
 "$MCP_BENCH_WORK/venv/bin/python" "$MCP_BENCH_WORK/pydantic_wire.py"
 ```
 
-Framework dependencies are frozen separately from CrewAI 1.15.22. The first environment includes an incidental CrewAI 1.6.1 installation, which was **not** the version tested in the CrewAI row. The dedicated Python 3.13 environment avoids the Python 3.14 import failure encountered through CrewAI's ChromaDB/Pydantic-v1 dependency path. The retained LangChain experiment uses its built-in beta `MCPAdapter`; the separately installed `langchain-mcp-adapters 0.3.1` failed to import with MCP 2.2.0 and is not the adapter measured.
+Framework dependencies are frozen separately from CrewAI 1.15.22: the framework environment uses MCP SDK 2.2.0, while the CrewAI environment uses MCP SDK 1.28.1. The first environment includes an incidental CrewAI 1.6.1 installation, which was **not** the version tested in the CrewAI row. The dedicated Python 3.13 environment avoids the Python 3.14 import failure encountered through CrewAI's ChromaDB/Pydantic-v1 dependency path. The retained LangChain experiment uses its built-in beta `MCPAdapter`; the separately installed `langchain-mcp-adapters 0.3.1` failed to import with MCP 2.2.0 and is not the adapter measured.
 
-For the host captures, install Claude Code 2.1.274 and Codex CLI 0.154.0 on `PATH`. Codex also needs its local model catalogue to contain `gpt-5.5`; the script reads that model's capabilities and changes only `supports_search_tool` between variants. It does not alter the original catalogue. Then run:
+For the host captures, install Claude Code 2.1.274 and Codex CLI 0.154.0 on `PATH`. The current Codex script requires the bundled `scripts/codex-model.json`, derived from the [0.154.0 public model catalogue](https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/models-manager/models.json). Its upstream `base_instructions` are replaced with a fixed benchmark instruction and `model_messages` is null; capability fields are retained. Each variant gets an isolated `CODEX_HOME` and `XDG_CONFIG_HOME`; only `supports_search_tool` changes between its model fixtures. The script checks the CLI version, refuses an existing output directory, and records the fixture hash and UTC capture time in `codex-payloads/provenance.json`.
+
+This is a new reproducible control. The September 20 Codex captures used the then-current local `gpt-5.5` cache entry and user configuration, which were not retained. The new fixture cannot reconstruct that missing historical state, and new captures must not silently replace `data/codex-*.json`. A [separate September 21 validation](validation/codex-2026-09-21/provenance.json) with the public fixture reproduced all three historical tool arrays exactly, including their 11,365-token eager and 923-token deferred additions. It records the fixture and script hashes with the new capture time. Then run:
 
 ```bash
 "$MCP_BENCH_WORK/venv/bin/python" "$MCP_BENCH_WORK/capture_claude.py"
 "$MCP_BENCH_WORK/venv/bin/python" "$MCP_BENCH_WORK/capture_codex.py"
 "$MCP_BENCH_WORK/venv/bin/python" "$MCP_BENCH_WORK/capture_goose.py"
 ```
+
+Claude Code tool search is forced with `ENABLE_TOOL_SEARCH=true` in the deferred variant: a custom API endpoint can otherwise disable it. The eager variant sets `ENABLE_TOOL_SEARCH=false`.
 
 The clients send to loopback HTTP servers, with dummy provider credentials and no inference. The endpoint deliberately returns HTTP 400 after capturing the request. Consequently, a nonzero CLI exit is expected; it is not a successful model invocation. goose retried four times; the analysis counts the first request, never their sum. An empty capture, missing GitHub catalogue, or absent Code Mode is a failed experiment, not a zero-token result. The analyzer validates these controls for the retained captures.
 
@@ -93,7 +98,7 @@ The normalizer fails on missing host captures and omits Antigravity when the opt
 | `goose-*.json` | First HTTP request's tools | Excludes instructions and messages; Code Mode is enabled through a recipe |
 | `antigravity.json` | Actual native usage and extracted server-log discovery evidence | Six diagnostic runs; no task-quality benchmark or cross-tokenizer ratio |
 
-The eager host tests have the same 45 GitHub tool names. Clients supporting elicitation can additionally discover `delete_repository`; the harness tests pass `--exclude-tools=delete_repository` to neutralize that difference. `collect.py` and CrewAI's tested client do not advertise it and already return 45. Actual credentials and server permissions can change the available catalogue; this experiment uses a dummy credential and never calls GitHub operations.
+The eager host tests have the same 45 GitHub tool names. GitHub MCP v1.12.2 exposes `delete_repository` only when both MCP `2026-07-28` and form elicitation are supported; the harness tests pass `--exclude-tools=delete_repository` to neutralize that difference. `collect.py` and the task runner call legacy `initialize()` and negotiate `2025-11-25`. Independent controls on September 21 returned 45 tools for legacy initialization with or without elicitation, 45 for modern discovery without elicitation, and 46 for modern discovery with elicitation. The current tools specification describes the general mechanism, not the negotiated protocol of every measurement. Actual credentials and server permissions can change the available catalogue; this experiment uses a dummy credential and never calls GitHub operations.
 
 The native-provider search request still contains all 45 definitions marked `defer_loading`, plus a search descriptor. These bytes are not proof that the model initially receives the definitions. Conversely, the reference-token size of the small search descriptor is not the provider's complete search overhead. Do not rank it as a nearly free prompt.
 
@@ -122,3 +127,9 @@ Antigravity's valid order was baseline, default, all, focused, default, baseline
 Schemas and built-in tool descriptions remain attributable to their upstream projects. The GitHub server is [MIT-licensed](https://github.com/github/github-mcp-server/blob/v1.12.2/LICENSE). No third-party binaries, complete documentation pages, credentials, or private user prompts are redistributed here.
 
 The public home is [fmind/mcp-context-benchmark](https://github.com/fmind/mcp-context-benchmark). Preserve the data, versions, scope labels, and checksums together. The article workspace retains a copy of this evidence.
+
+## Follow-up task study and reference handling
+
+The separate [three-strategy study](task/STUDY.md) has [complete outcome and usage records](task/study-results/README.md), including the initial interruption and operational amendment. Its role allowlist differs from the startup subset, and its first/repeat passes do not impose cache state.
+
+The executed runners are archived beside their results. Current task runners accept either `ref` or `sha` for the pinned commit and reject conflicting references, following the GitHub tool's supported [reference parameters](https://github.com/github/github-mcp-server/blob/v1.12.2/pkg/github/repositories.go#L966-L974). The [live alias control](validation/github-reference-alias-2026-09-21.json) fetched both source files with both spellings and obtained identical projected hashes. This post-run correction preserves the declared strict-gate failure and every historical observation. The original runner and its hash are also available in the original public benchmark revision; current source is not a byte-identical reconstruction of it.

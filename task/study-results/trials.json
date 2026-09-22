@@ -1,0 +1,2688 @@
+[
+  {
+    "case": "source",
+    "block": 0,
+    "phase": "first",
+    "mode": "eager",
+    "wall_seconds": 9.212796489999164,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 1746,
+        "reserved_usd": 0.03024225,
+        "usage": {
+          "candidates_token_count": 80,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 80
+            }
+          ],
+          "prompt_token_count": 8591,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8591
+            }
+          ],
+          "total_token_count": 8671,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 6.066616556985537,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 2920,
+        "reserved_usd": 0.035085,
+        "usage": {
+          "candidates_token_count": 121,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 121
+            }
+          ],
+          "prompt_token_count": 9773,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 9773
+            }
+          ],
+          "total_token_count": 9894,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 2.858356292010285,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "path": "go.mod",
+          "repo": "github-mcp-server",
+          "owner": "github"
+        },
+        "result_sha256": "1ccfd1a53d893b48d7dce18010adc7efc86ac9687aded6181ef4f69d9599dee1",
+        "ok": true,
+        "seconds": 0.23340455399011262,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\"go_version\": \"1.25.12\", \"mcp_go_sdk_version\": \"v1.7.0\", \"source_path\": \"go.mod\", \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\", \"evidence_line\": 13, \"evidence_quote\": \"\\tgithub.com/modelcontextprotocol/go-sdk v1.7.0\"}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "source",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "eager",
+    "wall_seconds": 7.128500204999,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 1746,
+        "reserved_usd": 0.03024225,
+        "usage": {
+          "candidates_token_count": 80,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 80
+            }
+          ],
+          "prompt_token_count": 8591,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8591
+            }
+          ],
+          "total_token_count": 8671,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 4.228074263985036,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 2920,
+        "reserved_usd": 0.035085,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8313
+            }
+          ],
+          "cached_content_token_count": 8313,
+          "candidates_token_count": 136,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 136
+            }
+          ],
+          "prompt_token_count": 9773,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 9773
+            }
+          ],
+          "total_token_count": 9909,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 2.653170068981126,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "path": "go.mod",
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "repo": "github-mcp-server",
+          "owner": "github"
+        },
+        "result_sha256": "1ccfd1a53d893b48d7dce18010adc7efc86ac9687aded6181ef4f69d9599dee1",
+        "ok": true,
+        "seconds": 0.2460027409833856,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"go_version\": \"1.25.12\",\n  \"mcp_go_sdk_version\": \"v1.7.0\",\n  \"source_path\": \"go.mod\",\n  \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\",\n  \"evidence_line\": 13,\n  \"evidence_quote\": \"\\tgithub.com/modelcontextprotocol/go-sdk v1.7.0\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "source",
+    "block": 0,
+    "phase": "first",
+    "mode": "fixed",
+    "wall_seconds": 2.799469959019916,
+    "turns": [],
+    "calls": [],
+    "final_response": "",
+    "error": "provider_ClientError_code_429",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "case": "source",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "fixed",
+    "wall_seconds": 17.313515392976115,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 234,
+        "reserved_usd": 0.02400525,
+        "usage": {
+          "candidates_token_count": 80,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 80
+            }
+          ],
+          "prompt_token_count": 728,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 728
+            }
+          ],
+          "total_token_count": 808,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 7.622284759010654,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "get_release_by_tag"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 1408,
+        "reserved_usd": 0.028848,
+        "usage": {
+          "candidates_token_count": 136,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 136
+            }
+          ],
+          "prompt_token_count": 1910,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1910
+            }
+          ],
+          "total_token_count": 2046,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 9.306066891003866,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "get_release_by_tag"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "owner": "github",
+          "path": "go.mod",
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "1ccfd1a53d893b48d7dce18010adc7efc86ac9687aded6181ef4f69d9599dee1",
+        "ok": true,
+        "seconds": 0.3543737400032114,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"go_version\": \"1.25.12\",\n  \"mcp_go_sdk_version\": \"v1.7.0\",\n  \"source_path\": \"go.mod\",\n  \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\",\n  \"evidence_line\": 13,\n  \"evidence_quote\": \"\\tgithub.com/modelcontextprotocol/go-sdk v1.7.0\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "source",
+    "block": 0,
+    "phase": "first",
+    "mode": "discovery",
+    "wall_seconds": 50.60133475699695,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 218,
+        "reserved_usd": 0.02393925,
+        "usage": {
+          "candidates_token_count": 21,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 21
+            }
+          ],
+          "prompt_token_count": 232,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 232
+            }
+          ],
+          "total_token_count": 253,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 16.76877309801057,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 412,
+        "reserved_usd": 0.0247395,
+        "usage": {
+          "candidates_token_count": 80,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 80
+            }
+          ],
+          "prompt_token_count": 852,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 852
+            }
+          ],
+          "total_token_count": 932,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 13.026629289000994,
+        "declared_tools": [
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "preflight_input_tokens": 1586,
+        "reserved_usd": 0.02958225,
+        "usage": {
+          "candidates_token_count": 121,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 121
+            }
+          ],
+          "prompt_token_count": 2034,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 2034
+            }
+          ],
+          "total_token_count": 2155,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 19.973145190015202,
+        "declared_tools": [
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "get file contents go.mod"
+        },
+        "ok": true,
+        "seconds": 0.005788734008092433,
+        "result": {
+          "loaded_tools": [
+            "get_file_contents",
+            "create_or_update_file",
+            "delete_file"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "repo": "github-mcp-server",
+          "path": "go.mod",
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "owner": "github"
+        },
+        "result_sha256": "1ccfd1a53d893b48d7dce18010adc7efc86ac9687aded6181ef4f69d9599dee1",
+        "ok": true,
+        "seconds": 0.8261871529975906,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\"go_version\": \"1.25.12\", \"mcp_go_sdk_version\": \"v1.7.0\", \"source_path\": \"go.mod\", \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\", \"evidence_line\": 13, \"evidence_quote\": \"\\tgithub.com/modelcontextprotocol/go-sdk v1.7.0\"}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "source",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "discovery",
+    "wall_seconds": 64.70841968301102,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 218,
+        "reserved_usd": 0.02393925,
+        "usage": {
+          "candidates_token_count": 27,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 27
+            }
+          ],
+          "prompt_token_count": 232,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 232
+            }
+          ],
+          "total_token_count": 259,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 10.94407500201487,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 418,
+        "reserved_usd": 0.02476425,
+        "usage": {
+          "candidates_token_count": 80,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 80
+            }
+          ],
+          "prompt_token_count": 858,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 858
+            }
+          ],
+          "total_token_count": 938,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 14.25567692000186,
+        "declared_tools": [
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "preflight_input_tokens": 500,
+        "reserved_usd": 0.0251025,
+        "usage": {
+          "candidates_token_count": 80,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 80
+            }
+          ],
+          "prompt_token_count": 948,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 948
+            }
+          ],
+          "total_token_count": 1028,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 13.762575151020428,
+        "declared_tools": [
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 3,
+        "preflight_input_tokens": 1674,
+        "reserved_usd": 0.02994525,
+        "usage": {
+          "candidates_token_count": 121,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 121
+            }
+          ],
+          "prompt_token_count": 2130,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 2130
+            }
+          ],
+          "total_token_count": 2251,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 25.053707496001152,
+        "declared_tools": [
+          "get_file_contents",
+          "create_or_update_file",
+          "delete_file",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "get file content go.mod github-mcp-server"
+        },
+        "ok": true,
+        "seconds": 0.001485838001826778,
+        "result": {
+          "loaded_tools": [
+            "get_file_contents",
+            "create_or_update_file",
+            "delete_file"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "repo": "github-mcp-server",
+          "sha": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "path": "go.mod",
+          "owner": "github"
+        },
+        "blocked": true,
+        "ok": false,
+        "seconds": 1.2545991921797395e-05,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": false
+        }
+      },
+      {
+        "name": "get_file_contents",
+        "arguments": {
+          "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+          "path": "go.mod",
+          "owner": "github",
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "1ccfd1a53d893b48d7dce18010adc7efc86ac9687aded6181ef4f69d9599dee1",
+        "ok": true,
+        "seconds": 0.6899368029844481,
+        "result": {
+          "fixture": "get_file_contents",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\"go_version\": \"1.25.12\", \"mcp_go_sdk_version\": \"v1.7.0\", \"source_path\": \"go.mod\", \"source_ref\": \"85598ba6e1256f7ebf4867b95d63b833c4549264\", \"evidence_line\": 13, \"evidence_quote\": \"\\tgithub.com/modelcontextprotocol/go-sdk v1.7.0\"}",
+    "error": null,
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Attempted operation outside the read-only task scope"
+      ]
+    }
+  },
+  {
+    "case": "issue",
+    "block": 0,
+    "phase": "first",
+    "mode": "fixed",
+    "wall_seconds": 20.559258102992317,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 163,
+        "reserved_usd": 0.023712375,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 657,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 657
+            }
+          ],
+          "total_token_count": 699,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 5.0734670870006084,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "get_release_by_tag"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 226,
+        "reserved_usd": 0.02397225,
+        "usage": {
+          "candidates_token_count": 61,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 61
+            }
+          ],
+          "prompt_token_count": 734,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 734
+            }
+          ],
+          "total_token_count": 795,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 14.313847542012809,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "get_release_by_tag"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "issue_read",
+        "arguments": {
+          "owner": "github",
+          "method": "get",
+          "issue_number": 2250,
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "b58208d976e1a33afe0d5d7f5244b0bb53e6de7d6603e2312c1cc1ec0648059f",
+        "ok": true,
+        "seconds": 1.171493861998897,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\"number\": 2250, \"title\": \"Missing author_association field in list_issues and pull request responses\", \"state\": \"open\", \"html_url\": \"https://github.com/github/github-mcp-server/issues/2250\"}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "issue",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "fixed",
+    "wall_seconds": 29.00485465899692,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 163,
+        "reserved_usd": 0.023712375,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 657,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 657
+            }
+          ],
+          "total_token_count": 699,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 13.685776441998314,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "get_release_by_tag"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 226,
+        "reserved_usd": 0.02397225,
+        "usage": {
+          "candidates_token_count": 61,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 61
+            }
+          ],
+          "prompt_token_count": 734,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 734
+            }
+          ],
+          "total_token_count": 795,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 14.514707739988808,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "get_release_by_tag"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "issue_read",
+        "arguments": {
+          "owner": "github",
+          "issue_number": 2250,
+          "repo": "github-mcp-server",
+          "method": "get"
+        },
+        "result_sha256": "b58208d976e1a33afe0d5d7f5244b0bb53e6de7d6603e2312c1cc1ec0648059f",
+        "ok": true,
+        "seconds": 0.8035351099970285,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\"number\": 2250, \"title\": \"Missing author_association field in list_issues and pull request responses\", \"state\": \"open\", \"html_url\": \"https://github.com/github/github-mcp-server/issues/2250\"}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "issue",
+    "block": 0,
+    "phase": "first",
+    "mode": "discovery",
+    "wall_seconds": 56.80021312498138,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 147,
+        "reserved_usd": 0.023646375,
+        "usage": {
+          "candidates_token_count": 16,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 16
+            }
+          ],
+          "prompt_token_count": 161,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 161
+            }
+          ],
+          "total_token_count": 177,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 39.14513679701486,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 351,
+        "reserved_usd": 0.024487875,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 886,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 886
+            }
+          ],
+          "total_token_count": 928,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 2.0834144770051353,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "preflight_input_tokens": 414,
+        "reserved_usd": 0.02474775,
+        "usage": {
+          "candidates_token_count": 61,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 61
+            }
+          ],
+          "prompt_token_count": 963,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 963
+            }
+          ],
+          "total_token_count": 1024,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 14.429880220006453,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "issue"
+        },
+        "ok": true,
+        "seconds": 0.005809681984828785,
+        "result": {
+          "loaded_tools": [
+            "add_issue_comment",
+            "assign_copilot_to_issue",
+            "issue_read"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "issue_read",
+        "arguments": {
+          "owner": "github",
+          "issue_number": 2250,
+          "method": "get",
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "b58208d976e1a33afe0d5d7f5244b0bb53e6de7d6603e2312c1cc1ec0648059f",
+        "ok": true,
+        "seconds": 1.13497110499884,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\"number\": 2250, \"title\": \"Missing author_association field in list_issues and pull request responses\", \"state\": \"open\", \"html_url\": \"https://github.com/github/github-mcp-server/issues/2250\"}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "issue",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "discovery",
+    "wall_seconds": 44.581286612024996,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 147,
+        "reserved_usd": 0.023646375,
+        "usage": {
+          "candidates_token_count": 16,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 16
+            }
+          ],
+          "prompt_token_count": 161,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 161
+            }
+          ],
+          "total_token_count": 177,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 14.291133379010716,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 351,
+        "reserved_usd": 0.024487875,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 886,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 886
+            }
+          ],
+          "total_token_count": 928,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 16.836522853001952,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "preflight_input_tokens": 414,
+        "reserved_usd": 0.02474775,
+        "usage": {
+          "candidates_token_count": 72,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 72
+            }
+          ],
+          "prompt_token_count": 963,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 963
+            }
+          ],
+          "total_token_count": 1035,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 12.241499596013455,
+        "declared_tools": [
+          "add_issue_comment",
+          "assign_copilot_to_issue",
+          "issue_read",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "issue"
+        },
+        "ok": true,
+        "seconds": 0.0034417630231473595,
+        "result": {
+          "loaded_tools": [
+            "add_issue_comment",
+            "assign_copilot_to_issue",
+            "issue_read"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "issue_read",
+        "arguments": {
+          "method": "get",
+          "owner": "github",
+          "issue_number": 2250,
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "b58208d976e1a33afe0d5d7f5244b0bb53e6de7d6603e2312c1cc1ec0648059f",
+        "ok": true,
+        "seconds": 1.2078756609989796,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"number\": 2250,\n  \"title\": \"Missing author_association field in list_issues and pull request responses\",\n  \"state\": \"open\",\n  \"html_url\": \"https://github.com/github/github-mcp-server/issues/2250\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "issue",
+    "block": 0,
+    "phase": "first",
+    "mode": "eager",
+    "wall_seconds": 31.044014678016538,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 1675,
+        "reserved_usd": 0.029949375,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 5304
+            }
+          ],
+          "cached_content_token_count": 5304,
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 8520,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8520
+            }
+          ],
+          "thoughts_token_count": 117,
+          "total_token_count": 8679,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 19.920250313996803,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "issue_read",
+        "arguments": {
+          "issue_number": 2250,
+          "owner": "github",
+          "repo": "github-mcp-server",
+          "method": "get"
+        },
+        "result_sha256": "b58208d976e1a33afe0d5d7f5244b0bb53e6de7d6603e2312c1cc1ec0648059f",
+        "ok": true,
+        "seconds": 1.1226480859913863,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "",
+    "error": "provider_ClientError_code_429",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "case": "issue",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "eager",
+    "wall_seconds": 58.83299426699523,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 1675,
+        "reserved_usd": 0.029949375,
+        "usage": {
+          "candidates_token_count": 42,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 42
+            }
+          ],
+          "prompt_token_count": 8520,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8520
+            }
+          ],
+          "thoughts_token_count": 60,
+          "total_token_count": 8622,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 16.54087807700853,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 1738,
+        "reserved_usd": 0.03020925,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 5310
+            }
+          ],
+          "cached_content_token_count": 5310,
+          "candidates_token_count": 54,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 54
+            }
+          ],
+          "prompt_token_count": 8657,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8657
+            }
+          ],
+          "thoughts_token_count": 121,
+          "total_token_count": 8832,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 41.45538217999274,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "issue_read",
+        "arguments": {
+          "method": "get",
+          "owner": "github",
+          "issue_number": 2250,
+          "repo": "github-mcp-server"
+        },
+        "result_sha256": "b58208d976e1a33afe0d5d7f5244b0bb53e6de7d6603e2312c1cc1ec0648059f",
+        "ok": true,
+        "seconds": 0.8350145380245522,
+        "result": {
+          "fixture": "issue_read",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\"number\":2250,\"title\":\"Missing author_association field in list_issues and pull request responses\",\"state\":\"open\",\"html_url\":\"https://github.com/github/github-mcp-server/issues/2250\"}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "release",
+    "block": 0,
+    "phase": "first",
+    "mode": "discovery",
+    "wall_seconds": 33.243962122011,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 182,
+        "reserved_usd": 0.02379075,
+        "usage": {
+          "candidates_token_count": 16,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 16
+            }
+          ],
+          "prompt_token_count": 196,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 196
+            }
+          ],
+          "total_token_count": 212,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 4.654354230005993,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 260,
+        "reserved_usd": 0.0241125,
+        "usage": {
+          "candidates_token_count": 43,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 43
+            }
+          ],
+          "prompt_token_count": 487,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 487
+            }
+          ],
+          "total_token_count": 530,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 12.307802239025477,
+        "declared_tools": [
+          "get_latest_release",
+          "get_release_by_tag",
+          "list_releases",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "release"
+        },
+        "ok": true,
+        "seconds": 0.002677048003533855,
+        "result": {
+          "loaded_tools": [
+            "get_latest_release",
+            "get_release_by_tag",
+            "list_releases"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "get_release_by_tag",
+        "arguments": {
+          "repo": "github-mcp-server",
+          "tag": "v1.12.2",
+          "owner": "github"
+        },
+        "result_sha256": "9dec424902f70b1d4f47a4479abf3626609fb54c32621350b6b5472b92ab6542",
+        "ok": true,
+        "seconds": 0.8728149519884028,
+        "result": {
+          "fixture": "get_release_by_tag",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "",
+    "error": "provider_ClientError_code_429",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "case": "release",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "discovery",
+    "wall_seconds": 45.18158332898747,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 182,
+        "reserved_usd": 0.02379075,
+        "usage": {
+          "candidates_token_count": 16,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 16
+            }
+          ],
+          "prompt_token_count": 196,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 196
+            }
+          ],
+          "total_token_count": 212,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 15.331395648012403,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 260,
+        "reserved_usd": 0.0241125,
+        "usage": {
+          "candidates_token_count": 43,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 43
+            }
+          ],
+          "prompt_token_count": 487,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 487
+            }
+          ],
+          "total_token_count": 530,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 13.882894912996562,
+        "declared_tools": [
+          "get_latest_release",
+          "get_release_by_tag",
+          "list_releases",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 2,
+        "preflight_input_tokens": 1080,
+        "reserved_usd": 0.027495,
+        "usage": {
+          "candidates_token_count": 180,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 180
+            }
+          ],
+          "prompt_token_count": 1365,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1365
+            }
+          ],
+          "total_token_count": 1545,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 15.213944568007719,
+        "declared_tools": [
+          "get_latest_release",
+          "get_release_by_tag",
+          "list_releases",
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "release"
+        },
+        "ok": true,
+        "seconds": 0.0042844649869948626,
+        "result": {
+          "loaded_tools": [
+            "get_latest_release",
+            "get_release_by_tag",
+            "list_releases"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      },
+      {
+        "name": "get_release_by_tag",
+        "arguments": {
+          "owner": "github",
+          "repo": "github-mcp-server",
+          "tag": "v1.12.2"
+        },
+        "result_sha256": "9dec424902f70b1d4f47a4479abf3626609fb54c32621350b6b5472b92ab6542",
+        "ok": true,
+        "seconds": 0.7481879249971826,
+        "result": {
+          "fixture": "get_release_by_tag",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"tag_name\": \"v1.12.2\",\n  \"published_at\": \"2026-09-16T10:58:24Z\",\n  \"prerelease\": false,\n  \"draft\": false,\n  \"asset_name\": \"github-mcp-server_Linux_x86_64.tar.gz\",\n  \"asset_size\": 8280894,\n  \"asset_digest\": \"sha256:95843162759da2c31dde082dd145be35db82164594796c294414b69790c2290e\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "release",
+    "block": 0,
+    "phase": "first",
+    "mode": "eager",
+    "wall_seconds": 31.88944917099434,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 1710,
+        "reserved_usd": 0.03009375,
+        "usage": {
+          "candidates_token_count": 43,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 43
+            }
+          ],
+          "prompt_token_count": 8555,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8555
+            }
+          ],
+          "thoughts_token_count": 99,
+          "total_token_count": 8697,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 19.098471461009467,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 2530,
+        "reserved_usd": 0.03347625,
+        "usage": {
+          "candidates_token_count": 180,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 180
+            }
+          ],
+          "prompt_token_count": 9532,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 9532
+            }
+          ],
+          "thoughts_token_count": 375,
+          "total_token_count": 10087,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 12.171694997989107,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "get_release_by_tag",
+        "arguments": {
+          "repo": "github-mcp-server",
+          "owner": "github",
+          "tag": "v1.12.2"
+        },
+        "result_sha256": "9dec424902f70b1d4f47a4479abf3626609fb54c32621350b6b5472b92ab6542",
+        "ok": true,
+        "seconds": 0.6178203639865387,
+        "result": {
+          "fixture": "get_release_by_tag",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"tag_name\": \"v1.12.2\",\n  \"published_at\": \"2026-09-16T10:58:24Z\",\n  \"prerelease\": false,\n  \"draft\": false,\n  \"asset_name\": \"github-mcp-server_Linux_x86_64.tar.gz\",\n  \"asset_size\": 8280894,\n  \"asset_digest\": \"sha256:95843162759da2c31dde082dd145be35db82164594796c294414b69790c2290e\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "release",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "eager",
+    "wall_seconds": 27.951012385019567,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 1710,
+        "reserved_usd": 0.03009375,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 5314
+            }
+          ],
+          "cached_content_token_count": 5314,
+          "candidates_token_count": 43,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 43
+            }
+          ],
+          "prompt_token_count": 8555,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 8555
+            }
+          ],
+          "total_token_count": 8598,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 14.773479227005737,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 2530,
+        "reserved_usd": 0.03347625,
+        "usage": {
+          "cache_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 5444
+            }
+          ],
+          "cached_content_token_count": 5444,
+          "candidates_token_count": 180,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 180
+            }
+          ],
+          "prompt_token_count": 9433,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 9433
+            }
+          ],
+          "total_token_count": 9613,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 12.85928455798421,
+        "declared_tools": [
+          "add_comment_to_pending_review",
+          "add_issue_comment",
+          "add_reply_to_pull_request_comment",
+          "assign_copilot_to_issue",
+          "create_branch",
+          "create_or_update_file",
+          "create_pull_request",
+          "create_repository",
+          "delete_file",
+          "fork_repository",
+          "get_commit",
+          "get_file_contents",
+          "get_label",
+          "get_latest_release",
+          "get_me",
+          "get_release_by_tag",
+          "get_tag",
+          "get_team_members",
+          "get_teams",
+          "issue_read",
+          "issue_write",
+          "list_branches",
+          "list_commits",
+          "list_issue_fields",
+          "list_issue_types",
+          "list_issues",
+          "list_pull_requests",
+          "list_releases",
+          "list_repository_collaborators",
+          "list_tags",
+          "merge_pull_request",
+          "pull_request_read",
+          "pull_request_review_write",
+          "push_files",
+          "request_copilot_review",
+          "search_code",
+          "search_commits",
+          "search_issues",
+          "search_pull_requests",
+          "search_repositories",
+          "search_users",
+          "sub_issue_write",
+          "update_issue_comment",
+          "update_pull_request",
+          "update_pull_request_branch"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "get_release_by_tag",
+        "arguments": {
+          "repo": "github-mcp-server",
+          "owner": "github",
+          "tag": "v1.12.2"
+        },
+        "result_sha256": "9dec424902f70b1d4f47a4479abf3626609fb54c32621350b6b5472b92ab6542",
+        "ok": true,
+        "seconds": 0.31695451799896546,
+        "result": {
+          "fixture": "get_release_by_tag",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"tag_name\": \"v1.12.2\",\n  \"published_at\": \"2026-09-16T10:58:24Z\",\n  \"prerelease\": false,\n  \"draft\": false,\n  \"asset_name\": \"github-mcp-server_Linux_x86_64.tar.gz\",\n  \"asset_size\": 8280894,\n  \"asset_digest\": \"sha256:95843162759da2c31dde082dd145be35db82164594796c294414b69790c2290e\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "release",
+    "block": 0,
+    "phase": "first",
+    "mode": "fixed",
+    "wall_seconds": 54.46247328398749,
+    "turns": [],
+    "calls": [],
+    "final_response": "",
+    "error": "provider_ServerError_code_504",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "case": "release",
+    "block": 0,
+    "phase": "repeat",
+    "mode": "fixed",
+    "wall_seconds": 19.007652503001736,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 198,
+        "reserved_usd": 0.02385675,
+        "usage": {
+          "candidates_token_count": 43,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 43
+            }
+          ],
+          "prompt_token_count": 692,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 692
+            }
+          ],
+          "total_token_count": 735,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 4.929003143013688,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "get_release_by_tag"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      },
+      {
+        "turn": 1,
+        "preflight_input_tokens": 1018,
+        "reserved_usd": 0.02723925,
+        "usage": {
+          "candidates_token_count": 180,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 180
+            }
+          ],
+          "prompt_token_count": 1570,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 1570
+            }
+          ],
+          "total_token_count": 1750,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 12.880436606006697,
+        "declared_tools": [
+          "get_file_contents",
+          "issue_read",
+          "get_release_by_tag"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "get_release_by_tag",
+        "arguments": {
+          "owner": "github",
+          "repo": "github-mcp-server",
+          "tag": "v1.12.2"
+        },
+        "result_sha256": "9dec424902f70b1d4f47a4479abf3626609fb54c32621350b6b5472b92ab6542",
+        "ok": true,
+        "seconds": 1.1975081839773338,
+        "result": {
+          "fixture": "get_release_by_tag",
+          "ok": true
+        }
+      }
+    ],
+    "final_response": "{\n  \"tag_name\": \"v1.12.2\",\n  \"published_at\": \"2026-09-16T10:58:24Z\",\n  \"prerelease\": false,\n  \"draft\": false,\n  \"asset_name\": \"github-mcp-server_Linux_x86_64.tar.gz\",\n  \"asset_size\": 8280894,\n  \"asset_digest\": \"sha256:95843162759da2c31dde082dd145be35db82164594796c294414b69790c2290e\"\n}",
+    "error": null,
+    "grade": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "source",
+    "block": 1,
+    "phase": "first",
+    "mode": "fixed",
+    "wall_seconds": 55.338405201997375,
+    "turns": [],
+    "calls": [],
+    "final_response": "",
+    "error": "provider_ServerError_code_504",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "case": "source",
+    "block": 1,
+    "phase": "repeat",
+    "mode": "fixed",
+    "wall_seconds": 38.58278382298886,
+    "turns": [],
+    "calls": [],
+    "final_response": "",
+    "error": "provider_ClientError_code_429",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "case": "source",
+    "block": 1,
+    "phase": "first",
+    "mode": "discovery",
+    "wall_seconds": 15.606226436008,
+    "turns": [
+      {
+        "turn": 0,
+        "preflight_input_tokens": 218,
+        "reserved_usd": 0.02393925,
+        "usage": {
+          "candidates_token_count": 19,
+          "candidates_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 19
+            }
+          ],
+          "prompt_token_count": 232,
+          "prompt_tokens_details": [
+            {
+              "modality": "TEXT",
+              "token_count": 232
+            }
+          ],
+          "total_token_count": 251,
+          "traffic_type": "ON_DEMAND"
+        },
+        "model_version": "gemini-3.8-flash",
+        "model_seconds": 11.325135657010833,
+        "declared_tools": [
+          "search_tools"
+        ],
+        "finish_reason": "FinishReason.STOP"
+      }
+    ],
+    "calls": [
+      {
+        "name": "search_tools",
+        "arguments": {
+          "query": "get file contents repository"
+        },
+        "ok": true,
+        "seconds": 0.009658472001319751,
+        "result": {
+          "loaded_tools": [
+            "get_file_contents",
+            "create_or_update_file",
+            "delete_file"
+          ],
+          "note": "Their input definitions are now available as callable tools."
+        }
+      }
+    ],
+    "final_response": "",
+    "error": "provider_ClientError_code_429",
+    "grade": {
+      "passed": false,
+      "errors": [
+        "Final response is not a JSON object"
+      ]
+    }
+  },
+  {
+    "case": "source",
+    "block": 1,
+    "mode": "discovery",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "source",
+    "block": 1,
+    "mode": "eager",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "source",
+    "block": 1,
+    "mode": "eager",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 1,
+    "mode": "discovery",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 1,
+    "mode": "discovery",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 1,
+    "mode": "eager",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 1,
+    "mode": "eager",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 1,
+    "mode": "fixed",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 1,
+    "mode": "fixed",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 1,
+    "mode": "eager",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 1,
+    "mode": "eager",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 1,
+    "mode": "fixed",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 1,
+    "mode": "fixed",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 1,
+    "mode": "discovery",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 1,
+    "mode": "discovery",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "source",
+    "block": 2,
+    "mode": "discovery",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "source",
+    "block": 2,
+    "mode": "discovery",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "source",
+    "block": 2,
+    "mode": "eager",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "source",
+    "block": 2,
+    "mode": "eager",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "source",
+    "block": 2,
+    "mode": "fixed",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "source",
+    "block": 2,
+    "mode": "fixed",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 2,
+    "mode": "eager",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 2,
+    "mode": "eager",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 2,
+    "mode": "fixed",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 2,
+    "mode": "fixed",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 2,
+    "mode": "discovery",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "issue",
+    "block": 2,
+    "mode": "discovery",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 2,
+    "mode": "fixed",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 2,
+    "mode": "fixed",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 2,
+    "mode": "discovery",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 2,
+    "mode": "discovery",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 2,
+    "mode": "eager",
+    "phase": "first",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  },
+  {
+    "case": "release",
+    "block": 2,
+    "mode": "eager",
+    "phase": "repeat",
+    "status": "not_run",
+    "reason": "three_consecutive_unreported_requests"
+  }
+]

@@ -78,9 +78,7 @@ def allowed(name: str, arguments: dict) -> bool:
     if name == "issue_read":
         return common and arguments.get("method") == "get" and arguments.get("issue_number") == 2275
     if name == "get_file_contents":
-        # Both supported spellings must preserve the pin; sha takes precedence upstream.
-        references = [arguments[key] for key in ("ref", "sha") if key in arguments]
-        return common and arguments.get("path") == SOURCE and bool(references) and all(ref == REF for ref in references)
+        return common and arguments.get("path") == SOURCE and arguments.get("ref") == REF
     return False
 
 

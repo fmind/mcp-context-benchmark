@@ -1,0 +1,135 @@
+{
+  "status": "prepared_not_run",
+  "prepared_at": "2026-09-21T19:33:39.513755+00:00",
+  "observation_method": "Actual read-only MCP calls, then deterministic field projection. Source authors inspected fixtures to declare expected answers; no model trials or candidate tuning on these cases.",
+  "server_version": "v1.12.2",
+  "server_binary_sha256": "b7a96bf79c68c0d4d0cdb5713e9ff36a1730b87ee3ae710e2e6189f398d7c1aa",
+  "protocol": "2025-11-25",
+  "cases": [
+    {
+      "id": "source",
+      "source_url": "https://github.com/github/github-mcp-server/blob/85598ba6e1256f7ebf4867b95d63b833c4549264/go.mod",
+      "tool": "get_file_contents",
+      "arguments": {
+        "owner": "github",
+        "repo": "github-mcp-server",
+        "path": "go.mod",
+        "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264"
+      },
+      "prompt": "Read github/github-mcp-server go.mod at commit 85598ba6e1256f7ebf4867b95d63b833c4549264. What Go version and modelcontextprotocol/go-sdk version does it declare? Return JSON with go_version (string), mcp_go_sdk_version (string), source_path (string), source_ref (string), evidence_line (integer line number of the SDK dependency), evidence_quote (complete SDK dependency line).",
+      "observation": {
+        "path": "go.mod",
+        "ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+        "numbered_source": "1: module github.com/github/github-mcp-server\n2: \n3: go 1.25.12\n4: \n5: require (\n6: \tgithub.com/go-chi/chi/v5 v5.3.2\n7: \tgithub.com/go-viper/mapstructure/v2 v2.5.0\n8: \tgithub.com/google/go-github/v89 v89.0.1-0.20260728185857-34349a88bac3\n9: \tgithub.com/google/jsonschema-go v0.4.3\n10: \tgithub.com/josephburnett/jd/v2 v2.5.0\n11: \tgithub.com/lithammer/fuzzysearch v1.1.8\n12: \tgithub.com/microcosm-cc/bluemonday v1.0.27\n13: \tgithub.com/modelcontextprotocol/go-sdk v1.7.0\n14: \tgithub.com/muesli/cache2go v0.0.0-20221011235721-518229cd8021\n15: \tgithub.com/shurcooL/githubv4 v0.0.0-20240727222349-48295856cce7\n16: \tgithub.com/shurcooL/graphql v0.0.0-20230722043721-ed46e5a46466\n17: \tgithub.com/spf13/cobra v1.10.2\n18: \tgithub.com/spf13/pflag v1.0.10\n19: \tgithub.com/spf13/viper v1.21.0\n20: \tgithub.com/stretchr/testify v1.12.1\n21: \tgithub.com/yosida95/uritemplate/v3 v3.0.2\n22: \tgolang.org/x/net v0.55.0\n23: \tgolang.org/x/oauth2 v0.36.0\n24: )\n25: \n26: require (\n27: \tgithub.com/aymerick/douceur v0.2.0 // indirect\n28: \tgithub.com/fsnotify/fsnotify v1.9.0 // indirect\n29: \tgithub.com/google/go-querystring v1.2.0 // indirect\n30: \tgithub.com/gorilla/css v1.0.1 // indirect\n31: \tgithub.com/inconshreveable/mousetrap v1.1.0 // indirect\n32: \tgithub.com/pelletier/go-toml/v2 v2.2.4 // indirect\n33: \tgithub.com/sagikazarmark/locafero v0.11.0 // indirect\n34: \tgithub.com/segmentio/asm v1.1.3 // indirect\n35: \tgithub.com/segmentio/encoding v0.5.4 // indirect\n36: \tgithub.com/sourcegraph/conc v0.3.1-0.20240121214520-5f936abd7ae8 // indirect\n37: \tgithub.com/spf13/afero v1.15.0 // indirect\n38: \tgithub.com/spf13/cast v1.10.0 // indirect\n39: \tgithub.com/stretchr/objx v0.5.3 // indirect\n40: \tgithub.com/subosito/gotenv v1.6.0 // indirect\n41: \tgo.yaml.in/yaml/v3 v3.0.5 // indirect\n42: \tgolang.org/x/sync v0.20.0 // indirect\n43: \tgolang.org/x/sys v0.45.0 // indirect\n44: \tgolang.org/x/text v0.37.0 // indirect\n45: \tgolang.org/x/time v0.15.0 // indirect\n46: )"
+      },
+      "observation_sha256": "1ccfd1a53d893b48d7dce18010adc7efc86ac9687aded6181ef4f69d9599dee1",
+      "expected": {
+        "go_version": "1.25.12",
+        "mcp_go_sdk_version": "v1.7.0",
+        "source_path": "go.mod",
+        "source_ref": "85598ba6e1256f7ebf4867b95d63b833c4549264",
+        "evidence_line": 13,
+        "evidence_quote": "\tgithub.com/modelcontextprotocol/go-sdk v1.7.0"
+      }
+    },
+    {
+      "id": "issue",
+      "source_url": "https://github.com/github/github-mcp-server/issues/2250",
+      "tool": "issue_read",
+      "arguments": {
+        "owner": "github",
+        "repo": "github-mcp-server",
+        "method": "get",
+        "issue_number": 2250
+      },
+      "prompt": "Read github/github-mcp-server issue #2250. Return its observed number (integer), title (string), state (string), and html_url (string) as a JSON object. Do not infer current state from the title.",
+      "observation": {
+        "number": 2250,
+        "title": "Missing author_association field in list_issues and pull request responses",
+        "state": "open",
+        "html_url": "https://github.com/github/github-mcp-server/issues/2250"
+      },
+      "observation_sha256": "b58208d976e1a33afe0d5d7f5244b0bb53e6de7d6603e2312c1cc1ec0648059f",
+      "expected": {
+        "number": 2250,
+        "title": "Missing author_association field in list_issues and pull request responses",
+        "state": "open",
+        "html_url": "https://github.com/github/github-mcp-server/issues/2250"
+      }
+    },
+    {
+      "id": "release",
+      "source_url": "https://github.com/github/github-mcp-server/releases/tag/v1.12.2",
+      "tool": "get_release_by_tag",
+      "arguments": {
+        "owner": "github",
+        "repo": "github-mcp-server",
+        "tag": "v1.12.2"
+      },
+      "prompt": "Inspect the v1.12.2 release of github/github-mcp-server. Return JSON with tag_name (string), published_at (string), prerelease (boolean), draft (boolean), and the Linux x86_64 tar.gz asset_name (string), asset_size (integer bytes), asset_digest (string, including its algorithm prefix). Do not substitute the latest release.",
+      "observation": {
+        "tag_name": "v1.12.2",
+        "published_at": "2026-09-16T10:58:24Z",
+        "prerelease": false,
+        "draft": false,
+        "assets": [
+          {
+            "name": "github-mcp-server_1.12.2_checksums.txt",
+            "size": 824,
+            "digest": "sha256:cb3690fef00c9aaee2dce96815060169e0e8ee186bfa82d89eb9b45430b46c55"
+          },
+          {
+            "name": "github-mcp-server_Darwin_arm64.tar.gz",
+            "size": 7946044,
+            "digest": "sha256:7e6c5aec43f26b82d3580e77a4ee26872bcd34b48c9a08d0eaef48b5d0563904"
+          },
+          {
+            "name": "github-mcp-server_Darwin_x86_64.tar.gz",
+            "size": 8457095,
+            "digest": "sha256:6e73f5c9738050e44318d37aa919cb8ed2e29453d6341e942dc9c40c9c7ced5b"
+          },
+          {
+            "name": "github-mcp-server_Linux_arm64.tar.gz",
+            "size": 7582387,
+            "digest": "sha256:2b30f9fcc061b57456cbe38ddc0f13c88863bad49557508a9196f2d1c4cb17a5"
+          },
+          {
+            "name": "github-mcp-server_Linux_i386.tar.gz",
+            "size": 7879709,
+            "digest": "sha256:9d0be9fe3f68b3f4d6a9203b0405d821e839f3cdf6db5cd2e72210b690957f9f"
+          },
+          {
+            "name": "github-mcp-server_Linux_x86_64.tar.gz",
+            "size": 8280894,
+            "digest": "sha256:95843162759da2c31dde082dd145be35db82164594796c294414b69790c2290e"
+          },
+          {
+            "name": "github-mcp-server_Windows_arm64.zip",
+            "size": 7661197,
+            "digest": "sha256:3290d0f26b0aa75f3c8d88ea4e07f0101f7e1555170dc7affa9454acf6636b4c"
+          },
+          {
+            "name": "github-mcp-server_Windows_i386.zip",
+            "size": 8198490,
+            "digest": "sha256:1c4ee69a75b5a79dba125a395c50d18482209a72e09bdc11069e69bb32ff99c5"
+          },
+          {
+            "name": "github-mcp-server_Windows_x86_64.zip",
+            "size": 8480261,
+            "digest": "sha256:c08872e69f700d4219e7b4ab9607d56d7993171519ee32b62fccb8fba0cab673"
+          }
+        ]
+      },
+      "observation_sha256": "9dec424902f70b1d4f47a4479abf3626609fb54c32621350b6b5472b92ab6542",
+      "expected": {
+        "tag_name": "v1.12.2",
+        "published_at": "2026-09-16T10:58:24Z",
+        "prerelease": false,
+        "draft": false,
+        "asset_name": "github-mcp-server_Linux_x86_64.tar.gz",
+        "asset_size": 8280894,
+        "asset_digest": "sha256:95843162759da2c31dde082dd145be35db82164594796c294414b69790c2290e"
+      }
+    }
+  ]
+}

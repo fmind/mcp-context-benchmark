@@ -1,0 +1,30 @@
+{
+  "captured_at_utc": "2026-09-21T19:17:43.866349+00:00",
+  "cli_version": "codex-cli 0.154.0",
+  "fixture_sha256": "43416f638032601b2491cdaa1164f203cf78072d5949a0876943c7f4df698131",
+  "script_sha256": "98124183b2460b62006460703707716652ef93651609c3fc15c033e1f4a11b73",
+  "fixture_source": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/models-manager/models.json",
+  "configuration": "isolated CODEX_HOME and XDG_CONFIG_HOME per variant",
+  "historical_configuration": false,
+  "observations": [
+    {
+      "mode": "baseline",
+      "reference_tokens": 1160,
+      "same_tools_as_historical": true
+    },
+    {
+      "mode": "eager",
+      "reference_tokens": 12525,
+      "same_tools_as_historical": true
+    },
+    {
+      "mode": "deferred",
+      "reference_tokens": 2083,
+      "same_tools_as_historical": true
+    }
+  ],
+  "eager_delta": 11365,
+  "deferred_delta": 923,
+  "reduction_percent": 91.87857457105147,
+  "historical_data_replaced": false
+}
