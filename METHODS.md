@@ -126,7 +126,7 @@ Antigravity's valid order was baseline, default, all, focused, default, baseline
 
 Schemas and built-in tool descriptions remain attributable to their upstream projects. The GitHub server is [MIT-licensed](https://github.com/github/github-mcp-server/blob/v1.12.2/LICENSE). No third-party binaries, complete documentation pages, credentials, or private user prompts are redistributed here.
 
-The public home is [fmind/mcp-context-benchmark](https://github.com/fmind/mcp-context-benchmark). Preserve the data, versions, scope labels, and checksums together. The article workspace retains a copy of this evidence.
+The public home is [fmind/mcp-context-benchmark](https://github.com/fmind/mcp-context-benchmark). Preserve the data, versions, scope labels, and checksums together.
 
 ## Follow-up task study and reference handling
 
