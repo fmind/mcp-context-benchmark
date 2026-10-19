@@ -131,7 +131,7 @@ pydantic-core==2.46.5
 pydantic-graph==2.46.0
 pydantic-settings==2.15.0
 pygments==2.21.0
-pyjwt==2.14.0
+pyjwt==2.15.0
 pyparsing==3.3.2
 pypdfium2==5.13.0
 pypika==0.51.1
