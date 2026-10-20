@@ -1,0 +1,405 @@
+[
+  {
+    "agent": "pydantic",
+    "condition": "eager",
+    "task": "release (asset question: name, size, and digest of the Linux x86_64 asset)",
+    "started_utc": "2026-10-10T09:29:49+00:00",
+    "version": "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0",
+    "model": "gemini-3.8-flash",
+    "mcp_protocol_versions": [
+      "2026-07-28"
+    ],
+    "error": "UsageLimitExceeded: The next request would exceed the request_limit of 25. Consider raising the limit, or see the docs on usage limits for budget-aware patterns: https://pydantic.dev/docs/ai/core-concepts/agent/#usage-limits",
+    "model_calls": 25,
+    "input": 1380940,
+    "github_calls": [
+      {
+        "name": "get_release_by_tag",
+        "ok": true,
+        "result_chars": 886
+      },
+      {
+        "name": "list_releases",
+        "ok": true,
+        "result_chars": 76000
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 5666
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 55
+      },
+      {
+        "name": "search_commits",
+        "ok": true,
+        "result_chars": 4724
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1453
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1253
+      },
+      {
+        "name": "get_tag",
+        "ok": true,
+        "result_chars": 269
+      },
+      {
+        "name": "get_commit",
+        "ok": true,
+        "result_chars": 1812
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 2924
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1925
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 55
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 55
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 25639
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 48287
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 9202
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 9472
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 4703
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 3293
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 6666
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 14946
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 12100
+      },
+      {
+        "name": "search_code",
+        "ok": true,
+        "result_chars": 1955
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 4834
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 2809
+      }
+    ]
+  },
+  {
+    "agent": "pydantic",
+    "condition": "search",
+    "task": "release (asset question: name, size, and digest of the Linux x86_64 asset)",
+    "started_utc": "2026-10-10T09:31:40+00:00",
+    "version": "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0",
+    "model": "gemini-3.8-flash",
+    "mcp_protocol_versions": [
+      "2026-07-28"
+    ],
+    "error": "UsageLimitExceeded: The next request would exceed the request_limit of 25. Consider raising the limit, or see the docs on usage limits for budget-aware patterns: https://pydantic.dev/docs/ai/core-concepts/agent/#usage-limits",
+    "model_calls": 25,
+    "input": 360743,
+    "github_calls": [
+      {
+        "name": "get_release_by_tag",
+        "ok": true,
+        "result_chars": 886
+      },
+      {
+        "name": "get_latest_release",
+        "ok": true,
+        "result_chars": 662
+      },
+      {
+        "name": "get_tag",
+        "ok": true,
+        "result_chars": 269
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 5666
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1247
+      },
+      {
+        "name": "get_commit",
+        "ok": true,
+        "result_chars": 852
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1324
+      },
+      {
+        "name": "list_commits",
+        "ok": true,
+        "result_chars": 2
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 9170
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1925
+      },
+      {
+        "name": "get_release_by_tag",
+        "ok": true,
+        "result_chars": 1280
+      },
+      {
+        "name": "get_commit",
+        "ok": true,
+        "result_chars": 31082
+      },
+      {
+        "name": "issue_read",
+        "ok": true,
+        "result_chars": 2518
+      },
+      {
+        "name": "get_commit",
+        "ok": true,
+        "result_chars": 1778
+      },
+      {
+        "name": "get_commit",
+        "ok": true,
+        "result_chars": 1105
+      },
+      {
+        "name": "list_commits",
+        "ok": true,
+        "result_chars": 2658
+      },
+      {
+        "name": "issue_read",
+        "ok": true,
+        "result_chars": 2867
+      },
+      {
+        "name": "issue_read",
+        "ok": true,
+        "result_chars": 4229
+      },
+      {
+        "name": "issue_read",
+        "ok": true,
+        "result_chars": 3426
+      },
+      {
+        "name": "list_commits",
+        "ok": true,
+        "result_chars": 52686
+      },
+      {
+        "name": "issue_read",
+        "ok": true,
+        "result_chars": 39
+      }
+    ]
+  },
+  {
+    "agent": "pydantic",
+    "condition": "allowlist",
+    "task": "release (asset question: name, size, and digest of the Linux x86_64 asset)",
+    "started_utc": "2026-10-10T09:33:17+00:00",
+    "version": "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0",
+    "model": "gemini-3.8-flash",
+    "mcp_protocol_versions": [
+      "2026-07-28"
+    ],
+    "error": "UsageLimitExceeded: The next request would exceed the request_limit of 25. Consider raising the limit, or see the docs on usage limits for budget-aware patterns: https://pydantic.dev/docs/ai/core-concepts/agent/#usage-limits",
+    "model_calls": 25,
+    "input": 1003742,
+    "github_calls": [
+      {
+        "name": "get_release_by_tag",
+        "ok": true,
+        "result_chars": 886
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 9170
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1247
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 5666
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1324
+      },
+      {
+        "name": "issue_read",
+        "ok": true,
+        "result_chars": 2518
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 113264
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1698
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 234
+      },
+      {
+        "name": "get_release_by_tag",
+        "ok": true,
+        "result_chars": 1280
+      },
+      {
+        "name": "issue_read",
+        "ok": true,
+        "result_chars": 2867
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 5334
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 5956
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 7028
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 7177
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 12768
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 5235
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 4315
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1925
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 2838
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1247
+      },
+      {
+        "name": "issue_read",
+        "ok": true,
+        "result_chars": 4229
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 17374
+      },
+      {
+        "name": "get_release_by_tag",
+        "ok": true,
+        "result_chars": 5400
+      },
+      {
+        "name": "get_file_contents",
+        "ok": true,
+        "result_chars": 1247
+      }
+    ]
+  }
+]

@@ -1,0 +1,2312 @@
+{
+  "runs": 276,
+  "passed": 264,
+  "framework_declarations": {
+    "adk": {
+      "tools": 46,
+      "reference_tokens": 17930
+    },
+    "langgraph": {
+      "tools": 46,
+      "reference_tokens": 10357
+    },
+    "pydantic": {
+      "tools": 45,
+      "reference_tokens": 11097
+    }
+  },
+  "cells": [
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "hello",
+      "condition": "none",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 19538.0,
+      "measured_on": "passed",
+      "median_input": 19538.0,
+      "median_input_all": 19538.0,
+      "min_input": 19538,
+      "max_input": 19538,
+      "median_cache_read": 11901.0,
+      "median_output": 4.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 2.9400000000000004,
+      "median_cost_usd_reported": 0.0329642,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "hello",
+      "condition": "default",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 20806.0,
+      "measured_on": "passed",
+      "median_input": 20806.0,
+      "median_input_all": 20806.0,
+      "min_input": 20806,
+      "max_input": 20806,
+      "median_cache_read": 11901.0,
+      "median_output": 4.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 5.325,
+      "median_cost_usd_reported": 0.0380362,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "hello",
+      "condition": "eager",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 47998.0,
+      "measured_on": "passed",
+      "median_input": 47998.0,
+      "median_input_all": 47998.0,
+      "min_input": 47998,
+      "max_input": 47998,
+      "median_cache_read": 19929.5,
+      "median_output": 4.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 5.9399999999999995,
+      "median_cost_usd_reported": 0.11629589999999998,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "hello",
+      "condition": "allowlist",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 19982.0,
+      "measured_on": "passed",
+      "median_input": 19982.0,
+      "median_input_all": 19982.0,
+      "min_input": 19982,
+      "max_input": 19982,
+      "median_cache_read": 11901.0,
+      "median_output": 4.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 4.46,
+      "median_cost_usd_reported": 0.0347402,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "hello",
+      "condition": "cli",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 19585.0,
+      "measured_on": "passed",
+      "median_input": 19585.0,
+      "median_input_all": 19585.0,
+      "min_input": 19585,
+      "max_input": 19585,
+      "median_cache_read": 11901.0,
+      "median_output": 4.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 2.7649999999999997,
+      "median_cost_usd_reported": 0.0331522,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "issue",
+      "condition": "default",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 21120,
+      "measured_on": "passed",
+      "median_input": 84977,
+      "median_input_all": 84977,
+      "min_input": 84977,
+      "max_input": 84977,
+      "median_cache_read": 55299,
+      "median_output": 1275,
+      "median_model_calls": 3,
+      "median_github_calls": 2,
+      "median_result_chars": 21137,
+      "median_wall_seconds": 13.3,
+      "median_cost_usd_reported": 0.14250980000000002,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "issue",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 48312,
+      "measured_on": "passed",
+      "median_input": 115917,
+      "median_input_all": 115917,
+      "min_input": 115917,
+      "max_input": 115917,
+      "median_cache_read": 88169,
+      "median_output": 1240,
+      "median_model_calls": 2,
+      "median_github_calls": 2,
+      "median_result_chars": 21137,
+      "median_wall_seconds": 12.11,
+      "median_cost_usd_reported": 0.14101780000000003,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "issue",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 20296,
+      "measured_on": "passed",
+      "median_input": 82505,
+      "median_input_all": 82505,
+      "min_input": 82505,
+      "max_input": 82505,
+      "median_cache_read": 53651,
+      "median_output": 1334,
+      "median_model_calls": 3,
+      "median_github_calls": 2,
+      "median_result_chars": 21137,
+      "median_wall_seconds": 12.83,
+      "median_cost_usd_reported": 0.1394742,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "issue",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 19899,
+      "measured_on": "passed",
+      "median_input": 64715,
+      "median_input_all": 64715,
+      "min_input": 43827,
+      "max_input": 90373,
+      "median_cache_read": 54011,
+      "median_output": 606,
+      "median_model_calls": 3,
+      "median_github_calls": 4,
+      "median_result_chars": 37616,
+      "median_wall_seconds": 11.85,
+      "median_cost_usd_reported": 0.059686199999999995,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "release",
+      "condition": "default",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 20982,
+      "measured_on": "passed",
+      "median_input": 64150,
+      "median_input_all": 64150,
+      "min_input": 64150,
+      "max_input": 64150,
+      "median_cache_read": 54194,
+      "median_output": 287,
+      "median_model_calls": 3,
+      "median_github_calls": 1,
+      "median_result_chars": 886,
+      "median_wall_seconds": 6.94,
+      "median_cost_usd_reported": 0.0535208,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "release",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 48174,
+      "measured_on": "passed",
+      "median_input": 96886,
+      "median_input_all": 96886,
+      "min_input": 96886,
+      "max_input": 96886,
+      "median_cache_read": 88031,
+      "median_output": 199,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 886,
+      "median_wall_seconds": 6.13,
+      "median_cost_usd_reported": 0.0550082,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "release",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 20158,
+      "measured_on": "passed",
+      "median_input": 61678,
+      "median_input_all": 61678,
+      "min_input": 61678,
+      "max_input": 61678,
+      "median_cache_read": 52546,
+      "median_output": 287,
+      "median_model_calls": 3,
+      "median_github_calls": 1,
+      "median_result_chars": 886,
+      "median_wall_seconds": 6.77,
+      "median_cost_usd_reported": 0.0498952,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "claude",
+      "kind": "harness",
+      "versions": [
+        "2.1.295 (Claude Code)"
+      ],
+      "model": "claude-sonnet-5-5",
+      "task": "release",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 19761,
+      "measured_on": "passed",
+      "median_input": 39750,
+      "median_input_all": 39750,
+      "min_input": 39750,
+      "max_input": 39750,
+      "median_cache_read": 31660,
+      "median_output": 199,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 173,
+      "median_wall_seconds": 5.6,
+      "median_cost_usd_reported": 0.040674,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "hello",
+      "condition": "none",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11107.0,
+      "measured_on": "passed",
+      "median_input": 11107.0,
+      "median_input_all": 11107.0,
+      "min_input": 11107,
+      "max_input": 11107,
+      "median_cache_read": 1920.0,
+      "median_output": 5.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 5.74,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "hello",
+      "condition": "default",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11091.0,
+      "measured_on": "passed",
+      "median_input": 11091.0,
+      "median_input_all": 11091.0,
+      "min_input": 11091,
+      "max_input": 11091,
+      "median_cache_read": 2816.0,
+      "median_output": 5.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 7.505000000000001,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "hello",
+      "condition": "eager",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 21801.0,
+      "measured_on": "passed",
+      "median_input": 21801.0,
+      "median_input_all": 21801.0,
+      "min_input": 21801,
+      "max_input": 21801,
+      "median_cache_read": 2816.0,
+      "median_output": 5.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 8.365,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "hello",
+      "condition": "allowlist",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11123.0,
+      "measured_on": "passed",
+      "median_input": 11123.0,
+      "median_input_all": 11123.0,
+      "min_input": 11123,
+      "max_input": 11123,
+      "median_cache_read": 3840.0,
+      "median_output": 5.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 7.435,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "hello",
+      "condition": "cli",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11188.0,
+      "measured_on": "passed",
+      "median_input": 11188.0,
+      "median_input_all": 11188.0,
+      "min_input": 11188,
+      "max_input": 11188,
+      "median_cache_read": 5888.0,
+      "median_output": 5.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 5.045,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "issue",
+      "condition": "default",
+      "runs": 5,
+      "passed": 5,
+      "citation": 2,
+      "errors": [],
+      "median_first_call_input": 11296,
+      "measured_on": "passed",
+      "median_input": 124703,
+      "median_input_all": 124703,
+      "min_input": 111833,
+      "max_input": 181998,
+      "median_cache_read": 101888,
+      "median_output": 522,
+      "median_model_calls": 6,
+      "median_github_calls": 2,
+      "median_result_chars": 21220,
+      "median_wall_seconds": 14.82,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "issue",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": 2,
+      "errors": [],
+      "median_first_call_input": 22006,
+      "measured_on": "passed",
+      "median_input": 102499,
+      "median_input_all": 102499,
+      "min_input": 50529,
+      "max_input": 162022,
+      "median_cache_read": 74752,
+      "median_output": 483,
+      "median_model_calls": 4,
+      "median_github_calls": 3,
+      "median_result_chars": 23543,
+      "median_wall_seconds": 13.53,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "issue",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": 4,
+      "errors": [],
+      "median_first_call_input": 11328,
+      "measured_on": "passed",
+      "median_input": 62936,
+      "median_input_all": 62936,
+      "min_input": 43442,
+      "max_input": 63070,
+      "median_cache_read": 49152,
+      "median_output": 473,
+      "median_model_calls": 4,
+      "median_github_calls": 3,
+      "median_result_chars": 38573,
+      "median_wall_seconds": 12.61,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "issue",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 11393,
+      "measured_on": "passed",
+      "median_input": 64947,
+      "median_input_all": 64947,
+      "min_input": 53289,
+      "max_input": 78532,
+      "median_cache_read": 51968,
+      "median_output": 456,
+      "median_model_calls": 5,
+      "median_github_calls": 3,
+      "median_result_chars": 51286,
+      "median_wall_seconds": 16.34,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "release",
+      "condition": "default",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11206,
+      "measured_on": "passed",
+      "median_input": 42469,
+      "median_input_all": 42469,
+      "min_input": 42407,
+      "max_input": 79044,
+      "median_cache_read": 30976,
+      "median_output": 189,
+      "median_model_calls": 3,
+      "median_github_calls": 1,
+      "median_result_chars": 17824,
+      "median_wall_seconds": 8.87,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "release",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 21916,
+      "measured_on": "passed",
+      "median_input": 49276,
+      "median_input_all": 49276,
+      "min_input": 49276,
+      "max_input": 49276,
+      "median_cache_read": 23040,
+      "median_output": 114,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 17824,
+      "median_wall_seconds": 8.02,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "release",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11238,
+      "measured_on": "passed",
+      "median_input": 42057,
+      "median_input_all": 42057,
+      "min_input": 40027,
+      "max_input": 42060,
+      "median_cache_read": 24832,
+      "median_output": 146,
+      "median_model_calls": 3,
+      "median_github_calls": 1,
+      "median_result_chars": 17824,
+      "median_wall_seconds": 8.9,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-06-18"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "codex",
+      "kind": "harness",
+      "versions": [
+        "codex-cli 0.162.0"
+      ],
+      "model": "gpt-6-luna",
+      "task": "release",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11303,
+      "measured_on": "passed",
+      "median_input": 22802,
+      "median_input_all": 22802,
+      "min_input": 22772,
+      "max_input": 35173,
+      "median_cache_read": 18944,
+      "median_output": 158,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 199,
+      "median_wall_seconds": 8.88,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "hello",
+      "condition": "none",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 17066.0,
+      "measured_on": "passed",
+      "median_input": 17066.0,
+      "median_input_all": 17066.0,
+      "min_input": 17064,
+      "max_input": 17068,
+      "median_cache_read": 6112.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 8.51,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "hello",
+      "condition": "default",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 18150.5,
+      "measured_on": "passed",
+      "median_input": 18150.5,
+      "median_input_all": 18150.5,
+      "min_input": 18149,
+      "max_input": 18152,
+      "median_cache_read": 6110.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 10.445,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "hello",
+      "condition": "allowlist",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 17915.5,
+      "measured_on": "passed",
+      "median_input": 17915.5,
+      "median_input_all": 17915.5,
+      "min_input": 17911,
+      "max_input": 17920,
+      "median_cache_read": 6109.5,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 6.13,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "hello",
+      "condition": "cli",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 17103.0,
+      "measured_on": "passed",
+      "median_input": 17103.0,
+      "median_input_all": 17103.0,
+      "min_input": 17103,
+      "max_input": 17103,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 5.529999999999999,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "issue",
+      "condition": "default",
+      "runs": 5,
+      "passed": 5,
+      "citation": 2,
+      "errors": [],
+      "median_first_call_input": 18397,
+      "measured_on": "passed",
+      "median_input": 148063,
+      "median_input_all": 148063,
+      "min_input": 123814,
+      "max_input": 149304,
+      "median_cache_read": 122128,
+      "median_output": 817,
+      "median_model_calls": 7,
+      "median_github_calls": 2,
+      "median_result_chars": 21137,
+      "median_wall_seconds": 18.45,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "issue",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 18160,
+      "measured_on": "passed",
+      "median_input": 144218,
+      "median_input_all": 144218,
+      "min_input": 121668,
+      "max_input": 234468,
+      "median_cache_read": 118033,
+      "median_output": 871,
+      "median_model_calls": 7,
+      "median_github_calls": 2,
+      "median_result_chars": 21137,
+      "median_wall_seconds": 18.98,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "issue",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 17351,
+      "measured_on": "passed",
+      "median_input": 113457,
+      "median_input_all": 113457,
+      "min_input": 93107,
+      "max_input": 213839,
+      "median_cache_read": 77343,
+      "median_output": 1297,
+      "median_model_calls": 6,
+      "median_github_calls": 5,
+      "median_result_chars": 96687,
+      "median_wall_seconds": 21.06,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "release",
+      "condition": "default",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 18280,
+      "measured_on": "passed",
+      "median_input": 56103,
+      "median_input_all": 56103,
+      "min_input": 56082,
+      "max_input": 56122,
+      "median_cache_read": 44790,
+      "median_output": 247,
+      "median_model_calls": 3,
+      "median_github_calls": 1,
+      "median_result_chars": 886,
+      "median_wall_seconds": 9.5,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        47
+      ]
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "release",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 18041,
+      "measured_on": "passed",
+      "median_input": 55401,
+      "median_input_all": 55401,
+      "min_input": 55391,
+      "max_input": 56101,
+      "median_cache_read": 44786,
+      "median_output": 254,
+      "median_model_calls": 3,
+      "median_github_calls": 1,
+      "median_result_chars": 886,
+      "median_wall_seconds": 9.05,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        3
+      ]
+    },
+    {
+      "agent": "agy",
+      "kind": "harness",
+      "versions": [
+        "1.3.3"
+      ],
+      "model": "gemini-3.8-flash-low",
+      "task": "release",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 17232,
+      "measured_on": "passed",
+      "median_input": 54366,
+      "median_input_all": 54366,
+      "min_input": 34778,
+      "max_input": 54390,
+      "median_cache_read": 32586,
+      "median_output": 303,
+      "median_model_calls": 3,
+      "median_github_calls": 1,
+      "median_result_chars": 199,
+      "median_wall_seconds": 9.01,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "none",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11.0,
+      "measured_on": "passed",
+      "median_input": 11.0,
+      "median_input_all": 11.0,
+      "min_input": 11,
+      "max_input": 11,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 8.39,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "eager",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 8290.0,
+      "measured_on": "passed",
+      "median_input": 8290.0,
+      "median_input_all": 8290.0,
+      "min_input": 8290,
+      "max_input": 8290,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 3.65,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "search",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 2493.0,
+      "measured_on": "passed",
+      "median_input": 2504.0,
+      "median_input_all": 2504.0,
+      "min_input": 2504,
+      "max_input": 2504,
+      "median_cache_read": 0.0,
+      "median_output": 8.0,
+      "median_model_calls": 2.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 5.325,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "allowlist",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 541.0,
+      "measured_on": "passed",
+      "median_input": 541.0,
+      "median_input_all": 541.0,
+      "min_input": 541,
+      "max_input": 541,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 2.7800000000000002,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "cli",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 108.0,
+      "measured_on": "passed",
+      "median_input": 108.0,
+      "median_input_all": 108.0,
+      "min_input": 108,
+      "max_input": 108,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 2.2800000000000002,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": 1,
+      "errors": [],
+      "median_first_call_input": 8536,
+      "measured_on": "passed",
+      "median_input": 32917,
+      "median_input_all": 32917,
+      "min_input": 32911,
+      "max_input": 52634,
+      "median_cache_read": 20432,
+      "median_output": 343,
+      "median_model_calls": 3,
+      "median_github_calls": 2,
+      "median_result_chars": 21220,
+      "median_wall_seconds": 24.7,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "search",
+      "runs": 5,
+      "passed": 0,
+      "citation": 0,
+      "errors": [
+        "No JSON object",
+        "ValueError"
+      ],
+      "median_first_call_input": 2739,
+      "measured_on": "all",
+      "median_input": 2739,
+      "median_input_all": 2739,
+      "min_input": 2739,
+      "max_input": 2739,
+      "median_cache_read": 0,
+      "median_output": 28,
+      "median_model_calls": 1,
+      "median_github_calls": 0,
+      "median_result_chars": 0,
+      "median_wall_seconds": 4.01,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": 1,
+      "errors": [],
+      "median_first_call_input": 787,
+      "measured_on": "passed",
+      "median_input": 9667,
+      "median_input_all": 9667,
+      "min_input": 9661,
+      "max_input": 21632,
+      "median_cache_read": 0,
+      "median_output": 343,
+      "median_model_calls": 3,
+      "median_github_calls": 2,
+      "median_result_chars": 21220,
+      "median_wall_seconds": 11.47,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 4,
+      "citation": 4,
+      "errors": [
+        "No JSON object",
+        "RemoteProtocolError"
+      ],
+      "median_first_call_input": 355.0,
+      "measured_on": "passed",
+      "median_input": 33586.5,
+      "median_input_all": 31957,
+      "min_input": 6822,
+      "max_input": 50795,
+      "median_cache_read": 1968.5,
+      "median_output": 1555.0,
+      "median_model_calls": 9.0,
+      "median_github_calls": 4,
+      "median_result_chars": 73377,
+      "median_wall_seconds": 51.2,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 8417,
+      "measured_on": "passed",
+      "median_input": 24103,
+      "median_input_all": 24103,
+      "min_input": 24098,
+      "max_input": 24104,
+      "median_cache_read": 9578,
+      "median_output": 125,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 17824,
+      "median_wall_seconds": 7.53,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "search",
+      "runs": 5,
+      "passed": 0,
+      "citation": null,
+      "errors": [
+        "No JSON object",
+        "ValueError"
+      ],
+      "median_first_call_input": 2620,
+      "measured_on": "all",
+      "median_input": 2620,
+      "median_input_all": 2620,
+      "min_input": 2620,
+      "max_input": 2620,
+      "median_cache_read": 0,
+      "median_output": 38,
+      "median_model_calls": 1,
+      "median_github_calls": 0,
+      "median_result_chars": 0,
+      "median_wall_seconds": 3.98,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 668,
+      "measured_on": "passed",
+      "median_input": 8701,
+      "median_input_all": 8701,
+      "min_input": 8698,
+      "max_input": 8727,
+      "median_cache_read": 0,
+      "median_output": 125,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 17824,
+      "median_wall_seconds": 8.48,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "langgraph",
+      "kind": "framework",
+      "versions": [
+        "langchain==1.4.4 langgraph==1.2.14 langchain-mcp-adapters==0.3.2 langchain-google-genai==4.4.0 google-genai==2.29.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 236,
+      "measured_on": "passed",
+      "median_input": 650,
+      "median_input_all": 650,
+      "min_input": 627,
+      "max_input": 1706,
+      "median_cache_read": 0,
+      "median_output": 163,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 199,
+      "median_wall_seconds": 6.89,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "none",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 25.0,
+      "measured_on": "passed",
+      "median_input": 25.0,
+      "median_input_all": 25.0,
+      "min_input": 25,
+      "max_input": 25,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 8.685,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "eager",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 16151.0,
+      "measured_on": "passed",
+      "median_input": 16151.0,
+      "median_input_all": 16151.0,
+      "min_input": 16151,
+      "max_input": 16151,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 3.875,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "allowlist",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 1072.0,
+      "measured_on": "passed",
+      "median_input": 1072.0,
+      "median_input_all": 1072.0,
+      "min_input": 1072,
+      "max_input": 1072,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 2.75,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "cli",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 133.0,
+      "measured_on": "passed",
+      "median_input": 133.0,
+      "median_input_all": 133.0,
+      "min_input": 133,
+      "max_input": 133,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 12.755,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 16397,
+      "measured_on": "passed",
+      "median_input": 56433,
+      "median_input_all": 56433,
+      "min_input": 56433,
+      "max_input": 56433,
+      "median_cache_read": 29769,
+      "median_output": 342,
+      "median_model_calls": 3,
+      "median_github_calls": 2,
+      "median_result_chars": 21220,
+      "median_wall_seconds": 20.72,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": 2,
+      "errors": [],
+      "median_first_call_input": 1318,
+      "measured_on": "passed",
+      "median_input": 11196,
+      "median_input_all": 11196,
+      "min_input": 11196,
+      "max_input": 11338,
+      "median_cache_read": 0,
+      "median_output": 343,
+      "median_model_calls": 3,
+      "median_github_calls": 2,
+      "median_result_chars": 21220,
+      "median_wall_seconds": 11.22,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": 5,
+      "errors": [],
+      "median_first_call_input": 380,
+      "measured_on": "passed",
+      "median_input": 6799,
+      "median_input_all": 6799,
+      "min_input": 4819,
+      "max_input": 6953,
+      "median_cache_read": 0,
+      "median_output": 536,
+      "median_model_calls": 5,
+      "median_github_calls": 4,
+      "median_result_chars": 73270,
+      "median_wall_seconds": 15.6,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 16278,
+      "measured_on": "passed",
+      "median_input": 39792,
+      "median_input_all": 39792,
+      "min_input": 39792,
+      "max_input": 39934,
+      "median_cache_read": 17041,
+      "median_output": 125,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 17824,
+      "median_wall_seconds": 9.2,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 1199,
+      "measured_on": "passed",
+      "median_input": 9672,
+      "median_input_all": 9672,
+      "min_input": 9634,
+      "max_input": 9759,
+      "median_cache_read": 0,
+      "median_output": 125,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 17824,
+      "median_wall_seconds": 7.18,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2025-11-25"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "adk",
+      "kind": "framework",
+      "versions": [
+        "google-adk==2.11.0 google-genai==2.29.0 mcp==2.3.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 261,
+      "measured_on": "passed",
+      "median_input": 677,
+      "median_input_all": 677,
+      "min_input": 677,
+      "max_input": 8506,
+      "median_cache_read": 0,
+      "median_output": 149,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 199,
+      "median_wall_seconds": 8.23,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "none",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 11.0,
+      "measured_on": "passed",
+      "median_input": 11.0,
+      "median_input_all": 11.0,
+      "min_input": 11,
+      "max_input": 11,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 10.245,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "eager",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 8435.0,
+      "measured_on": "passed",
+      "median_input": 8435.0,
+      "median_input_all": 8435.0,
+      "min_input": 8435,
+      "max_input": 8435,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 4.14,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "search",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 136.0,
+      "measured_on": "passed",
+      "median_input": 136.0,
+      "median_input_all": 136.0,
+      "min_input": 136,
+      "max_input": 136,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 2.75,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "allowlist",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 555.0,
+      "measured_on": "passed",
+      "median_input": 555.0,
+      "median_input_all": 555.0,
+      "min_input": 555,
+      "max_input": 555,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 3.115,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "hello",
+      "condition": "cli",
+      "runs": 2,
+      "passed": 2,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 108.0,
+      "measured_on": "passed",
+      "median_input": 108.0,
+      "median_input_all": 108.0,
+      "min_input": 108,
+      "max_input": 108,
+      "median_cache_read": 0.0,
+      "median_output": 1.0,
+      "median_model_calls": 1.0,
+      "median_github_calls": 0.0,
+      "median_result_chars": 0.0,
+      "median_wall_seconds": 2.825,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": 0,
+      "errors": [],
+      "median_first_call_input": 8681,
+      "measured_on": "passed",
+      "median_input": 32882,
+      "median_input_all": 32882,
+      "min_input": 32882,
+      "max_input": 32882,
+      "median_cache_read": 17464,
+      "median_output": 342,
+      "median_model_calls": 3,
+      "median_github_calls": 2,
+      "median_result_chars": 21137,
+      "median_wall_seconds": 12.2,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "search",
+      "runs": 5,
+      "passed": 5,
+      "citation": 1,
+      "errors": [],
+      "median_first_call_input": 382,
+      "measured_on": "passed",
+      "median_input": 15825,
+      "median_input_all": 15825,
+      "min_input": 13347,
+      "max_input": 21675,
+      "median_cache_read": 0,
+      "median_output": 376,
+      "median_model_calls": 4,
+      "median_github_calls": 2,
+      "median_result_chars": 21137,
+      "median_wall_seconds": 14.93,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": 0,
+      "errors": [],
+      "median_first_call_input": 801,
+      "measured_on": "passed",
+      "median_input": 9242,
+      "median_input_all": 9242,
+      "min_input": 9242,
+      "max_input": 9242,
+      "median_cache_read": 0,
+      "median_output": 343,
+      "median_model_calls": 3,
+      "median_github_calls": 2,
+      "median_result_chars": 21137,
+      "median_wall_seconds": 11.77,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "issue",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 4,
+      "citation": 4,
+      "errors": [
+        "No JSON object",
+        "RemoteProtocolError"
+      ],
+      "median_first_call_input": 355.0,
+      "measured_on": "passed",
+      "median_input": 45917.0,
+      "median_input_all": 17245,
+      "min_input": 4731,
+      "max_input": 82554,
+      "median_cache_read": 13865.5,
+      "median_output": 1034.0,
+      "median_model_calls": 7.5,
+      "median_github_calls": 4,
+      "median_result_chars": 74810,
+      "median_wall_seconds": 31.57,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "eager",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 8562,
+      "measured_on": "passed",
+      "median_input": 17569,
+      "median_input_all": 17569,
+      "min_input": 17523,
+      "max_input": 17593,
+      "median_cache_read": 5383,
+      "median_output": 139,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 886,
+      "median_wall_seconds": 8.81,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "search",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 263,
+      "measured_on": "passed",
+      "median_input": 4622,
+      "median_input_all": 4622,
+      "min_input": 4622,
+      "max_input": 4626,
+      "median_cache_read": 0,
+      "median_output": 148,
+      "median_model_calls": 3,
+      "median_github_calls": 1,
+      "median_result_chars": 886,
+      "median_wall_seconds": 9.77,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "allowlist",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 682,
+      "measured_on": "passed",
+      "median_input": 1701,
+      "median_input_all": 1701,
+      "min_input": 1701,
+      "max_input": 1701,
+      "median_cache_read": 0,
+      "median_output": 125,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 886,
+      "median_wall_seconds": 7.36,
+      "median_cost_usd_reported": null,
+      "protocols": [
+        "2026-07-28"
+      ],
+      "tools_listed": [
+        46
+      ]
+    },
+    {
+      "agent": "pydantic",
+      "kind": "framework",
+      "versions": [
+        "pydantic-ai-slim==2.55.0 google-genai==2.29.0 mcp==2.3.0 fastmcp-slim==4.1.0"
+      ],
+      "model": "gemini-3.8-flash",
+      "task": "release",
+      "condition": "cli",
+      "runs": 5,
+      "passed": 5,
+      "citation": null,
+      "errors": [],
+      "median_first_call_input": 236,
+      "measured_on": "passed",
+      "median_input": 629,
+      "median_input_all": 629,
+      "min_input": 629,
+      "max_input": 4051,
+      "median_cache_read": 0,
+      "median_output": 149,
+      "median_model_calls": 2,
+      "median_github_calls": 1,
+      "median_result_chars": 199,
+      "median_wall_seconds": 6.81,
+      "median_cost_usd_reported": null,
+      "protocols": [],
+      "tools_listed": []
+    }
+  ]
+}

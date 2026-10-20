@@ -1,0 +1,2230 @@
+[
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAdd review comment to the requester's latest pending pull request review. A pending review needs to already exist to call this (check with the user if not sure).\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "add_comment_to_pending_review",
+  "parameters_json_schema": {
+   "properties": {
+    "body": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe text of the review comment\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "line": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe line of the blob in the pull request diff that the comment applies to. For multi-line comments, the last line of the range\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "path": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe relative path to the file that necessitates a comment\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "pullNumber": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPull request number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "side": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe side of the diff to comment on. LEFT indicates the previous state, RIGHT indicates the new state\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "LEFT",
+      "RIGHT"
+     ],
+     "type": "string"
+    },
+    "startLine": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFor multi-line comments, the first line of the range that the comment applies to\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "startSide": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFor multi-line comments, the starting side of the diff that the comment applies to. LEFT indicates the previous state, RIGHT indicates the new state\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "LEFT",
+      "RIGHT"
+     ],
+     "type": "string"
+    },
+    "subjectType": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe level at which the comment is targeted\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "FILE",
+      "LINE"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "pullNumber",
+    "path",
+    "body",
+    "subjectType"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAdd a comment and/or reaction to a specific issue or issue comment in a GitHub repository. Use this tool with pull requests as well (in this case pass pull request number as issue_number), but only if user is not asking specifically to add or react to review comments. At least one of body or reaction is required.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "add_issue_comment",
+  "parameters_json_schema": {
+   "properties": {
+    "body": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nComment content. Required unless reaction is provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minLength": 1,
+     "type": "string"
+    },
+    "comment_id": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe numeric ID of the issue or pull request comment to react to. Use this for reactions to comments; omit it to react to the issue or pull request itself. Cannot be combined with body.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "issue_number": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue or pull request number to comment on or react to.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "reaction": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nEmoji reaction to add. Required unless body is provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "+1",
+      "-1",
+      "laugh",
+      "confused",
+      "heart",
+      "hooray",
+      "rocket",
+      "eyes"
+     ],
+     "type": "string"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "issue_number"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAdd a reply and/or reaction to an existing pull request comment. This can create a new comment linked as a reply to the specified comment, add an emoji reaction to the specified comment, or do both. At least one of body or reaction is required.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "add_reply_to_pull_request_comment",
+  "parameters_json_schema": {
+   "properties": {
+    "body": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe text of the reply. Required unless reaction is provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "commentId": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe numeric ID of the pull request review comment to reply or react to. Use the number from a #discussion_r... anchor, not the GraphQL thread node ID (PRRT_...).\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "pullNumber": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPull request number. Required when body is provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "reaction": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nEmoji reaction to add. Required unless body is provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "+1",
+      "-1",
+      "laugh",
+      "confused",
+      "heart",
+      "hooray",
+      "rocket",
+      "eyes"
+     ],
+     "type": "string"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "commentId"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAssign Copilot to a specific issue in a GitHub repository.\n\nThis tool can help with the following outcomes:\n- a Pull Request created with source code changes to resolve the issue\n\n\nMore information can be found at:\n- https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent\n\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "assign_copilot_to_issue",
+  "parameters_json_schema": {
+   "properties": {
+    "base_ref": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGit reference (e.g., branch) that the agent will start its work from. If not specified, defaults to the repository's default branch\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "custom_instructions": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOptional custom instructions to guide the agent beyond the issue body. Use this to provide additional context, constraints, or guidance that is not captured in the issue description\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "issue_number": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "issue_number"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCreate a new branch in a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "create_branch",
+  "parameters_json_schema": {
+   "properties": {
+    "branch": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nName for new branch\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "from_branch": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSource branch (defaults to repo default)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "branch"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCreate or update a single file in a GitHub repository. \nIf updating, you should provide the SHA of the file you want to update. Use this tool to create or update a file in a GitHub repository remotely; do not use it for local file operations.\n\nTo obtain the current blob SHA before updating, call the get_file_contents tool with the same owner, repo, and path, and set its ref parameter to this tool's branch value. The first text result reports the blob SHA for the requested path.\n\nSHA MUST be provided for existing file updates.\n\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "create_or_update_file",
+  "parameters_json_schema": {
+   "properties": {
+    "allow_symlink_write": {
+     "default": false,
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSet true to update a symbolic link itself; content must be its new target path.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    },
+    "branch": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nBranch to create/update the file in\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "content": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nContent of the file, exactly as it should appear once written. Do not base64-encode it; this server does that before calling the REST API.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "message": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCommit message\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner (username or organization)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "path": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPath where to create/update the file\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "sha": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe blob SHA of the file being replaced. Required if the file already exists. Retrieve it with get_file_contents using the same owner, repo, and path, with ref set to this tool's branch value.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "path",
+    "content",
+    "message",
+    "branch"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCreate a new pull request in a GitHub repository.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "create_pull_request",
+  "parameters_json_schema": {
+   "properties": {
+    "base": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nBranch to merge into\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "body": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPR description\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "draft": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCreate as draft PR\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    },
+    "head": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nBranch containing changes\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "maintainer_can_modify": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAllow maintainer edits\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "reviewers": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGitHub usernames or ORG/team-slug team reviewers to request reviews from\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "title": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPR title\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "title",
+    "head",
+    "base"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCreate a new GitHub repository in your account or specified organization\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "create_repository",
+  "parameters_json_schema": {
+   "properties": {
+    "autoInit": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nInitialize with README\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    },
+    "description": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository description\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "name": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "organization": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOrganization to create the repository in (omit to create in your personal account)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "private": {
+     "default": true,
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nWhether the repository should be private. Defaults to true (private) when omitted.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "name"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nDelete a file from a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "delete_file",
+  "parameters_json_schema": {
+   "properties": {
+    "branch": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nBranch to delete the file from\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "message": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCommit message\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner (username or organization)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "path": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPath to the file to delete\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "path",
+    "message",
+    "branch"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFork a GitHub repository to your account or specified organization\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "fork_repository",
+  "parameters_json_schema": {
+   "properties": {
+    "organization": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOrganization to fork to\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet details for a commit from a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_commit",
+  "parameters_json_schema": {
+   "properties": {
+    "detail": {
+     "default": "stats",
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nLevel of detail to include for changed files. \"none\" omits stats and files entirely. \"stats\" (default) includes per-file metadata: filename, status, and lines-of-code counts (additions, deletions, changes), with no patch content. \"full_patch\" additionally includes the unified diff content for each file and can be very large.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "none",
+      "stats",
+      "full_patch"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "sha": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCommit SHA, branch name, or tag name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "sha"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet the contents of a file or directory from a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_file_contents",
+  "parameters_json_schema": {
+   "properties": {
+    "fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSubset of fields to return for each entry when the path is a directory. If omitted, all fields are returned. Ignored when the path is a single file. Use this to reduce response size when listing directories and you only need specific fields, e.g. just 'name' and 'type'.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "enum": [
+       "type",
+       "name",
+       "path",
+       "size",
+       "sha",
+       "url",
+       "git_url",
+       "html_url",
+       "download_url"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner (username or organization)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "path": {
+     "default": "/",
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPath to file/directory\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "ref": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAccepts optional git refs such as `refs/tags/{tag}`, `refs/heads/{branch}` or `refs/pull/{pr_number}/head`\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "sha": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAccepts optional commit SHA. If specified, it will be used instead of ref\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet a specific label from a repository.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_label",
+  "parameters_json_schema": {
+   "properties": {
+    "name": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nLabel name.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner (username or organization name)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "name"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet the latest release in a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_latest_release",
+  "parameters_json_schema": {
+   "properties": {
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet details of the authenticated GitHub user. Use this when a request is about the user's own profile for GitHub. Or when information is missing to build other tool calls.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_me",
+  "parameters_json_schema": {
+   "properties": {},
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet a specific release by its tag name in a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_release_by_tag",
+  "parameters_json_schema": {
+   "properties": {
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "tag": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nTag name (e.g., 'v1.0.0')\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "tag"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet details about a specific git tag in a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_tag",
+  "parameters_json_schema": {
+   "properties": {
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "tag": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nTag name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "tag"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet member usernames of a specific team in an organization. Limited to organizations accessible with current credentials\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_team_members",
+  "parameters_json_schema": {
+   "properties": {
+    "org": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOrganization login (owner) that contains the team.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "team_slug": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nTeam slug\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "org",
+    "team_slug"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet details of the teams the user is a member of. Limited to organizations accessible with current credentials\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "get_teams",
+  "parameters_json_schema": {
+   "properties": {
+    "user": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nUsername to get teams for. If not provided, uses the authenticated user.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet information about a specific issue in a GitHub repository.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "issue_read",
+  "parameters_json_schema": {
+   "properties": {
+    "issue_number": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe number of the issue\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "method": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe read operation to perform on a single issue.\nOptions are:\n1. get - Get issue details. Also returns best-effort hierarchy flags (`has_parent`, `has_children`); `parent` and `sub_issues_summary` are optional relationship summaries, and `closed_by_pull_requests` summarizes the pull requests configured to close the issue as `total_count` plus up to 5 `references`.\n2. get_comments - Get issue comments.\n3. get_sub_issues - Get sub-issues (children) of the issue.\n4. get_parent - Get the parent issue, if this issue is a sub-issue of another.\n5. get_labels - Get labels assigned to the issue.\n\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "get",
+      "get_comments",
+      "get_sub_issues",
+      "get_parent",
+      "get_labels"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe owner of the repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe name of the repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "method",
+    "owner",
+    "repo",
+    "issue_number"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCreate a new or update an existing issue in a GitHub repository.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "issue_write",
+  "parameters_json_schema": {
+   "properties": {
+    "assignees": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nUsernames to assign to this issue\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "body": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue body content\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "duplicate_of": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue number that this issue is a duplicate of. Required when state_reason is 'duplicate'.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "issue_fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue field values to set or clear. Each item requires 'field_name' and exactly one of 'value', 'field_option_name', or 'delete: true'.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "additionalProperties": false,
+      "properties": {
+       "delete": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSet to true to clear this field's current value on the issue. When false or omitted, this property is ignored. Cannot be true when 'value' or 'field_option_name' is provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "type": "boolean"
+       },
+       "field_name": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue field name (case-insensitive). Must match a field returned by list_issue_fields for this repository or its organization.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "type": "string"
+       },
+       "field_option_name": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOption name for single-select fields. Validated against the field's options before the API call. Cannot be combined with 'value' or 'delete: true'.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "type": "string"
+       },
+       "value": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nValue to set. Use for text, number, and date fields (date as YYYY-MM-DD). For single-select fields, prefer 'field_option_name' so the option is validated before the API call. Cannot be combined with 'field_option_name' or 'delete: true'.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "type": [
+         "string",
+         "number",
+         "boolean"
+        ]
+       }
+      },
+      "required": [
+       "field_name"
+      ],
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "issue_number": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue number to update\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "labels": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nLabels to apply to this issue\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "method": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nWrite operation to perform on a single issue.\nOptions are:\n- 'create' - creates a new issue.\n- 'update' - updates an existing issue.\n\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "create",
+      "update"
+     ],
+     "type": "string"
+    },
+    "milestone": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nMilestone number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "parent_issue_number": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue number of the parent issue. Only used when method is 'create' and cannot be combined with issue_fields. The new issue is created and attached to this parent in the same operation.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "parent_owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner of the parent issue. Must be provided with parent_repo. Omit both to use owner and repo. Only used when method is 'create' and parent_issue_number is provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "parent_repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name of the parent issue. Must be provided with parent_owner. Omit both to use owner and repo. Only used when method is 'create' and parent_issue_number is provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "state": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nNew state\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "open",
+      "closed"
+     ],
+     "type": "string"
+    },
+    "state_reason": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nReason for the state change. Ignored unless state is changed.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "completed",
+      "not_planned",
+      "duplicate"
+     ],
+     "type": "string"
+    },
+    "title": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nIssue title\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "type": {
+     "anyOf": [
+      {
+       "minLength": 1,
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nType of this issue. For updates, pass null to remove the current type. Only use if issue types are enabled for this repository. Use list_issue_types to get valid type values for this repository or its owner organization. If the repository doesn't support issue types, omit this parameter.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>"
+    }
+   },
+   "required": [
+    "method",
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList branches in a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_branches",
+  "parameters_json_schema": {
+   "properties": {
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet list of commits of a branch in a GitHub repository. Returns at least 30 results per page by default, but can return more if specified using the perPage parameter (up to 100).\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_commits",
+  "parameters_json_schema": {
+   "properties": {
+    "author": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAuthor username or email address to filter commits by\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSubset of fields to return for each commit. If omitted, all fields are returned. Use this to reduce response size when you only need specific fields, e.g. just 'sha' and 'html_url'.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "enum": [
+       "sha",
+       "html_url",
+       "commit",
+       "author",
+       "committer"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "path": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOnly commits containing this file path will be returned\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "sha": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCommit SHA, branch or tag name to list commits of. If not provided, uses the default branch of the repository. If a commit SHA is provided, will list commits up to that SHA.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "since": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOnly commits after this date will be returned (ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DD)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "until": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOnly commits before this date will be returned (ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DD)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList issue fields for a repository or organization. Returns field definitions including name, type (text, number, date, single_select), and for single_select fields the list of valid option names. When repo is omitted, returns org-level fields directly.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_issue_fields",
+  "parameters_json_schema": {
+   "properties": {
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe account owner of the repository or organization. The name is not case sensitive.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe name of the repository. When provided, returns fields for this specific repository (inherited from its organization). When omitted, returns org-level fields directly.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList supported issue types for a repository or its owner organization. When repo is omitted, returns org-level issue types directly.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_issue_types",
+  "parameters_json_schema": {
+   "properties": {
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe account owner of the repository or organization.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe name of the repository. When provided, returns issue types for this specific repository. When omitted, returns org-level issue types directly.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList issues in a GitHub repository. For pagination, use the 'endCursor' from the previous response's 'pageInfo' in the 'after' parameter.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_issues",
+  "parameters_json_schema": {
+   "properties": {
+    "after": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCursor for pagination. Use the cursor from the previous response.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "direction": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOrder direction. If provided, the 'orderBy' also needs to be provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "ASC",
+      "DESC"
+     ],
+     "type": "string"
+    },
+    "field_filters": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFilter by custom issue field values. Each entry takes a field_name and a value; the server looks up the field and coerces the value to its type (single-select option name, text, number, or YYYY-MM-DD date).\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "properties": {
+       "field_name": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nName of the custom field (e.g. \"Priority\"). Case-insensitive.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "type": "string"
+       },
+       "value": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nValue to filter on. For single-select fields, the option name (e.g. \"P1\"). For dates, YYYY-MM-DD. For numbers, the numeric value as a string. For text, the text value.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "type": "string"
+       }
+      },
+      "required": [
+       "field_name",
+       "value"
+      ],
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSubset of fields to return for each issue. If omitted, all fields are returned. Use this to reduce response size when you only need specific fields; omitting 'body' and 'field_values' in particular drops the largest per-result data.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "enum": [
+       "number",
+       "title",
+       "body",
+       "state",
+       "user",
+       "labels",
+       "assignees",
+       "comments",
+       "created_at",
+       "updated_at",
+       "field_values"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "labels": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFilter by labels\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "orderBy": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOrder issues by field. If provided, the 'direction' also needs to be provided.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "CREATED_AT",
+      "UPDATED_AT",
+      "COMMENTS"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "since": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFilter by date (ISO 8601 timestamp)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "state": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFilter by state, by default both open and closed issues are returned when not provided\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "OPEN",
+      "CLOSED"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList pull requests in a GitHub repository. If the user specifies an author, then DO NOT use this tool and use the search_pull_requests tool instead.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_pull_requests",
+  "parameters_json_schema": {
+   "properties": {
+    "base": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFilter by base branch\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "direction": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort direction\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "asc",
+      "desc"
+     ],
+     "type": "string"
+    },
+    "fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSubset of fields to return for each pull request. If omitted, all fields are returned. Use this to reduce response size when you only need specific fields; omitting 'body' in particular drops the largest per-result data.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "enum": [
+       "number",
+       "title",
+       "body",
+       "state",
+       "draft",
+       "merged",
+       "mergeable_state",
+       "html_url",
+       "user",
+       "labels",
+       "assignees",
+       "requested_reviewers",
+       "merged_by",
+       "head",
+       "base",
+       "additions",
+       "deletions",
+       "changed_files",
+       "commits",
+       "comments",
+       "created_at",
+       "updated_at",
+       "closed_at",
+       "merged_at",
+       "milestone"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "head": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFilter by head user/org and branch\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "sort": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort by\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "created",
+      "updated",
+      "popularity",
+      "long-running"
+     ],
+     "type": "string"
+    },
+    "state": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFilter by state\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "open",
+      "closed",
+      "all"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList releases in a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_releases",
+  "parameters_json_schema": {
+   "properties": {
+    "fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSubset of fields to return for each release. If omitted, all fields are returned. Use this to reduce response size when you only need specific fields; omitting 'body' in particular drops the largest per-release data.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "enum": [
+       "id",
+       "tag_name",
+       "name",
+       "body",
+       "html_url",
+       "published_at",
+       "prerelease",
+       "draft",
+       "author"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList collaborators of a GitHub repository. Results are paginated; the response includes `nextPage`, `prevPage`, `firstPage`, and `lastPage` fields. To get the next page, use the `nextPage` value as the `page` parameter.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_repository_collaborators",
+  "parameters_json_schema": {
+   "properties": {
+    "affiliation": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFilter by affiliation. Can be one of: 'outside' (outside collaborators), 'direct' (all with permissions regardless of org membership), 'all' (all collaborators). Default: 'all'\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "outside",
+      "direct",
+      "all"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (default 1, min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (default 30, min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nList git tags in a GitHub repository\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "list_tags",
+  "parameters_json_schema": {
+   "properties": {
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nMerge a pull request in a GitHub repository.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "merge_pull_request",
+  "parameters_json_schema": {
+   "properties": {
+    "commit_message": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nExtra detail for merge commit\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "commit_title": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nTitle for merge commit\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "expectedHeadSha": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe expected SHA of the pull request's HEAD ref\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "merge_method": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nMerge method\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "merge",
+      "squash",
+      "rebase"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "pullNumber": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPull request number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "pullNumber"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGet information on a specific pull request in GitHub repository.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "pull_request_read",
+  "parameters_json_schema": {
+   "properties": {
+    "after": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCursor for pagination, used only by the get_review_comments method. Pass the endCursor from the previous page's PageInfo to fetch the next page.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "method": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAction to specify what pull request data needs to be retrieved from GitHub. \nPossible options: \n 1. get - Get details of a specific pull request.\n 2. get_diff - Get the diff of a pull request.\n 3. get_status - Get combined commit status of a head commit in a pull request.\n 4. get_files - Get the list of files changed in a pull request. Use with pagination parameters to control the number of results returned.\n 5. get_commits - Get the list of commits on a pull request. Use with pagination parameters to control the number of results returned.\n 6. get_review_comments - Get review threads on a pull request. Each thread contains logically grouped review comments made on the same code location during pull request reviews. Returns thread metadata and comments with nullable current and original line-range coordinates (line, start_line, original_line, original_start_line). Current coordinates are omitted when unavailable, such as for outdated comments. Use cursor-based pagination (perPage, after) to control results.\n 7. get_reviews - Get the reviews on a pull request. When asked for review comments, use get_review_comments method. Use with pagination parameters to control the number of results returned.\n 8. get_comments - Get comments on a pull request. Use this if user doesn't specifically want review comments. Use with pagination parameters to control the number of results returned.\n 9. get_check_runs - Get check runs for the head commit of a pull request. Check runs are the individual CI/CD jobs and checks that run on the PR.\n\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "get",
+      "get_diff",
+      "get_status",
+      "get_files",
+      "get_commits",
+      "get_review_comments",
+      "get_reviews",
+      "get_comments",
+      "get_check_runs"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "pullNumber": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPull request number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "method",
+    "owner",
+    "repo",
+    "pullNumber"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCreate and/or submit, delete review of a pull request.\n\nAvailable methods:\n- create: Create a new review of a pull request. If \"event\" parameter is provided, the review is submitted. If \"event\" is omitted, a pending review is created.\n- submit_pending: Submit an existing pending review of a pull request. This requires that a pending review exists for the current user on the specified pull request. The \"body\" and \"event\" parameters are used when submitting the review.\n- delete_pending: Delete an existing pending review of a pull request. This requires that a pending review exists for the current user on the specified pull request.\n- resolve_thread: Resolve a review thread. Requires only \"threadId\" parameter with the thread's node ID (e.g., PRRT_kwDOxxx). The owner, repo, and pullNumber parameters are not used for this method. Resolving an already-resolved thread is a no-op.\n- unresolve_thread: Unresolve a previously resolved review thread. Requires only \"threadId\" parameter. The owner, repo, and pullNumber parameters are not used for this method. Unresolving an already-unresolved thread is a no-op.\n\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "pull_request_review_write",
+  "parameters_json_schema": {
+   "properties": {
+    "body": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nReview comment text\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "commitID": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSHA of commit to review\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "event": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nReview action to perform.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "APPROVE",
+      "REQUEST_CHANGES",
+      "COMMENT"
+     ],
+     "type": "string"
+    },
+    "method": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe write operation to perform on pull request review.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "create",
+      "submit_pending",
+      "delete_pending",
+      "resolve_thread",
+      "unresolve_thread"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "pullNumber": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPull request number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "threadId": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe node ID of the review thread (e.g., PRRT_kwDOxxx). Required for resolve_thread and unresolve_thread methods. Get thread IDs from pull_request_read with method get_review_comments.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "method",
+    "owner",
+    "repo",
+    "pullNumber"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPush multiple files to a GitHub repository in a single commit\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "push_files",
+  "parameters_json_schema": {
+   "properties": {
+    "branch": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nBranch to push to\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "files": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nArray of file objects to push, each object with path (string) and content (string)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "additionalProperties": false,
+      "properties": {
+       "content": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nfile content\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "type": "string"
+       },
+       "path": {
+        "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\npath to the file\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+        "type": "string"
+       }
+      },
+      "required": [
+       "path",
+       "content"
+      ],
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "message": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCommit message\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "branch",
+    "files",
+    "message"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRequest a GitHub Copilot code review for a pull request. Use this for automated feedback on pull requests, usually before requesting a human reviewer.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "request_copilot_review",
+  "parameters_json_schema": {
+   "properties": {
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "pullNumber": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPull request number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "pullNumber"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFast and precise code search across ALL GitHub repositories using GitHub's native search engine. Best for finding exact symbols, functions, classes, or specific code patterns.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "search_code",
+  "parameters_json_schema": {
+   "properties": {
+    "fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSubset of fields to return for each code search result. If omitted, all fields are returned. Use this to reduce response size when you only need specific fields; omitting 'repository' and 'text_matches' in particular drops the largest per-result data.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "enum": [
+       "name",
+       "path",
+       "sha",
+       "repository",
+       "text_matches"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "order": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort order for results\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "asc",
+      "desc"
+     ],
+     "type": "string"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "query": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSearch query (GitHub code search REST). Implicit AND between terms; supports `OR`, `NOT`, and `\"quoted phrase\"` for exact match. Qualifiers: `repo:owner/repo`, `org:`, `user:`, `language:`, `path:dir` (prefix match), `filename:exact.ext`, `extension:`, `in:file`, `in:path`, `size:`, `is:archived`, `is:fork`. Max 256 chars. Examples: `WithContext language:go org:github`; `\"package main\" repo:o/r`; `func extension:go path:cmd repo:o/r`; `NOT TODO language:go repo:o/r`.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "sort": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort field ('indexed' only)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSearch for commits across GitHub repositories using GitHub's commit search syntax. Useful for finding specific changes, authors, or messages across one or many repositories. Searches the default branch only.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "search_commits",
+  "parameters_json_schema": {
+   "properties": {
+    "order": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort order\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "asc",
+      "desc"
+     ],
+     "type": "string"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "query": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nCommit search query (GitHub commit search REST). Searches commit messages on the default branch only. Scope the search with `repo:owner/repo`, `org:`, or `user:` (queries without a scope qualifier match across all of GitHub and are usually not what you want). Other qualifiers: `author:`, `committer:`, `author-name:`, `committer-name:`, `author-email:`, `committer-email:`, `author-date:`, `committer-date:` (supports `>`, `<`, `>=`, `<=`, and `YYYY-MM-DD..YYYY-MM-DD` ranges), `merge:true|false`, `hash:`, `tree:`, `parent:`, `is:public`. Examples: `repo:owner/repo fix panic`; `org:github author:defunkt committer-date:>=2024-01-01`; `\"refactor cache\" repo:o/r`; `hash:abc1234 repo:o/r`.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "sort": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort by author or committer date (defaults to best match)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "author-date",
+      "committer-date"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSearch issues using natural-language semantic matching. Best for conceptual or paraphrased queries (e.g. \"login fails after password reset\"). Already scoped to is:issue.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "search_issues",
+  "parameters_json_schema": {
+   "properties": {
+    "fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSubset of fields to return for each issue result. If omitted, all fields are returned. Use this to reduce response size when you only need specific fields; omitting 'body', 'reactions', and 'labels' in particular drops the largest per-result data.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "enum": [
+       "number",
+       "title",
+       "body",
+       "state",
+       "state_reason",
+       "draft",
+       "locked",
+       "html_url",
+       "user",
+       "author_association",
+       "labels",
+       "assignee",
+       "assignees",
+       "milestone",
+       "comments",
+       "reactions",
+       "created_at",
+       "updated_at",
+       "closed_at",
+       "closed_by",
+       "type",
+       "repository_url",
+       "pull_request",
+       "field_values"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "order": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort order\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "asc",
+      "desc"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOptional repository owner. If provided with repo, only issues for this repository are listed.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "query": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe search query, as natural language. When the user gives alternative wordings, include them as plain words rather than joining them with OR.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOptional repository name. If provided with owner, only issues for this repository are listed.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "sort": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort field by number of matches of categories, defaults to best match\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "comments",
+      "reactions",
+      "reactions-+1",
+      "reactions--1",
+      "reactions-smile",
+      "reactions-thinking_face",
+      "reactions-heart",
+      "reactions-tada",
+      "interactions",
+      "created",
+      "updated"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSearch for pull requests in GitHub repositories using issues search syntax already scoped to is:pr\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "search_pull_requests",
+  "parameters_json_schema": {
+   "properties": {
+    "fields": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSubset of fields to return for each pull request result. If omitted, all fields are returned. Use this to reduce response size when you only need specific fields; omitting 'body', 'reactions', and 'labels' in particular drops the largest per-result data.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "enum": [
+       "number",
+       "title",
+       "body",
+       "state",
+       "state_reason",
+       "draft",
+       "locked",
+       "html_url",
+       "user",
+       "author_association",
+       "labels",
+       "assignee",
+       "assignees",
+       "milestone",
+       "comments",
+       "reactions",
+       "created_at",
+       "updated_at",
+       "closed_at",
+       "closed_by",
+       "pull_request",
+       "repository_url"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "order": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort order\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "asc",
+      "desc"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOptional repository owner. If provided with repo, only pull requests for this repository are listed.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "query": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSearch query using GitHub pull request search syntax\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nOptional repository name. If provided with owner, only pull requests for this repository are listed.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "sort": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort field by number of matches of categories, defaults to best match\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "comments",
+      "reactions",
+      "reactions-+1",
+      "reactions--1",
+      "reactions-smile",
+      "reactions-thinking_face",
+      "reactions-heart",
+      "reactions-tada",
+      "interactions",
+      "created",
+      "updated"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFind GitHub repositories by name, description, readme, topics, or other metadata. Perfect for discovering projects, finding examples, or locating specific repositories across GitHub.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "search_repositories",
+  "parameters_json_schema": {
+   "properties": {
+    "minimal_output": {
+     "default": true,
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nReturn minimal repository information (default: true). When false, modern clients receive additional curated repository details, not the complete GitHub API object. Legacy clients retain full GitHub API repository objects.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    },
+    "order": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort order\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "asc",
+      "desc"
+     ],
+     "type": "string"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "query": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository search query. Examples: 'machine learning in:name stars:>1000 language:python', 'topic:react', 'user:facebook'. Supports advanced search syntax for precise filtering.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "sort": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort repositories by field, defaults to best match\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "stars",
+      "forks",
+      "help-wanted-issues",
+      "updated"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFind GitHub users by username, real name, or other profile information. Useful for locating developers, contributors, or team members.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "search_users",
+  "parameters_json_schema": {
+   "properties": {
+    "order": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort order\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "asc",
+      "desc"
+     ],
+     "type": "string"
+    },
+    "page": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPage number for pagination (min 1)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "number"
+    },
+    "perPage": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nResults per page for pagination (min 1, max 100)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "maximum": 100,
+     "minimum": 1,
+     "type": "number"
+    },
+    "query": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nUser search query. Examples: 'john smith', 'location:seattle', 'followers:>100'. Search is automatically scoped to type:user.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "sort": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nSort users by number of followers or repositories, or when the person joined GitHub.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "followers",
+      "repositories",
+      "joined"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAdd a sub-issue to a parent issue in a GitHub repository.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "sub_issue_write",
+  "parameters_json_schema": {
+   "properties": {
+    "after_id": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe ID of the sub-issue to be prioritized after (either after_id OR before_id should be specified)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "before_id": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe ID of the sub-issue to be prioritized before (either after_id OR before_id should be specified)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "issue_number": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe number of the parent issue\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "method": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe action to perform on a single sub-issue\nOptions are:\n- 'add' - add a sub-issue to a parent issue in a GitHub repository.\n- 'remove' - remove a sub-issue from a parent issue in a GitHub repository.\n- 'reprioritize' - change the order of sub-issues within a parent issue in a GitHub repository. Use either 'after_id' or 'before_id' to specify the new position.\nWrites issue hierarchy. To move a sub-issue to a new parent, use `add` with `replace_parent=true`; there is no writable parent field.\n\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "replace_parent": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nWhen true, replaces the sub-issue's current parent issue. Use with 'add' method only.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "sub_issue_id": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe ID of the sub-issue to add. ID is not the same as issue number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    }
+   },
+   "required": [
+    "method",
+    "owner",
+    "repo",
+    "issue_number",
+    "sub_issue_id"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nFetch UI data for MCP Apps (labels, assignees, milestones, issue types, branches, issue fields, reviewers).\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "ui_get",
+  "parameters_json_schema": {
+   "properties": {
+    "method": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe type of data to fetch\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "labels",
+      "assignees",
+      "milestones",
+      "issue_types",
+      "branches",
+      "issue_fields",
+      "reviewers"
+     ],
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner (required for all methods)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name (required for labels, assignees, milestones, branches, issue fields, reviewers)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "method",
+    "owner"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nUpdate the body of an existing issue or pull request conversation comment. This tool cannot update pull request review comments.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "update_issue_comment",
+  "parameters_json_schema": {
+   "properties": {
+    "body": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nNew comment content\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minLength": 1,
+     "type": "string"
+    },
+    "comment_id": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe numeric ID of the issue or pull request conversation comment to update. Do not use a pull request review comment ID.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "comment_id",
+    "body"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nUpdate an existing pull request in a GitHub repository.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "update_pull_request",
+  "parameters_json_schema": {
+   "properties": {
+    "base": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nNew base branch name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "body": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nNew description\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "draft": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nMark pull request as draft (true) or ready for review (false)\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    },
+    "maintainer_can_modify": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nAllow maintainer edits\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "boolean"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "pullNumber": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPull request number to update\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    },
+    "reviewers": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nGitHub usernames or ORG/team-slug team reviewers to request reviews from\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "state": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nNew state\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "enum": [
+      "open",
+      "closed"
+     ],
+     "type": "string"
+    },
+    "title": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nNew title\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "pullNumber"
+   ],
+   "type": "object"
+  }
+ },
+ {
+  "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nUpdate the branch of a pull request with the latest changes from the base branch.\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+  "name": "update_pull_request_branch",
+  "parameters_json_schema": {
+   "properties": {
+    "expectedHeadSha": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nThe expected SHA of the pull request's HEAD ref\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string"
+    },
+    "owner": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository owner\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "owner"
+    },
+    "pullNumber": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nPull request number\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "number"
+    },
+    "repo": {
+     "description": "<<<BEGIN_UNTRUSTED_TOOL_DESCRIPTION>>>\nRepository name\n<<<END_UNTRUSTED_TOOL_DESCRIPTION>>>",
+     "type": "string",
+     "x-mcp-header": "repo"
+    }
+   },
+   "required": [
+    "owner",
+    "repo",
+    "pullNumber"
+   ],
+   "type": "object"
+  }
+ }
+]

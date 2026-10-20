@@ -1,0 +1,300 @@
+{
+  "server": {
+    "version": "2.0.2",
+    "build": [
+      "GitHub MCP Server",
+      "Version: 2.0.2",
+      "Commit: eb47a99ddb866ca2b8a162920e6bda9521f33ebb",
+      "Build Date: 2026-10-08T11:26:40Z"
+    ],
+    "binary_sha256": "721ffbb573397d8e95b847f7a1908359fd2973784ca8a8d5d3182db6f9fcb5b6"
+  },
+  "tokenizer": "tiktoken 0.14.0 / o200k_base",
+  "catalogue": [
+    {
+      "config": "all",
+      "protocol": "2025-11-25",
+      "tools": 91,
+      "declaration_tokens": 23102,
+      "output_schema_tools": 0,
+      "output_schema_tokens": 0,
+      "full_record_tokens": 116709,
+      "instructions_tokens": 1559,
+      "names_sha256": "34acaa5ad0109e0af0d04851ee1b4d7fa1ae5ecfef897f60f3fee40fe4c94467"
+    },
+    {
+      "config": "all",
+      "protocol": "2026-07-28",
+      "tools": 91,
+      "declaration_tokens": 23102,
+      "output_schema_tools": 91,
+      "output_schema_tokens": 36003,
+      "full_record_tokens": 152984,
+      "instructions_tokens": null,
+      "names_sha256": "34acaa5ad0109e0af0d04851ee1b4d7fa1ae5ecfef897f60f3fee40fe4c94467"
+    },
+    {
+      "config": "default",
+      "protocol": "2025-11-25",
+      "tools": 46,
+      "declaration_tokens": 11157,
+      "output_schema_tools": 0,
+      "output_schema_tokens": 0,
+      "full_record_tokens": 57485,
+      "instructions_tokens": 377,
+      "names_sha256": "2d914b0a9e3a999daba98dd086926d55d00e43be78d08349d863ff3ec134c6cd"
+    },
+    {
+      "config": "default",
+      "protocol": "2026-07-28",
+      "tools": 46,
+      "declaration_tokens": 11157,
+      "output_schema_tools": 46,
+      "output_schema_tokens": 17171,
+      "full_record_tokens": 74793,
+      "instructions_tokens": null,
+      "names_sha256": "2d914b0a9e3a999daba98dd086926d55d00e43be78d08349d863ff3ec134c6cd"
+    },
+    {
+      "config": "read_only",
+      "protocol": "2025-11-25",
+      "tools": 27,
+      "declaration_tokens": 6461,
+      "output_schema_tools": 0,
+      "output_schema_tokens": 0,
+      "full_record_tokens": 32140,
+      "instructions_tokens": 377,
+      "names_sha256": "806a864739aa3f072edcb2eceef5ba8c6570c26786ea377575636bcef719f33c"
+    },
+    {
+      "config": "read_only",
+      "protocol": "2026-07-28",
+      "tools": 27,
+      "declaration_tokens": 6461,
+      "output_schema_tools": 27,
+      "output_schema_tokens": 14900,
+      "full_record_tokens": 47120,
+      "instructions_tokens": null,
+      "names_sha256": "806a864739aa3f072edcb2eceef5ba8c6570c26786ea377575636bcef719f33c"
+    },
+    {
+      "config": "allowlist",
+      "protocol": "2025-11-25",
+      "tools": 3,
+      "declaration_tokens": 708,
+      "output_schema_tools": 0,
+      "output_schema_tokens": 0,
+      "full_record_tokens": 3350,
+      "instructions_tokens": 202,
+      "names_sha256": "c280205bbb3211c055020b6593cc94a547cf78d5677a50de1188f478074d50a9"
+    },
+    {
+      "config": "allowlist",
+      "protocol": "2026-07-28",
+      "tools": 3,
+      "declaration_tokens": 708,
+      "output_schema_tools": 3,
+      "output_schema_tokens": 2837,
+      "full_record_tokens": 6195,
+      "instructions_tokens": null,
+      "names_sha256": "c280205bbb3211c055020b6593cc94a547cf78d5677a50de1188f478074d50a9"
+    }
+  ],
+  "results": [
+    {
+      "interface": "mcp",
+      "protocol": "2025-11-25",
+      "call": "issue_read",
+      "content": {
+        "chars": 3867,
+        "tokens": 957,
+        "sha256": "d60a6bea46f8456b873f02dd9f02629ea3998a7199c8c6723725fb4d3b307c49"
+      },
+      "structured": null,
+      "structured_keys": null
+    },
+    {
+      "interface": "mcp",
+      "protocol": "2025-11-25",
+      "call": "get_file_contents",
+      "content": {
+        "chars": 17353,
+        "tokens": 4298,
+        "sha256": "18d2bbed05e32362a8624ae177537391168a9158380e68cc73b91a9af0d680c8"
+      },
+      "structured": null,
+      "structured_keys": null
+    },
+    {
+      "interface": "mcp",
+      "protocol": "2025-11-25",
+      "call": "get_release_by_tag",
+      "content": {
+        "chars": 17824,
+        "tokens": 5261,
+        "sha256": "cf1cea52b7d27a748c1da4d1afc78bc01c16a75d23131c5b5bc3298edc44ef34"
+      },
+      "structured": null,
+      "structured_keys": null
+    },
+    {
+      "interface": "mcp",
+      "protocol": "2026-07-28",
+      "call": "issue_read",
+      "content": {
+        "chars": 3784,
+        "tokens": 935,
+        "sha256": "0631663c4bbded159598936bf35c3f32996f2959579001b078176f305e20607d"
+      },
+      "structured": {
+        "chars": 3844,
+        "tokens": 991,
+        "sha256": "e7ce3a9db62998c9612f3ba54c45440a3b4a79afa5b2b94385de4d7c656fe8bf"
+      },
+      "structured_keys": [
+        "issue",
+        "method"
+      ]
+    },
+    {
+      "interface": "mcp",
+      "protocol": "2026-07-28",
+      "call": "get_file_contents",
+      "content": {
+        "chars": 17353,
+        "tokens": 4298,
+        "sha256": "18d2bbed05e32362a8624ae177537391168a9158380e68cc73b91a9af0d680c8"
+      },
+      "structured": {
+        "chars": 19138,
+        "tokens": 5299,
+        "sha256": "5e71251c368e413dcd807f231725ccdc93d1050a4a40541efe01f046d84c803e"
+      },
+      "structured_keys": [
+        "content"
+      ]
+    },
+    {
+      "interface": "mcp",
+      "protocol": "2026-07-28",
+      "call": "get_release_by_tag",
+      "content": {
+        "chars": 886,
+        "tokens": 253,
+        "sha256": "d8ad0d345c15d312ea84d983de12af745c4532e134a62d43a4bd17b3bcbd57ff"
+      },
+      "structured": {
+        "chars": 910,
+        "tokens": 273,
+        "sha256": "7129f1ff4218348b343c621f7d0da281d59367e0c4b31e8b181721f69f0e13cd"
+      },
+      "structured_keys": [
+        "author",
+        "body",
+        "draft",
+        "html_url",
+        "id",
+        "name",
+        "prerelease",
+        "published_at",
+        "tag_name"
+      ]
+    },
+    {
+      "interface": "cli",
+      "call": "gh issue view (default)",
+      "argv": [
+        "issue",
+        "view",
+        "2275",
+        "-R",
+        "github/github-mcp-server"
+      ],
+      "content": {
+        "chars": 3126,
+        "tokens": 714,
+        "sha256": "c460af1bdf63ad1075c9a6ac5c0b82a585dc5143b548b140ff079357db6028c0"
+      }
+    },
+    {
+      "interface": "cli",
+      "call": "gh issue view --json title,state",
+      "argv": [
+        "issue",
+        "view",
+        "2275",
+        "-R",
+        "github/github-mcp-server",
+        "--json",
+        "title,state"
+      ],
+      "content": {
+        "chars": 82,
+        "tokens": 21,
+        "sha256": "02cc71e0beb853946a12325c544dd3567748849878194061e9cccc8062f7780f"
+      }
+    },
+    {
+      "interface": "cli",
+      "call": "gh api contents (default JSON, base64)",
+      "argv": [
+        "api",
+        "repos/github/github-mcp-server/contents/pkg/github/tools.go?ref=85598ba6e1256f7ebf4867b95d63b833c4549264"
+      ],
+      "content": {
+        "chars": 24850,
+        "tokens": 15708,
+        "sha256": "227dd81916540c4639ee3e4c02fd533b716f68676c17668a2b48404e6d44af0d"
+      }
+    },
+    {
+      "interface": "cli",
+      "call": "gh api contents (raw media type)",
+      "argv": [
+        "api",
+        "-H",
+        "Accept: application/vnd.github.raw",
+        "repos/github/github-mcp-server/contents/pkg/github/tools.go?ref=85598ba6e1256f7ebf4867b95d63b833c4549264"
+      ],
+      "content": {
+        "chars": 17272,
+        "tokens": 4265,
+        "sha256": "b14b55f66e2e53f059b78c33779047ed6f441b88589446de811ae7f98d6a7167"
+      }
+    },
+    {
+      "interface": "cli",
+      "call": "gh release view (default)",
+      "argv": [
+        "release",
+        "view",
+        "v1.12.2",
+        "-R",
+        "github/github-mcp-server"
+      ],
+      "content": {
+        "chars": 1119,
+        "tokens": 357,
+        "sha256": "c432fa2fc236cc8e7f3ee091f88d292c75f7dcfdb81495ceddb8b3596b101b45"
+      }
+    },
+    {
+      "interface": "cli",
+      "call": "gh release view --json (6 fields)",
+      "argv": [
+        "release",
+        "view",
+        "v1.12.2",
+        "-R",
+        "github/github-mcp-server",
+        "--json",
+        "tagName,name,author,publishedAt,isPrerelease,isDraft"
+      ],
+      "content": {
+        "chars": 199,
+        "tokens": 80,
+        "sha256": "3ec10d0a0e36df7e4f33718aa0900e5724095061f608b3d2718e63593411a90b"
+      }
+    }
+  ]
+}
