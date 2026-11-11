@@ -239,7 +239,7 @@ def startup_figure(rows: list[dict], output: Path) -> None:
     ax.set_xlabel('Native input tokens of the first model request ("Reply with exactly OK")', color=MUTED)
     finish(fig, ax, "What an agent pays before its first useful action",
            "Gray: the agent's own prompt and tools. Color: what the GitHub MCP server's default tools or the gh skill add.",
-           "Medians of 2 runs per bar, each agent's own tokenizer: compare bars within an agent, not across agents. Antigravity and ADK offer no deferral to switch off or on.",
+           "Medians of 2 runs per bar, each agent's own tokenizer: compare bars within an agent, not across agents. Antigravity CLI has no server-wide eager switch; ADK 2.11 has no MCP tool search.",
            output)  # fmt: skip
 
 

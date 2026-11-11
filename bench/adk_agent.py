@@ -8,7 +8,7 @@
 # ///
 """Google ADK agent: `LlmAgent` with an `McpToolset`, run by `InMemoryRunner`.
 
-eager lists every tool; allowlist uses `McpToolset(tool_filter=...)`. ADK has no
+eager lists every tool; allowlist uses `McpToolset(tool_filter=...)`. ADK 2.11 has no
 tool-search or deferred-loading option for MCP tools, so it has no search condition.
 """
 

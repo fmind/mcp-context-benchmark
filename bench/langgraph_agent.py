@@ -13,7 +13,7 @@
 
 eager binds every listed tool; allowlist keeps three by name; search adds LangChain's
 `LLMToolSelectorMiddleware`, which asks the model to pick at most three tools before each
-model call. LangChain's provider-native tool search supports only Anthropic and OpenAI.
+model call. In LangChain 1.4, provider-native tool search supports only Anthropic and OpenAI.
 """
 
 import warnings
